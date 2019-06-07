@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="696639d0-eb9f-4c0b-85f7-96bc05bbd9f1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Cajero/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cajero/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cajero/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cajero/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cajero/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cajero/Cajero.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Lexical analayzer step/Lexical Analysis(both steps).pages" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Lexical analayzer step/Lexical Analysis(both steps).pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Lexical analayzer step/Lexical_Analyzer_A01400033.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Lexical analayzer step/Reading_Assign_2.1-1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Lexical analayzer step/RegularExp.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Lexical analayzer step/RegularExpressions.pages" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Lexical analayzer step/RegularExpressions.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Lexical analayzer step/RegularLanguages.pages" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Lexical analayzer step/RegularLanguages.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Notes/Lexical_Analisis_A01400033.pages" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/PRoject/Compilers_Design_Project_Definition_A01400033.pages" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/PRoject/Compilers_Design_Project_Definition_A01400033.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Semantic Rules.pages" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Semantic Rules.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Semantic/4.3_Writing_a_grammar.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Semantic/exercises/Context_Free_Exercises.pages" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Semantic/exercises/Context_Free_Exercises.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Semantic/exercises/GrammarExercises.pages" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Semantic/exercises/GrammarExercises.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Semantic/exercises/Shift:reduce exercises.pages" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Semantic/exercises/Shift:reduce exercises.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Semantic/notes/Bottom-Up.pages" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Semantic/notes/Bottom-Up.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Semantic/notes/CodeGeneration Algorithm.pages" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Semantic/notes/CodeGeneration.pages" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Semantic/notes/CodeGeneration.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Semantic/notes/Top-Down summary.pages" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Semantic/notes/Top-Down summary.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Semantic/notes/TypeChecking.pages" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Semantic/notes/TypeChecking.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Semantic/notes/Types and Declarations.pages" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Semantic/notes/Types and Declarations.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Semantic/notes/notes_Wirtting_Grammar.pages" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Semantic/notes/notes_Wirtting_Grammar.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Symbol table tool.pages" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/Symbol table tool.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/exampleLex.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/ANNOUNCE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/CHANGES" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/Compiler.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/CythonLexer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/CythonParser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/CythonSemantic.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/GeneratedCode.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/GeneratedCode1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/MANIFEST.in" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/Nested_Structures.pyx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/New_Cases.pyx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/PKG-INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/TODO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/Variables_Constants.pyx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/comment_test.pyx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/datatypes.pyx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/doc/internal.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/doc/makedoc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/doc/ply.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/everything.pyx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/BASIC/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/BASIC/basic.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/BASIC/basiclex.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/BASIC/basiclog.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/BASIC/basinterp.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/BASIC/basparse.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/BASIC/dim.bas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/BASIC/func.bas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/BASIC/gcd.bas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/BASIC/gosub.bas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/BASIC/hello.bas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/BASIC/linear.bas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/BASIC/maxsin.bas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/BASIC/powers.bas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/BASIC/rand.bas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/BASIC/sales.bas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/BASIC/sears.bas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/BASIC/sqrt1.bas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/BASIC/sqrt2.bas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/GardenSnake/GardenSnake.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/GardenSnake/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/ansic/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/ansic/clex.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/ansic/cparse.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/calc/calc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/calcdebug/calc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/calceof/calc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/classcalc/calc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/cleanup.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/closurecalc/calc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/hedit/hedit.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/newclasscalc/calc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/optcalc/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/optcalc/calc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/unicalc/calc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/yply/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/yply/ylex.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/yply/yparse.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/example/yply/yply.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/input_output.pyx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/loop_error.pyx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/loops_condition.pyx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/parser.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/parsetab.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/place_error.pyx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/ply.egg-info/PKG-INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/ply.egg-info/SOURCES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/ply.egg-info/dependency_links.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/ply.egg-info/top_level.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/ply/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/ply/cpp.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/ply/ctokens.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/ply/lex.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/ply/yacc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/ply/ygen.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/setup.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/setup.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/strings.pyx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/calclex.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/cleanup.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_closure.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_doc1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_dup1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_dup2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_dup3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_empty.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_error1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_error2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_error3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_error4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_hedit.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_ignore.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_ignore2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_literal1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_literal2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_literal3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_many_tokens.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_module.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_module_import.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_object.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_opt_alias.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_optimize.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_optimize2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_optimize3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_optimize4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_re1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_re2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_re3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_rule1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_rule2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_rule3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_state1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_state2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_state3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_state4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_state5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_state_noerror.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_state_norule.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_state_try.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_token1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_token2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_token3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_token4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_token5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/lex_token_dup.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/parser.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test1/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test1/parsing/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test1/parsing/calclex.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test1/parsing/calcparse.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test1/parsing/lextab.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test1/parsing/parser.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test1/parsing/parsetab.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test2/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test2/parsing/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test2/parsing/calclex.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test2/parsing/calclextab.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test2/parsing/calcparse.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test2/parsing/calcparsetab.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test2/parsing/parser.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test3/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test3/generated/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test3/generated/lextab.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test3/generated/parser.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test3/generated/parsetab.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test3/parsing/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test3/parsing/calclex.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test3/parsing/calcparse.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test4/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test4/parsing/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test4/parsing/calclex.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test4/parsing/calcparse.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test5/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test5/parsing/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test5/parsing/calclex.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test5/parsing/calcparse.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test5/parsing/lextab.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test5/parsing/parser.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test5/parsing/parsetab.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test6/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test6/parsing/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test6/parsing/calclex.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test6/parsing/calcparse.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test6/parsing/expression.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test6/parsing/lextab.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test6/parsing/parser.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test6/parsing/parsetab.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/pkg_test6/parsing/statement.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/testcpp.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/testlex.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/testyacc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_badargs.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_badid.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_badprec.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_badprec2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_badprec3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_badrule.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_badtok.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_dup.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_error1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_error2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_error3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_error4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_error5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_error6.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_error7.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_inf.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_literal.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_misplaced.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_missing1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_nested.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_nodoc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_noerror.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_nop.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_notfunc.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_notok.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_prec1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_rr.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_rr_unused.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_simple.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_sr.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_term1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_unicode_literals.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_unused.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_unused_rule.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_uprec.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/test/yacc_uprec2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/testParse.pyx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Compilers/ply-3.11/variable_error.pyx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Django-1" beforeDir="false" afterPath="$PROJECT_DIR$/../Django-1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LDAW" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LNCAB" beforeDir="false" afterPath="$PROJECT_DIR$/../LNCAB" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/AMS/Agile 7.2 y 7.3.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/AMS/Assignment1_A01400033.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/2ndoPArcial/ActividadVirtual.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/2ndoPArcial/ActividadVirtual/Conclusion.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/2ndoPArcial/ActividadVirtual/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/2ndoPArcial/ActividadVirtual/actividadVirtual.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/2ndoPArcial/Entrega2ndoParcial.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/2ndoPArcial/Entrega2ndoParcial/hex.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/2ndoPArcial/Entrega2ndoParcial/markov.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/2ndoPArcial/Entrega2ndoParcial/teoria_colas.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/2ndoPArcial/TeoriadeColas.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/2ndoPArcial/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/2ndoPArcial/actividad.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/AceptacionMontecarlos.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/CongruenciaLineal.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/Distribucion.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/Estadistica.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/EstadisticaCiclos.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/Examen_Metodos/Ejercicio2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/Examen_Metodos/Examen-ex1.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/Examen_Metodos/Examen-ex3.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/Examen_Metodos/Examen-ex4.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/Examen_Metodos/Examen_ex2.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/Examen_Metodos/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/MedianModeFrequency.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/TransofrmacionDirecta.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/VonNeumannaleat.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/bayestheorem.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/ejercicio1.nb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/ejercicio3.nb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/ejercico2.nb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/gamma.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/gato.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/kolmogorov.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/metodos1.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/ordenamiento.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TEC-7mo_semestre/Metodos_Cuantitativos_y_Simulacion/pruebaphi.cpp" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/DMHQuiroz/__init__.py" />
+        <option value="$PROJECT_DIR$/DMHQuiroz/settings.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1680" />
+    <option name="height" value="1050" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="DMHQuiroz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DMHQuiroz" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DMHQuiroz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DMHQuiroz" type="462c0819:PsiDirectoryNode" />
+              <item name="DMHQuiroz" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="DMHQuiroz" type="Python.DjangoServer" factoryName="Django server">
+      <module name="DMHQuiroz" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="DMHQuiroz.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="696639d0-eb9f-4c0b-85f7-96bc05bbd9f1" name="Default Changelist" comment="" />
+      <created>1559912910028</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1559912910028</updated>
+      <workItem from="1559912927137" duration="1257000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1257000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24969475" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32959184" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32959184" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="SciView" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$USER_HOME$/.virtualenvs/DMHQuiroz/lib/python3.7/site-packages/django/db/backends/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DMHQuiroz/urls.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DMHQuiroz/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DMHQuiroz/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="61" column="29" lean-forward="true" selection-start-line="61" selection-start-column="29" selection-end-line="61" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
