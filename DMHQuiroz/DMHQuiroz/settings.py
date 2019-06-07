@@ -78,13 +78,13 @@ DATABASES = {
     'default': {
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'DMHQuiroz',
-            'USER': 'root',
+            'USER': 'developer',
             'PASSWORD': 'adminsql',
             'HOST': 'localhost',
             'PORT': '3306',
         }
 }
-cd
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -123,3 +123,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
