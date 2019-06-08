@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Here goes Doctor content</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ DoctorForm.as_p }}
+   <button class="btn waves-effect waves-light pink lighten-3" type="submit" name="action">Terminar
+    <i class="material-icons right pink lighten-3">send</i>
+  </button>
+</form>
 {% endblock %}
 
