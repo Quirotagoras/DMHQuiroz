@@ -42,7 +42,10 @@
 
         $(document).ready(function(){
 
-        $(".dropdown-trigger").dropdown();
+
+
+            $(".dropdown-trigger").dropdown();
+            $('select').formSelect();
 
         });
 
@@ -64,7 +67,7 @@
   <nav class=" pink lighten-3"> <!-- navbar content here  -->
    {% load static from staticfiles %}
        <div class="nav-wrapper">
-  <img class="left hide-on-med-and-down" src="{% static 'DMHQuiroz/logo.jpg' %}" width="70" height="63"/>
+  <img class="left hide-on-med-and-down" src="{% static 'DMHQuiroz/logo.png' %}" width="200" height="63"/>
     <ul class="right hide-on-med-and-down">
 
       <li><a href="sass.html">Capturar Equivalencia</a></li>
@@ -83,7 +86,7 @@
     <li><a href="#!">Sucursal</a></li>
 
     <li><a href="#!">Derecho Habiente</a></li>
-    <li><a href="#!">Producto</a></li>
+    <li><a href="/products/">Productos</a></li>
     <li class="divider"></li>
 </ul>
 

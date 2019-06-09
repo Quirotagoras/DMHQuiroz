@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<ul>
+    <li><h2 class="pink-text text-lighten-3">Registrar Producto
+    <i class="medium material-icons ">local_pharmacy</i></h2></li>
+    <li class="divider pink lighten-3"></li>
+</ul>
+
+<form method="POST">
+
+    {% csrf_token %}
+    {{ Form.as_p }}
+
+
+
+
+   <button class="btn waves-effect waves-light pink lighten-3" type="submit" name="action">Terminar
+    <i class="material-icons right pink lighten-3">done</i>
+  </button>
+</form>
+{% endblock %}
+

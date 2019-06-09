@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'doctores.apps.DoctoresConfig',
     'products.apps.ProductsConfig',
+    'materializecssform',
 
 ]
 
