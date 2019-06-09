@@ -1,4 +1,5 @@
 from django import forms
+from .models import Doctor
 
 class DoctorForm(forms.Form):
     first_name=forms.CharField(label="Nombre",max_length=100)
@@ -11,4 +12,19 @@ class DoctorForm(forms.Form):
     estado=forms.CharField(label="Estado donde ejerce", max_length=50)
     municipio=forms.CharField(label="Municipio donde ejerce", max_length=50)
     cp=forms.CharField(label="Codigo postal donde ejerce", max_length=10)
+
+    def clean(self):
+        cleaned_data = super().clean()
+        cedula = cleaned_data.get("cedula")
+        if cedula:
+            try:
+                Doctor.objects.get(cedula=cedula)
+                raise forms.ValidationError("Cedula existente. Intente otravez")
+
+            except Doctor.DoesNotExist:
+                pass
+
+
+
+
 

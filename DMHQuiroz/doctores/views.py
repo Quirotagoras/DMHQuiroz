@@ -25,11 +25,10 @@ def RegisterDoctor(request):
                 municipio=form.cleaned_data.get("municipio"),
                 cp=form.cleaned_data.get("cp"),
             )
-            if len(new_doctor.rfc) >= 12 and len(new_doctor.rfc) <= 13:
-                new_doctor.save()
-                return HttpResponseRedirect('/registeredDoctor/')
-            else:
-                raise ValidationError("rfc tiene que ser menor a 12 caracteres")
+
+
+            new_doctor.save()
+            return HttpResponseRedirect('/registeredDoctor/')
     else:
         form = DoctorForm()
 
