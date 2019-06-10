@@ -2,35 +2,7 @@ from django.forms import ModelForm
 from .models import Product
 from django import forms
 
-PRESENTACIONES_CHOICES = [
-    ('Tab', 'Tabletas'),
-    ('Amp', 'Ampolletas'),
-    ('Polv', 'Polvos'),
-    ('Cap', 'Capsulas'),
-    ('Pil', 'Pildoras'),
-    ('Grag', 'Grageas'),
-    ('Sup', 'Supositorios'),
-    ('Ov', 'Ovulos'),
-    ('Pom', 'Pomada'),
-    ('Cre', 'Crema'),
-    ('Sol', 'Soluciones'),
-    ('Jar', 'Jarabes'),
-    ('Col', 'Colirios'),
-    ('Loc', 'Lociones'),
-    ('Lin', 'Linimiento'),
-    ('Eli', 'Elixir'),
-    ('Ene', 'Enema'),
-    ('Inha', 'Inhalaciones'),
-    ('Aero', 'Aerosoles'),
 
-]
-
-UNIDADES_CHOICES = [
-    ('mg', 'miligramos'),
-    ('g', 'gramos'),
-    ('ml', 'mililitros'),
-
-]
 
 class formRegisterProduct(ModelForm):
 
@@ -42,6 +14,16 @@ class formRegisterProduct(ModelForm):
        fields = ['cbarras','subcuenta','nombre_comercial','nombre_activo','presentacion','cantidad_pastillas','unidad_medida','precio_max_pub']
 
 
+       widgets = {
+           'required' : True,
+           'cbarras': forms.TextInput(attrs={'placeholder': 'Inserte Codigo de barras aqui','lab':'Codigo de Barras'}),
+           'subcuenta': forms.TextInput(attrs={'placeholder': 'Inserte Subcuenta aqui'}),
+           'nombre_comercial': forms.TextInput(attrs={'placeholder': 'Inserte Nombre comercial aqui'}),
+           'nombre_activo': forms.TextInput(attrs={'placeholder': 'Inserte Nombre activo aqui'}),
+           'cantidad_pastillas': forms.TextInput(attrs={'placeholder': 'Inserte Cantidad de pastillas en caja aqui'}),
+           'precio_max_pub': forms.TextInput(attrs={'placeholder': 'Inserte Precio maximo al publico aqui'}),
+
+       }
 
     def clean(self):
         cleaned_data = super().clean()

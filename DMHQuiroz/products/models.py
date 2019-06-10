@@ -2,7 +2,7 @@ from django.db import models
 
 class Product(models.Model):
 
-    presentaciones = (
+    presentaciones = [
         ('Tab','Tabletas'),
         ('Amp','Ampolletas'),
         ('Polv','Polvos'),
@@ -25,21 +25,21 @@ class Product(models.Model):
 
 
 
-    )
+    ]
 
 
-    unidades=(
+    unidades=[
         ('mg','miligramos'),
         ('g','gramos'),
         ('ml','mililitros'),
 
 
-    )
+    ]
     cbarras=models.PositiveIntegerField()
     subcuenta= models.CharField(max_length=100)
     nombre_comercial=models.CharField(max_length=200)
     nombre_activo=models.CharField(max_length=200)
-    presentacion=models.CharField(choices=presentaciones,max_length=20,default='Tab')
+    presentacion=models.CharField(choices=presentaciones,max_length=20)
     cantidad_pastillas = models.PositiveIntegerField()
 
     unidad_medida=models.CharField(choices=unidades,max_length=20)
