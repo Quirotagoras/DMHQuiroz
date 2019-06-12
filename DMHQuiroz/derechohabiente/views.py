@@ -4,6 +4,9 @@ from django.shortcuts import render
 from .models import DerechoHabiente
 from django.core.exceptions import ValidationError
 
+def SuccessRegister(request):
+    return render(request,'../templates/successDerecho.html')
+
 def RegisterDerechoHabiente(request):
 
 
@@ -32,7 +35,7 @@ def RegisterDerechoHabiente(request):
 
 
             new_derechohabiente.save()
-            return HttpResponseRedirect('/registeredDerechoHabiente/')
+            return HttpResponseRedirect('registeredDerechoHabiente/')
     else:
         form = DerechoHabienteForm()
 

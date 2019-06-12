@@ -5,6 +5,9 @@ from .models import Product
 from equivalencia.models import Equivalencia
 from django.core.exceptions import ValidationError
 
+def SuccessRegister(request):
+    return render(request,'../templates/successProducto.html')
+
 def RegisterProduct(request):
 
 
@@ -38,7 +41,7 @@ def RegisterProduct(request):
 
             new_product.save()
             new_equivalencia.save()
-            return HttpResponseRedirect('/registeredProduct/')
+            return HttpResponseRedirect('registeredProduct/')
     else:
         form = formRegisterProduct()
 

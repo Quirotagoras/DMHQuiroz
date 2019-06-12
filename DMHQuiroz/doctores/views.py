@@ -5,6 +5,9 @@ from .models import Doctor
 from django.core.exceptions import ValidationError
 from farmacia.models import Farmacia
 
+def SuccessRegister(request):
+    return render(request,'../templates/successDoctor.html')
+
 def RegisterDoctor(request):
 
 
@@ -29,7 +32,7 @@ def RegisterDoctor(request):
 
 
             new_doctor.save()
-            return HttpResponseRedirect('/registeredDoctor/')
+            return HttpResponseRedirect('registeredDoctor/')
     else:
         form = DoctorForm()
 

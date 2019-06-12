@@ -5,6 +5,9 @@ from .models import Receta
 from django.core.exceptions import ValidationError
 from django.utils import timezone
 
+def SuccessRegister(request):
+    return render(request,'../templates/successReceta.html')
+
 def RegisterReceta(request):
 
 
@@ -36,7 +39,7 @@ def RegisterReceta(request):
 
 
             new_derechohabiente.save()
-            return HttpResponseRedirect('/registeredReceta/')
+            return HttpResponseRedirect('registeredReceta/')
     else:
         form = RecetaForm()
 

@@ -4,6 +4,10 @@ from django.shortcuts import render
 from .models import Farmacia
 from django.core.exceptions import ValidationError
 
+
+def SuccessRegister(request):
+    return render(request,'../templates/successFarmacia.html')
+
 def RegisterFarmacia(request):
 
     if request.method == 'POST':
@@ -25,7 +29,7 @@ def RegisterFarmacia(request):
 
 
             new_farmacia.save()
-            return HttpResponseRedirect('/registeredFarmacia/')
+            return HttpResponseRedirect('registeredFarmacia/')
     else:
         form = formRegisterFarmacia()
 
