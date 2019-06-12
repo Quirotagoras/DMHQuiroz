@@ -25,14 +25,5 @@ class formRegisterProduct(ModelForm):
 
        }
 
-    def clean(self):
-        cleaned_data = super().clean()
-        cbarras = cleaned_data.get("cbarras")
-        if cbarras:
-            try:
-                Product.objects.get(cbarras=cbarras)
-                raise forms.ValidationError("Codigo de barras existente. Intente otravez")
 
-            except Product.DoesNotExist:
-                pass
 

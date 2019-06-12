@@ -16,8 +16,8 @@ class formRegisterFarmacia(ModelForm):
 
        widgets = {
            'required' : True,
-           'cve_admin': forms.TextInput(attrs={'placeholder':'Inserte clave de administrador aqui'}),
-           'cve_admin2': forms.TextInput(attrs={'placeholder': 'Inserte clave 2 de administrador aqui'}),
+           'cve_admin': forms.TextInput(attrs={'placeholder':'Inserte clave de administrador aqui'}),#se tiene que validar???
+           'cve_admin2': forms.TextInput(attrs={'placeholder': 'Inserte clave 2 de administrador aqui'}),#x2
             'nombre' : forms.TextInput(attrs={'placeholder':'Inserte nombre de farmacia aqui'}),
            'telefono' : forms.TextInput(attrs={'placeholder':'Inserte telefono de farmacia aqui'}),
            'calle_num' : forms.TextInput(attrs={'placeholder':'Inserte calle y numero donde se encuentra la farmacia aqui'}),
@@ -26,6 +26,7 @@ class formRegisterFarmacia(ModelForm):
 
 
        }
+
 
 
 

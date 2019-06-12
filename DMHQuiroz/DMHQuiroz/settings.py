@@ -39,7 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'doctores.apps.DoctoresConfig',
+    'derechohabiente.apps.DerechohabienteConfig',
+    'receta.apps.RecetaConfig',
     'products.apps.ProductsConfig',
+    'equivalencia.apps.EquivalenciaConfig',
     'farmacia.apps.FarmaciaConfig',
     'materializecssform',
 

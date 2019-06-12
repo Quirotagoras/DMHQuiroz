@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .models import Doctor
 from django.core.exceptions import ValidationError
+from farmacia.models import Farmacia
 
 def RegisterDoctor(request):
 
@@ -10,6 +11,7 @@ def RegisterDoctor(request):
     if request.method == 'POST':
         form = DoctorForm(request.POST)
         if form.is_valid():
+
             new_doctor = Doctor(
                 first_name=form.cleaned_data.get("first_name"),
                 last_name=form.cleaned_data.get("last_name"),
@@ -18,10 +20,9 @@ def RegisterDoctor(request):
 
                 telefono=form.cleaned_data.get("telefono"),
                 rfc=form.cleaned_data.get("rfc"),
-
-
                 calle_num=form.cleaned_data.get("calle_num"),
-                estado=form.cleaned_data.get("estado"),
+                farmacia = form.cleaned_data.get("farmacia"),
+                estado = form.cleaned_data.get("estado"),
                 municipio=form.cleaned_data.get("municipio"),
                 cp=form.cleaned_data.get("cp"),
             )

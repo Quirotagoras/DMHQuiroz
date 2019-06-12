@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+{% block content %}
+<ul>
+    <li><h2 class="pink-text text-lighten-3">Registrar Receta
+    <i class="medium material-icons ">local_pharmacy</i></h2></li>
+    <li class="divider pink lighten-3"></li>
+</ul>
+
+<form method="POST">
+    {% block javascript %}
+     <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/js/materialize.min.js" integrity="sha256-SrBfGi+Zp2LhAvy9M1bWOCXztRU9Ztztxmu5BcYPcPE=" crossorigin="anonymous"></script>
+
+    <script>
+
+
+
+        $(document).ready(function(){
+            $(".dropdown-trigger").dropdown();
+            $('select').formSelect();
+        // Initialize materialize data picker
+            $('.datepicker').datepicker({format: 'mm/dd/yyyy',
+                                 changeMonth: true,
+                                 changeYear: true,
+                                yearRange: [2019,2080]});
+        $('select').formSelect();
+         $('.collapsible').collapsible();
+        });
+        </script>
+    {% endblock javascript %}
+
+    {% csrf_token %}
+
+
+
+
+    <label class="active">Folio de Receta:</label>
+
+    {{ Form.folio_receta }}
+    {{ Form.folio_receta.errors }}
+    <label class="active">Status</label>
+
+    {{ Form.status }}
+     <label class="active">Fecha que expide:</label>
+
+    {{ Form.fecha_expide }}
+     <label class="active">Fecha que recibe:</label>
+
+    {{ Form.fecha_recibe }}
+
+     <label class="active">Fecha que surte:</label>
+
+    {{ Form.fecha_surte }}
+
+    <label class="active">Doctor que medica:</label>
+
+    {{ Form.doctor }}
+<div>
+     <label class="active">Ficha de Derecho Habiente:</label>
+
+    {{ Form.ficha_derechohabiente }}
+    </div>
+<div>
+     <label class="active">Farmacia:</label>
+
+    {{ Form.farmacia }}
+
+    </div>
+    <div>
+     <label class="active">Medicamento:</label>
+
+    {{ Form.cbarras }}
+
+    </div>
+<div>
+      <label class="active">Cantidad:</label>
+
+    {{ Form.cantidad }}
+
+</div>
+    <ul class=" collapsible">
+    <li>
+      <div class="collapsible-header pink lighten-3 white-text"><i class=" small material-icons h">add</i>Agregar Equivalencia a Receta(opcional)</div>
+      <div class="collapsible-body">
+          <label>Medicamento de Equivalencia</label>
+          {{ Form.equivalencia_cbarras }}
+
+
+      </div>
+           <div class="collapsible-body">
+          <label>Cantidad equivalente:</label>
+          {{ Form.equivalencia_cantidad }}
+
+
+      </div>
+         <div class="collapsible-body">
+          <label>Observaciones</label>
+          {{ Form.equivalencia_obs }}
+
+
+      </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+
+
+   <button class="btn waves-effect waves-light pink lighten-3" type="submit" name="action">Terminar
+    <i class="material-icons right pink lighten-3">done</i>
+  </button>
+</form>
+{% endblock %}
+

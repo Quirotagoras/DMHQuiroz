@@ -1,28 +1,28 @@
 from django import forms
 from .models import Doctor
+from django.forms import ModelForm
 
-class DoctorForm(forms.Form):
-    first_name=forms.CharField(label="Nombre",max_length=100)
-    last_name = forms.CharField(label="Apellido Paterno", max_length=100)
-    last_name2 = forms.CharField(label="Apellido Materno", max_length=100)
-    cedula=forms.CharField(label="Cedula Profesional", max_length=50)#
-    telefono = forms.CharField(label="Telefono", max_length=50)
-    rfc = forms.CharField(label="RFC", max_length=50)#12 a 13 caracteres
-    calle_num=forms.CharField(label="Calle y numero",max_length=100)
-    estado=forms.CharField(label="Estado donde ejerce", max_length=50)
-    municipio=forms.CharField(label="Municipio donde ejerce", max_length=50)
-    cp=forms.CharField(label="Codigo postal donde ejerce", max_length=10)
+class DoctorForm(ModelForm):
 
-    def clean(self):
-        cleaned_data = super().clean()
-        cedula = cleaned_data.get("cedula")
-        if cedula:
-            try:
-                Doctor.objects.get(cedula=cedula)
-                raise forms.ValidationError("Cedula existente. Intente otravez")
 
-            except Doctor.DoesNotExist:
-                pass
+    class Meta:
+        model = Doctor
+        fields = ['first_name','last_name','last_name2','cedula','rfc','telefono','calle_num','farmacia','estado','municipio','cp']
+
+        widgets = {
+            'first_name' : forms.TextInput(attrs={'placeholder':'Inserte nombres de el doctor'}),
+            'last_name': forms.TextInput(attrs={'placeholder': 'Inserte apellido paterno de el doctor'}),
+            'last_name2': forms.TextInput(attrs={'placeholder': 'Inserte apellido materno de el doctor'}),
+            'cedula': forms.TextInput(attrs={'placeholder': 'Inserte cedula de el doctor'}),
+            'rfc': forms.TextInput(attrs={'placeholder': 'Inserte rfc de el doctor'}),
+            'telefono': forms.TextInput(attrs={'placeholder': 'Inserte telefono de el doctor'}),
+            'calle_num': forms.TextInput(attrs={'placeholder': 'Inserte calle y numero donde ejerce  el doctor'}),
+            'municipio': forms.TextInput(attrs={'placeholder': 'Inserte municipio donde ejerce  el doctor'}),
+            'cp': forms.TextInput(attrs={'placeholder': 'Inserte codigo postal donde ejerce  el doctor'}),
+
+        }
+
+
 
 
 

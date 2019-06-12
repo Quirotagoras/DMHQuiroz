@@ -1,6 +1,7 @@
 from django.db import models
+from farmacia.models import Farmacia
 
-# Create your models here.
+
 
 estado_choices= [
     ('AGS','Aguascalientes'),
@@ -37,22 +38,21 @@ estado_choices= [
 
 ]
 
-class Farmacia(models.Model):
-    cve_admin = models.IntegerField("Clave de administrador",unique=True)
-    cve_admin2 = models.CharField("Clave de administrador 2",max_length=50,unique=True)
+# Create your models here.
+
+class DerechoHabiente(models.Model):
+    ficha = models.PositiveIntegerField()
+    codigo = models.PositiveIntegerField()
+    org = models.CharField(max_length=50)
+    cve_farmacia = models.ManyToManyField(Farmacia)
     nombre = models.CharField(max_length=50)
-    telefono = models.BigIntegerField("Telefono de farmacia")
     calle_num = models.CharField("Calle y numero",max_length=100)
-    estado = models.CharField(choices=estado_choices,max_length=15)
-    municipio=models.CharField(max_length=100)
-    cp=models.PositiveIntegerField("Codigo Postal")
-
-
+    colonia = models.CharField(max_length=100)
+    estado = models.CharField(max_length=100,choices=estado_choices)
+    municipio = models.CharField(max_length=50)
+    cp = models.PositiveIntegerField("Codigo postal")
+    telefono = models.BigIntegerField()
+    email = models.EmailField(max_length=50)
 
     def __str__(self):
-        return self.nombre + " " + self.municipio
-
-
-
-
-
+        return str(self.ficha) +"-"+ str(self.codigo)

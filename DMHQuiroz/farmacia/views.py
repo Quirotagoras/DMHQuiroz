@@ -6,7 +6,6 @@ from django.core.exceptions import ValidationError
 
 def RegisterFarmacia(request):
 
-
     if request.method == 'POST':
         form = formRegisterFarmacia(request.POST)
         if form.is_valid():
