@@ -4,11 +4,13 @@ from django.shortcuts import render
 from .models import Doctor
 from django.core.exceptions import ValidationError
 from farmacia.models import Farmacia
+from django.contrib.auth.decorators import login_required
 
 def SuccessRegister(request):
     return render(request,'../templates/successDoctor.html')
 
-def RegisterDoctor(request):
+@login_required
+def RegisterDoctor(request,idEmpleado):
 
 
     if request.method == 'POST':
@@ -20,7 +22,6 @@ def RegisterDoctor(request):
                 last_name=form.cleaned_data.get("last_name"),
                 last_name2=form.cleaned_data.get("last_name2"),
                 cedula=form.cleaned_data.get("cedula"),
-
                 telefono=form.cleaned_data.get("telefono"),
                 rfc=form.cleaned_data.get("rfc"),
                 calle_num=form.cleaned_data.get("calle_num"),
@@ -32,7 +33,7 @@ def RegisterDoctor(request):
 
 
             new_doctor.save()
-            return HttpResponseRedirect('registeredDoctor/')
+            return HttpResponseRedirect('/doctor/registeredDoctor/')
     else:
         form = DoctorForm()
 

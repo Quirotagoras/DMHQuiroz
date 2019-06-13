@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'products.apps.ProductsConfig',
     'equivalencia.apps.EquivalenciaConfig',
     'farmacia.apps.FarmaciaConfig',
+    'users.apps.UsersConfig',
     'materializecssform',
 
 ]

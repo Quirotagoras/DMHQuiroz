@@ -3,11 +3,13 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .models import DerechoHabiente
 from django.core.exceptions import ValidationError
+from django.contrib.auth.decorators import login_required
 
 def SuccessRegister(request):
     return render(request,'../templates/successDerecho.html')
 
-def RegisterDerechoHabiente(request):
+@login_required
+def RegisterDerechoHabiente(request,idEmpleado):
 
 
     if request.method == 'POST':
@@ -35,7 +37,7 @@ def RegisterDerechoHabiente(request):
 
 
             new_derechohabiente.save()
-            return HttpResponseRedirect('registeredDerechoHabiente/')
+            return HttpResponseRedirect('/derechoHabiente/registeredDerechoHabiente/')
     else:
         form = DerechoHabienteForm()
 

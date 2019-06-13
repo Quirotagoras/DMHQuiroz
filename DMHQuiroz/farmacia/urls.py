@@ -18,6 +18,6 @@ from .views import RegisterFarmacia,SuccessRegister
 
 
 urlpatterns = [
-    path('',RegisterFarmacia,name="RegisterFarmacia"),
+    path('<int:idEmpleado>',RegisterFarmacia,name="RegisterFarmacia"),
     path('registeredFarmacia/',SuccessRegister,name="SuccessRegister"),
 ]

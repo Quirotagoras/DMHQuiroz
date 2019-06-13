@@ -74,11 +74,13 @@
   <img class="left hide-on-med-and-down" src="{% static 'DMHQuiroz/logo.png' %}" width="200" height="63"/>
     <ul class="right hide-on-med-and-down">
 
-
-      <li><a href="/receta/{{ request.user.pk }}"> Capturar Receta</a></li>
+        <li><a href="/receta/{{ request.user.pk }}"> </a></li>
+      <li><a href="/recetaGerente/{{ request.user.pk }}/Gerente"> Capturar Receta</a></li>
       <!-- Dropdown Trigger -->
       <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Alta<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Modificar<i class="material-icons right">arrow_drop_down</i></a></li>
         <li><a href="{% url 'logoutUser' %}" >Logout</a></li>
+
     </ul>
   </div>
 
@@ -92,9 +94,18 @@
 
     <li><a href="/derechoHabiente/{{ request.user.pk }}">Derecho Habiente</a></li>
     <li><a href="/products/{{ request.user.pk }}">Productos</a></li>
+    <li><a href="">Capturista</a></li>
     <li class="divider"></li>
 </ul>
 
+<ul id="dropdown2" class="dropdown-content">
+    <li><a href="">Doctor</a></li>
+
+    <li><a href="">Derecho Habiente</a></li>
+    <li><a href="">Receta</a></li>
+
+    <li class="divider"></li>
+</ul>
 
 
 <div class="row">

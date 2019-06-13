@@ -8,7 +8,7 @@ class RecetaForm(ModelForm):
     class Meta:
         model = Receta
 
-        fields = ['folio_receta' , 'status' , 'fecha_expide' , 'fecha_recibe' , 'fecha_surte' , 'doctor' ,'ficha_derechohabiente','farmacia','cbarras','cantidad','equivalencia_cbarras','equivalencia_cantidad','equivalencia_obs']
+        fields = ['folio_receta' , 'status' , 'fecha_expide' , 'fecha_recibe' , 'fecha_surte' ,'doctor','ficha_derechohabiente','cbarras','cantidad','equivalencia_cbarras','equivalencia_cantidad','equivalencia_obs']
 
         widgets = {
             'required' : True,
@@ -25,16 +25,9 @@ class RecetaForm(ModelForm):
 
 
 
-        }
-    def clean(self):
-        cleaned_data = super().clean()
-        folio_receta = cleaned_data.get("folio_receta")
-        if folio_receta:
-            try:
-                Receta.objects.get(folio_receta=folio_receta)
-                raise forms.ValidationError("Folio existente. Intente otravez")
 
-            except Receta.DoesNotExist:
-                pass
+
+        }
+
 
 

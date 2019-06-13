@@ -4,10 +4,11 @@ from doctores.models import Doctor
 from derechohabiente.models import DerechoHabiente
 from farmacia.models import Farmacia
 from equivalencia.models import Equivalencia
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Receta(models.Model):
-    folio_receta = models.CharField("Folio de Receta",max_length=255,unique=True)
+    folio_receta = models.CharField("Folio de Receta",max_length=255)
     status = models.CharField(max_length=100)
     fecha_expide = models.DateField("Fecha de expedicion")
     fecha_recibe = models.DateField("Fecha que recibe")
@@ -22,7 +23,7 @@ class Receta(models.Model):
     farmacia = models.ForeignKey(Farmacia,on_delete=models.CASCADE)
     creado = models.DateField()
     ultimamodif = models.DateField()
-    #id_empleado(RBAC)
+    empleado = models.ForeignKey(User,on_delete=models.CASCADE)
 
 
 

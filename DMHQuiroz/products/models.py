@@ -35,7 +35,7 @@ class Product(models.Model):
 
 
     ]
-    cbarras=models.PositiveIntegerField("Codgio de Barras",unique=True)
+    cbarras=models.BigIntegerField("Codgio de Barras",unique=True)
     subcuenta= models.CharField(max_length=10)#preguntar sobre validacion
     nombre_comercial=models.CharField(max_length=200)
     nombre_activo=models.CharField(max_length=200)

@@ -23,6 +23,8 @@ urlpatterns = [
     path('farmacias/', include('farmacia.urls')),
     path('derechoHabiente/', include('derechohabiente.urls')),
     path('receta/', include('receta.urls')),
+    path('recetaGerente/', include('receta.urls')),
+    path('users/',include('users.urls')),
 
     path('admin/', admin.site.urls),
 

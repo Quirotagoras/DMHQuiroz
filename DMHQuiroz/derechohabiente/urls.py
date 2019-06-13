@@ -18,6 +18,6 @@ from .views import RegisterDerechoHabiente,SuccessRegister
 
 
 urlpatterns = [
-    path('',RegisterDerechoHabiente,name="RegisterDerechoHabiente"),
+    path('<int:idEmpleado>/',RegisterDerechoHabiente,name="RegisterDerechoHabiente"),
     path('registeredDerechoHabiente/',SuccessRegister,name="SuccessRegister")
 ]

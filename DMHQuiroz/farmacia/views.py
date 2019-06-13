@@ -3,12 +3,15 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .models import Farmacia
 from django.core.exceptions import ValidationError
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required
 
 
 def SuccessRegister(request):
     return render(request,'../templates/successFarmacia.html')
 
-def RegisterFarmacia(request):
+@login_required
+def RegisterFarmacia(request,idEmpleado):
 
     if request.method == 'POST':
         form = formRegisterFarmacia(request.POST)
@@ -29,7 +32,7 @@ def RegisterFarmacia(request):
 
 
             new_farmacia.save()
-            return HttpResponseRedirect('registeredFarmacia/')
+            return HttpResponseRedirect('/farmacias/registeredFarmacia/')
     else:
         form = formRegisterFarmacia()
 
