@@ -10,6 +10,9 @@ from django.contrib.auth.decorators import login_required
 def SuccessRegister(request):
     return render(request,'../templates/successFarmacia.html')
 
+def SuccessRegisterGerente(request):
+    return render(request,'../templates/successFarmaciaGerente.html')
+
 @login_required
 def RegisterFarmacia(request,idEmpleado):
 
@@ -37,6 +40,35 @@ def RegisterFarmacia(request,idEmpleado):
         form = formRegisterFarmacia()
 
     return render(request, '../templates/registerFarmacia.html', {'Form': form})
+
+@login_required
+def RegisterFarmaciaGerente(request,idEmpleado):
+
+    if request.method == 'POST':
+        form = formRegisterFarmacia(request.POST)
+        if form.is_valid():
+            new_farmacia = Farmacia(
+
+
+                cve_admin=form.cleaned_data.get('cve_admin'),
+                cve_admin2 = form.cleaned_data.get('cve_admin2'),
+                nombre = form.cleaned_data.get('nombre'),
+                telefono = form.cleaned_data.get('telefono'),
+                calle_num = form.cleaned_data.get('calle_num'),
+                estado = form.cleaned_data.get('estado'),
+                municipio = form.cleaned_data.get('municipio'),
+                cp = form.cleaned_data.get('cp'),
+
+            )
+
+
+            new_farmacia.save()
+            return HttpResponseRedirect('/farmacias/registeredFarmaciaGerente/')
+    else:
+        form = formRegisterFarmacia()
+
+    return render(request, '../templates/registerFarmaciaGerente.html', {'Form': form})
+
 
 
 

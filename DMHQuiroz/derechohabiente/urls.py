@@ -14,10 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
-from .views import RegisterDerechoHabiente,SuccessRegister
+from .views import RegisterDerechoHabiente,SuccessRegister,RegisterDerechoHabienteGerente,SuccessRegisterGerente
 
 
 urlpatterns = [
     path('<int:idEmpleado>/',RegisterDerechoHabiente,name="RegisterDerechoHabiente"),
-    path('registeredDerechoHabiente/',SuccessRegister,name="SuccessRegister")
+    path('<int:idEmpleado>/Gerente',RegisterDerechoHabienteGerente,name="RegisterDerechoHabiente"),
+    path('registeredDerechoHabiente/',SuccessRegister,name="SuccessRegister"),
+    path('registeredDerechoHabienteGerente/',SuccessRegisterGerente)
 ]

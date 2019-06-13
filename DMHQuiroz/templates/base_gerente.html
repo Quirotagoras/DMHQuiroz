@@ -89,20 +89,20 @@
 
 <!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
-    <li><a href="/doctor/{{ request.user.pk }}">Doctor</a></li>
-    <li><a href="/farmacias/{{ request.user.pk }}">Farmacia</a></li>
+    <li><a href="/doctorGerente/{{ request.user.pk }}/Gerente">Doctor</a></li>
+    <li><a href="/farmaciasGerente/{{ request.user.pk }}/Gerente">Farmacia</a></li>
 
-    <li><a href="/derechoHabiente/{{ request.user.pk }}">Derecho Habiente</a></li>
-    <li><a href="/products/{{ request.user.pk }}">Productos</a></li>
+    <li><a href="/derechoHabienteGerente/{{ request.user.pk }}/Gerente">Derecho Habiente</a></li>
+    <li><a href="/productsGerente/{{ request.user.pk }}/Gerente">Productos</a></li>
     <li><a href="">Capturista</a></li>
     <li class="divider"></li>
 </ul>
 
 <ul id="dropdown2" class="dropdown-content">
-    <li><a href="">Doctor</a></li>
-
-    <li><a href="">Derecho Habiente</a></li>
     <li><a href="">Receta</a></li>
+    <li><a href="">Doctor</a></li>
+    <li><a href="">Derecho Habiente</a></li>
+
 
     <li class="divider"></li>
 </ul>

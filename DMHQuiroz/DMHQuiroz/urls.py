@@ -19,9 +19,13 @@ from django.urls import path,include
 
 urlpatterns = [
     path('doctor/', include('doctores.urls')),
+    path('doctorGerente/', include('doctores.urls')),
     path('products/', include('products.urls')),
+    path('productsGerente/', include('products.urls')),
     path('farmacias/', include('farmacia.urls')),
+    path('farmaciasGerente/', include('farmacia.urls')),
     path('derechoHabiente/', include('derechohabiente.urls')),
+    path('derechoHabienteGerente/', include('derechohabiente.urls')),
     path('receta/', include('receta.urls')),
     path('recetaGerente/', include('receta.urls')),
     path('users/',include('users.urls')),

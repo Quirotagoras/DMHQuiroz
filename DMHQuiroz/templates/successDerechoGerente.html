@@ -20,6 +20,15 @@
     <title>Title</title>
 </head>
 <body>
+  {% block javascript %}
+    <script>
+        function redirect(){
+           window.location.href = "/derechoHabienteGerente/{{ request.user.pk }}/Gerente";
+        }
+
+        setTimeout(redirect, 3000); //2000 is equivalent to 2 seconds
+    </script>
+{% endblock javascript %}
 <nav class="pink lighten-3"> <!-- navbar content here  -->
    {% load static from staticfiles %}
        <div class="nav-wrapper">
@@ -35,24 +44,13 @@
       <div class="col s5 pull-s7"><span class="flow-text"></span></div>
     </div>
         <div class="col s6 push-s3 z-depth-3">
-            <h3 class="pink-text text-lighten-3">Login</h3>
-            <form method="POST">
-                {% block content %}
-            {% csrf_token %}
-            {{ login_form.as_p}}
-                {% endblock %}
-               <button class="btn waves-effect waves-light pink lighten-3" type="submit" name="action">Acceder a Sistema
-    <i class="material-icons right pink lighten-3">arrow_forward</i>
-  </button>
-                </form>
-             <div class="row">
-                <div class="col s12"></div>
-
-
-            </div>
+            <h3 class="pink-text text-lighten-3">Se registro correctamente la informacion. </h3>
+            <label>Redirigiendo en 3 segundos...</label>
+            <div class="progress">
+                  <div class="indeterminate"></div>
+              </div>
 
         </div>
 </div>
-
 </body>
 </html>
