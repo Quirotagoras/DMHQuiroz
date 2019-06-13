@@ -12,7 +12,7 @@ class Gerente(models.Model):
 class Capturista(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE)
     telefono = models.BigIntegerField()
-    farmacia = models.OneToOneField(Farmacia, on_delete=models.CASCADE)
+    farmacia = models.ForeignKey(Farmacia, on_delete=models.CASCADE)
 
 
 

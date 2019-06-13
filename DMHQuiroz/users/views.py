@@ -4,6 +4,30 @@ from django.contrib.auth import authenticate,login, logout
 from django.shortcuts import redirect
 from django.http import HttpResponse
 from .models import Gerente,Capturista
+from farmacia.models import Farmacia
+from django.views.generic import ListView
+
+
+
+class MyEmpleadosView(ListView):
+    template_name = '../templates/myEmpleados.html'
+    context_object_name = 'myempleadosList'
+
+    def get_queryset(self):
+        try:
+            user_id=self.request.user.pk
+            gerente_id = Gerente.objects.get(user_id=user_id)
+            farmacia_id=gerente_id.farmacia_id
+            self.capturista=Capturista.objects.filter(farmacia_id=farmacia_id)
+        except Capturista.DoesNotExist:
+            pass
+        return self.capturista.all()
+
+
+
+
+
+
 
 def logoutUser(request):
     logout(request)
