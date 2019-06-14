@@ -11,6 +11,25 @@ from .forms import UserForm,CapturistaForm
 
 
 
+def EditCapturistaView(request,id):
+    if request.method == 'POST':
+        form = CapturistaForm(request.POST)
+        if form.is_valid():
+
+            capturista = Capturista.objects.get(id=id)
+            capturista.nombre = form.cleaned_data.get("nombre")
+            capturista.apellidos=form.cleaned_data.get("apellidos")
+            capturista.telefono=form.cleaned_data.get("telefono")
+            capturista.email=form.cleaned_data.get("email")
+            capturista.save()
+            return redirect('/users/misEmpleados')
+
+    user_form = CapturistaForm()
+    capturista = Capturista.objects.get(id=id)
+    context = {'form': user_form,'empleado':capturista}
+    return render(request, '../templates/editCapturista.html', context)
+
+
 def UserRegisterView(request):
     if request.method == 'POST':
         user_form = UserForm(request.POST)
@@ -78,15 +97,6 @@ def Deactivate(request,idCapturista):
         userObject.is_active=False
         userObject.save()
         return redirect('/users/misEmpleados/')
-
-
-
-
-
-
-
-
-
 
 def logoutUser(request):
     logout(request)
