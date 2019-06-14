@@ -1,6 +1,7 @@
 from django.forms import ModelForm
 from .models import Receta
 from django import forms
+from users.models import Gerente
 
 
 class RecetaForm(ModelForm):
@@ -28,6 +29,9 @@ class RecetaForm(ModelForm):
 
 
         }
+
+
+
 
 
 

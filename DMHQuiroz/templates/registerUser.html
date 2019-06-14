@@ -1,0 +1,28 @@
+{% extends "base_gerente.html" %}
+<nav class="pink lighten-3"> <!-- navbar content here  -->
+   {% load static from staticfiles %}
+       <div class="nav-wrapper">
+  <img class="left hide-on-med-and-down" src="{% static 'DMHQuiroz/logo.png' %}" width="200" height="63"/>
+
+  </div>
+
+
+  </nav>
+
+{% block content %}
+<ul>
+    <li><h2 class="pink-text text-lighten-3">Registrar Usuario(1/2) Pasos
+    <i class="medium material-icons ">account_box</i></h2></li>
+    <li class="divider pink lighten-3"></li>
+</ul>
+{{ new_user }}
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+   <button class="btn waves-effect waves-light pink lighten-3" type="submit" name="action">Continuar a siguiente paso
+    <i class="material-icons right pink lighten-3">arrow_forward</i>
+  </button>
+</form>
+{% endblock %}
+

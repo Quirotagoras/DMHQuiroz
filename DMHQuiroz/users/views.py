@@ -5,7 +5,51 @@ from django.shortcuts import redirect
 from django.http import HttpResponse
 from .models import Gerente,Capturista
 from farmacia.models import Farmacia
-from django.views.generic import ListView
+from django.views.generic import ListView,FormView
+from django.contrib.auth.models import  User
+from .forms import UserForm,CapturistaForm
+
+
+
+def UserRegisterView(request):
+    if request.method == 'POST':
+        user_form = UserForm(request.POST)
+        if user_form.is_valid():
+            new_user = user_form.save()
+            new_user.set_password(user_form.cleaned_data['password'])
+            new_user.save()
+            return redirect('/users/misEmpleados/'+ str(new_user.pk) +'/crearCapturista')
+    user_form = UserForm()
+    context={'form':user_form}
+    return render(request, '../templates/registerUser.html', context)
+
+
+def CapturistaRegisterView(request,id):
+    if request.method == 'POST':
+        form = CapturistaForm(request.POST)
+        if form.is_valid():
+            query = Gerente.objects.get(user=request.user.id)
+
+            new_capturista = Capturista(
+                nombre=form.cleaned_data.get("nombre"),
+                apellidos=form.cleaned_data.get("apellidos"),
+                user_id=id,
+                telefono=form.cleaned_data.get("telefono"),
+                email=form.cleaned_data.get("email"),
+                farmacia=query.farmacia,
+                is_active=True,
+            )
+
+            new_capturista.save()
+            return redirect('/users/misEmpleados')
+    user_form = CapturistaForm()
+    context={'form':user_form}
+    return render(request, '../templates/registerCapturista.html', context)
+
+
+
+
+
 
 
 
@@ -18,10 +62,25 @@ class MyEmpleadosView(ListView):
             user_id=self.request.user.pk
             gerente_id = Gerente.objects.get(user_id=user_id)
             farmacia_id=gerente_id.farmacia_id
-            self.capturista=Capturista.objects.filter(farmacia_id=farmacia_id)
+            self.capturista=Capturista.objects.filter(farmacia_id=farmacia_id,is_active=True)
         except Capturista.DoesNotExist:
             pass
         return self.capturista.all()
+
+
+
+def Deactivate(request,idCapturista):
+        capturista = Capturista.objects.get(pk=idCapturista)
+        capturista.is_active=False
+        capturista.save()
+        user = capturista.user_id
+        userObject = User.objects.get(pk=user)
+        userObject.is_active=False
+        userObject.save()
+        return redirect('/users/misEmpleados/')
+
+
+
 
 
 

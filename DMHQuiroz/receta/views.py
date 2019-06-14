@@ -20,7 +20,7 @@ def SuccessRegisterGerente(request):
 @login_required
 def RegisterReceta(request,idEmpleado):
     if request.method == 'POST':
-        form = RecetaForm(request.POST)
+        form = RecetaForm(request.POST,user=request.user)
         if form.is_valid():
 
             try:
@@ -81,7 +81,7 @@ def RegisterRecetaGerente(request,idEmpleado):
             id_farmacia = model.farmacia_id
             try:
                 Receta.objects.get(folio_receta=form.cleaned_data.get('folio_receta'),farmacia_id=id_farmacia)
-                return HttpResponseRedirect('/receta/'+str(idEmpleado))
+                return HttpResponseRedirect('/recetaGerente/'+str(idEmpleado)+'/Gerente')
             except Receta.DoesNotExist:
                 new_derechohabiente = Receta(
                     folio_receta=form.cleaned_data.get("folio_receta"),
@@ -105,16 +105,10 @@ def RegisterRecetaGerente(request,idEmpleado):
                 new_derechohabiente.save()
 
 
-
-
-
-
-
             return HttpResponseRedirect('/receta/registeredRecetaGerente/')
     else:
+
         form = RecetaForm()
-
-
     return render(request, '../templates/registerRecetaGerente.html', {'Form': form})
 
 
