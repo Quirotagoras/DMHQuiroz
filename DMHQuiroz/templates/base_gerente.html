@@ -72,6 +72,7 @@
    {% load static from staticfiles %}
        <div class="nav-wrapper">
   <img class="left hide-on-med-and-down" src="{% static 'DMHQuiroz/logo.png' %}" width="200" height="63"/>
+           <a>{{ request.user.username }}</a>
     <ul class="right hide-on-med-and-down">
 
         <li><a href="/users/misEmpleados"> Mis Empleados</a></li>
