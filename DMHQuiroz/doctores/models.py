@@ -39,12 +39,12 @@ estado_choices= [
 
 class Doctor(models.Model):
     first_name=models.CharField("Nombre",max_length=50)
-    farmacia = models.ForeignKey(Farmacia,on_delete=models.CASCADE)#se tiene que cambiar a llave foranea
+    farmacia = models.ForeignKey(Farmacia,on_delete=models.CASCADE)
     last_name = models.CharField('Apellido Paterno',max_length=50)
     last_name2 = models.CharField('Apellido Materno',max_length=50)
-    cedula = models.CharField('Cedula Profesional',max_length=50,unique=True)
+    cedula = models.CharField('Cedula Profesional',max_length=50)
     telefono = models.BigIntegerField()
-    rfc = models.CharField(max_length=50,unique=True)
+    rfc = models.CharField(max_length=50)
     calle_num = models.CharField("Calle y numero",max_length=100)
     estado = models.CharField(max_length=100,choices=estado_choices)
     municipio = models.CharField(max_length=100)

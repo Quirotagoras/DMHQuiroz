@@ -4,6 +4,7 @@ from django.shortcuts import render
 from .models import Doctor
 from django.core.exceptions import ValidationError
 from farmacia.models import Farmacia
+from users.models import Gerente,Capturista
 from django.contrib.auth.decorators import login_required
 
 def SuccessRegister(request):
@@ -19,6 +20,12 @@ def RegisterDoctor(request,idEmpleado):
     if request.method == 'POST':
         form = DoctorForm(request.POST)
         if form.is_valid():
+            model = Capturista.objects.get(user_id=idEmpleado)
+
+            id_farmacia = model.farmacia_id
+            farmacia = Farmacia.objects.get(id=id_farmacia)
+            farmacia_estado = farmacia.estado
+            farmacia_municipio = farmacia.municipio
 
             new_doctor = Doctor(
                 first_name=form.cleaned_data.get("first_name"),
@@ -28,9 +35,9 @@ def RegisterDoctor(request,idEmpleado):
                 telefono=form.cleaned_data.get("telefono"),
                 rfc=form.cleaned_data.get("rfc"),
                 calle_num=form.cleaned_data.get("calle_num"),
-                farmacia = form.cleaned_data.get("farmacia"),
-                estado = form.cleaned_data.get("estado"),
-                municipio=form.cleaned_data.get("municipio"),
+                farmacia=farmacia,
+                estado=farmacia_estado,
+                municipio=farmacia_municipio,
                 cp=form.cleaned_data.get("cp"),
             )
 
@@ -48,6 +55,13 @@ def RegisterDoctorGerente(request,idEmpleado):
     if request.method == 'POST':
         form = DoctorForm(request.POST)
         if form.is_valid():
+            model = Gerente.objects.get(user_id=idEmpleado)
+
+            id_farmacia = model.farmacia_id
+            farmacia = Farmacia.objects.get(id=id_farmacia)
+            farmacia_estado = farmacia.estado
+            farmacia_municipio = farmacia.municipio
+
 
             new_doctor = Doctor(
                 first_name=form.cleaned_data.get("first_name"),
@@ -57,9 +71,9 @@ def RegisterDoctorGerente(request,idEmpleado):
                 telefono=form.cleaned_data.get("telefono"),
                 rfc=form.cleaned_data.get("rfc"),
                 calle_num=form.cleaned_data.get("calle_num"),
-                farmacia = form.cleaned_data.get("farmacia"),
-                estado = form.cleaned_data.get("estado"),
-                municipio=form.cleaned_data.get("municipio"),
+                farmacia = farmacia,
+                estado = farmacia_estado,
+                municipio=farmacia_municipio,
                 cp=form.cleaned_data.get("cp"),
             )
 

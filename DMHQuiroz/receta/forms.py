@@ -8,7 +8,7 @@ class RecetaForm(ModelForm):
 
     class Meta:
         model = Receta
-        fields = ['folio_receta' , 'status' , 'fecha_expide' , 'fecha_recibe' , 'fecha_surte' ,'doctor','ficha_derechohabiente','cbarras','cantidad','equivalencia_cbarras','equivalencia_cantidad','equivalencia_obs']
+        fields = ['folio_receta' , 'status' , 'fecha_expide' , 'fecha_recibe' , 'fecha_surte' ,'doctor','ficha_derechohabiente','cbarras','cantidad','equivalencia_cantidad','equivalencia_obs']
 
         widgets = {
 

@@ -7,7 +7,7 @@ class DoctorForm(ModelForm):
 
     class Meta:
         model = Doctor
-        fields = ['first_name','last_name','last_name2','cedula','rfc','telefono','calle_num','farmacia','estado','municipio','cp']
+        fields = ['first_name','last_name','last_name2','cedula','rfc','telefono','calle_num','cp']
 
         widgets = {
             'first_name' : forms.TextInput(attrs={'placeholder':'Inserte nombres de el doctor'}),
@@ -17,7 +17,7 @@ class DoctorForm(ModelForm):
             'rfc': forms.TextInput(attrs={'placeholder': 'Inserte rfc de el doctor'}),
             'telefono': forms.TextInput(attrs={'placeholder': 'Inserte telefono de el doctor'}),
             'calle_num': forms.TextInput(attrs={'placeholder': 'Inserte calle y numero donde ejerce  el doctor'}),
-            'municipio': forms.TextInput(attrs={'placeholder': 'Inserte municipio donde ejerce  el doctor'}),
+
             'cp': forms.TextInput(attrs={'placeholder': 'Inserte codigo postal donde ejerce  el doctor'}),
 
         }

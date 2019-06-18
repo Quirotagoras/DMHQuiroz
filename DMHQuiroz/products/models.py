@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Product(models.Model):
 
     presentaciones = [
@@ -41,9 +42,10 @@ class Product(models.Model):
     nombre_activo=models.CharField(max_length=200)
     presentacion=models.CharField(choices=presentaciones,max_length=20)
     cantidad_pastillas = models.PositiveIntegerField("Cantidad de pastillas")
-
     unidad_medida=models.CharField("Unidad de medida",choices=unidades,max_length=20)
     precio_max_pub=models.PositiveIntegerField("Precio")
+
+
 
     def __str__(self):
         return self.nombre_comercial + " " + self.unidad_medida+" "+ self.presentacion

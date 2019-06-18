@@ -7,7 +7,7 @@ class DerechoHabienteForm(ModelForm):
 
     class Meta:
         model = DerechoHabiente
-        fields = ['ficha','codigo','org','nombre','calle_num','colonia','estado','municipio','cp','telefono','email']
+        fields = ['ficha','codigo','org','nombre','calle_num','colonia','cp','telefono','email']
 
 
         widgets = {
@@ -20,7 +20,7 @@ class DerechoHabienteForm(ModelForm):
             'colonia': forms.TextInput(
                 attrs={'placeholder': 'Inserte colonia de residencia  de derecho habiente aqui'}),
 
-            'municipio': forms.TextInput(attrs={'placeholder': 'Inserte municipio de residencia de derecho habiente aqui'}),
+
             'cp': forms.TextInput(attrs={'placeholder': 'Inserte cp de residencia de derecho habiente aqui'}),
             'telefono': forms.TextInput(attrs={'placeholder': 'Inserte telefono de derecho habiente aqui'}),
             'email': forms.EmailInput(attrs={'placeholder': 'Inserte email de derecho habiente aqui'}),

@@ -48,7 +48,7 @@ def RegisterReceta(request,idEmpleado):
                         cantidad=form.cleaned_data.get("cantidad"),
                         cbarras=form.cleaned_data.get("cbarras"),
                         farmacia=Farmacia.objects.get(id=id_farmacia),
-                        equivalencia_cbarras=form.cleaned_data.get("equivalencia_cbarras"),
+
                         equivalencia_cantidad=form.cleaned_data.get("equivalencia_cantidad"),
                         equivalencia_obs=form.cleaned_data.get("equivalencia_obs"),
                         creado=timezone.now(),

@@ -18,21 +18,28 @@ def SuccessRegisterGerente(request):
 def RegisterDerechoHabiente(request,idEmpleado):
     if request.method == 'POST':
         form = DerechoHabienteForm(request.POST)
+        model = Capturista.objects.get(user_id=idEmpleado)
+
+        id_farmacia = model.farmacia_id
+        farmacia = Farmacia.objects.get(id=id_farmacia)
+        farmacia_estado = farmacia.estado
+        farmacia_municipio = farmacia.municipio
+
         if form.is_valid():
             new_derechohabiente = DerechoHabiente(
 
                 ficha=form.cleaned_data.get('ficha'),
-                codigo = form.cleaned_data.get('codigo'),
-                org = form.cleaned_data.get('org'),
-
-                nombre = form.cleaned_data.get('nombre'),
-                calle_num = form.cleaned_data.get('calle_num'),
-                colonia =form.cleaned_data.get('colonia'),
-                estado = form.cleaned_data.get('estado'),
-                municipio = form.cleaned_data.get('municipio'),
-                cp = form.cleaned_data.get('cp'),
-                telefono = form.cleaned_data.get('telefono'),
-                email = form.cleaned_data.get('email'),
+                codigo=form.cleaned_data.get('codigo'),
+                org=form.cleaned_data.get('org'),
+                farmacia=farmacia,
+                nombre=form.cleaned_data.get('nombre'),
+                calle_num=form.cleaned_data.get('calle_num'),
+                colonia=form.cleaned_data.get('colonia'),
+                estado=farmacia_estado,
+                municipio=farmacia_municipio,
+                cp=form.cleaned_data.get('cp'),
+                telefono=form.cleaned_data.get('telefono'),
+                email=form.cleaned_data.get('email'),
 
             )
 
@@ -56,19 +63,22 @@ def RegisterDerechoHabienteGerente(request,idEmpleado):
         if form.is_valid():
             model = Gerente.objects.get(user_id=idEmpleado)
 
-
             id_farmacia = model.farmacia_id
+            farmacia = Farmacia.objects.get(id = id_farmacia)
+            farmacia_estado=farmacia.estado
+            farmacia_municipio=farmacia.municipio
+            farmacia_cp = farmacia.cp
 
             new_derechohabiente = DerechoHabiente(
                 ficha=form.cleaned_data.get('ficha'),
                 codigo = form.cleaned_data.get('codigo'),
                 org = form.cleaned_data.get('org'),
-                farmacia =Farmacia.objects.get(id=id_farmacia),
+                farmacia =farmacia,
                 nombre = form.cleaned_data.get('nombre'),
                 calle_num = form.cleaned_data.get('calle_num'),
                 colonia =form.cleaned_data.get('colonia'),
-                estado = form.cleaned_data.get('estado'),
-                municipio = form.cleaned_data.get('municipio'),
+                estado = farmacia_estado,
+                municipio = farmacia_municipio,
                 cp = form.cleaned_data.get('cp'),
                 telefono = form.cleaned_data.get('telefono'),
                 email = form.cleaned_data.get('email'),

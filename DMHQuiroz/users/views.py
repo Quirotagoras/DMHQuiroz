@@ -76,7 +76,7 @@ def CapturistaRegisterView(request,id):
 
 
 class MyEmpleadosView(ListView):
-    template_name = '../templates/myEmpleados.html'
+    template_name = '../templates/myEmpleados_gerente.html'
     context_object_name = 'myempleadosList'
 
     def get_queryset(self):
