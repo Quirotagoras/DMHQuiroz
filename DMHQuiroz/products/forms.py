@@ -7,8 +7,6 @@ from django import forms
 class formRegisterProduct(ModelForm):
 
 
-
-
     class Meta:
        model = Product
        fields = ['cbarras','subcuenta','nombre_comercial','nombre_activo','presentacion','cantidad_pastillas','unidad_medida','precio_max_pub']

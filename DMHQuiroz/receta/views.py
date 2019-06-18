@@ -17,14 +17,17 @@ def SuccessRegister(request):
 def SuccessRegisterGerente(request):
     return render(request,'../templates/successRecetaGerente.html')
 
+
+
+
 @login_required
 def RegisterReceta(request,idEmpleado):
     if request.method == 'POST':
-        form = RecetaForm(request.POST,user=request.user)
+        print('entre a post')
+        form = RecetaForm(request.POST)
         if form.is_valid():
-
+            print('entre a valid')
             try:
-
                 model = Capturista.objects.get(user_id=idEmpleado)
                 username = model.user
                 user_id = User.objects.get(username=username)
@@ -57,15 +60,15 @@ def RegisterReceta(request,idEmpleado):
 
 
 
-            except Gerente.DoesNotExist:
+            except Capturista.DoesNotExist:
                 #modelo de empleado
                 pass
 
 
             return HttpResponseRedirect('/receta/registeredReceta/')
+
     else:
         form = RecetaForm()
-
 
     return render(request, '../templates/registerReceta.html', {'Form': form})
 
@@ -73,8 +76,13 @@ def RegisterReceta(request,idEmpleado):
 @login_required
 def RegisterRecetaGerente(request,idEmpleado):
     if request.method == 'POST':
-        form = RecetaForm(request.POST)
+        print('entre a post')
+        form = RecetaForm(data=request.POST)
+        a=1
+        print(form.is_valid())
+        print(form.errors)
         if form.is_valid():
+            print('entre a valid')
             model = Gerente.objects.get(user_id=idEmpleado)
             username = model.user
             user_id = User.objects.get(username=username)
@@ -105,10 +113,17 @@ def RegisterRecetaGerente(request,idEmpleado):
                 new_derechohabiente.save()
 
 
-            return HttpResponseRedirect('/receta/registeredRecetaGerente/')
-    else:
 
+            return HttpResponseRedirect('/receta/registeredRecetaGerente/')
+        else:
+            print('entre a not valid')
+
+    else:
+        print("entre")
         form = RecetaForm()
+
+
+
     return render(request, '../templates/registerRecetaGerente.html', {'Form': form})
 
 

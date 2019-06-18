@@ -7,7 +7,7 @@ class DerechoHabienteForm(ModelForm):
 
     class Meta:
         model = DerechoHabiente
-        fields = ['ficha','codigo','org','cve_farmacia','nombre','calle_num','colonia','estado','municipio','cp','telefono','email']
+        fields = ['ficha','codigo','org','nombre','calle_num','colonia','estado','municipio','cp','telefono','email']
 
 
         widgets = {
@@ -30,16 +30,19 @@ class DerechoHabienteForm(ModelForm):
 
         }
 
-    def clean(self):
-        cleaned_data = super().clean()
-        ficha = cleaned_data.get("ficha")
-        codigo= cleaned_data.get("codigo")
-        if ficha and codigo:
-            try:
-                DerechoHabiente.objects.get(ficha=ficha, codigo = codigo)
-                raise forms.ValidationError("Ficha en combinacion con Codigo existente. Intente otravez")
+    #def clean(self):
+     #   cleaned_data = super().clean()
+      #  ficha = cleaned_data.get("ficha")
+       # codigo= cleaned_data.get("codigo")
+        #if ficha and codigo:
+         #   print('entre en orimer if')
+          #  try:
+           #     DerechoHabiente.objects.get(ficha=ficha, codigo = codigo)
+            #    print('entre en repetido')
+             #   raise forms.ValidationError("Ficha en combinacion con Codigo existente. Intente otravez")
 
-            except DerechoHabiente.DoesNotExist:
-                pass
+            #except DerechoHabiente.DoesNotExist:
+             #   print('entre a no existe')
+              #  pass
 
 

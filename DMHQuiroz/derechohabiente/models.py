@@ -43,8 +43,8 @@ estado_choices= [
 class DerechoHabiente(models.Model):
     ficha = models.PositiveIntegerField()
     codigo = models.PositiveIntegerField()
-    org = models.CharField(max_length=50)
-    cve_farmacia = models.ManyToManyField(Farmacia)
+    org = models.CharField(max_length=50,blank=True,null=True)
+    farmacia = models.ForeignKey(Farmacia,on_delete=models.CASCADE)
     nombre = models.CharField(max_length=50)
     calle_num = models.CharField("Calle y numero",max_length=100)
     colonia = models.CharField(max_length=100)

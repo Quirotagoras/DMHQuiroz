@@ -8,9 +8,10 @@ from farmacia.models import Farmacia
 from django.views.generic import ListView,FormView
 from django.contrib.auth.models import  User
 from .forms import UserForm,CapturistaForm
+from django.contrib.auth.decorators import login_required
 
 
-
+@login_required
 def EditCapturistaView(request,id):
     if request.method == 'POST':
         form = CapturistaForm(request.POST)
@@ -30,6 +31,7 @@ def EditCapturistaView(request,id):
     return render(request, '../templates/editCapturista.html', context)
 
 
+@login_required
 def UserRegisterView(request):
     if request.method == 'POST':
         user_form = UserForm(request.POST)
@@ -43,6 +45,7 @@ def UserRegisterView(request):
     return render(request, '../templates/registerUser.html', context)
 
 
+@login_required
 def CapturistaRegisterView(request,id):
     if request.method == 'POST':
         form = CapturistaForm(request.POST)
@@ -87,7 +90,7 @@ class MyEmpleadosView(ListView):
         return self.capturista.all()
 
 
-
+@login_required
 def Deactivate(request,idCapturista):
         capturista = Capturista.objects.get(pk=idCapturista)
         capturista.is_active=False
@@ -98,9 +101,12 @@ def Deactivate(request,idCapturista):
         userObject.save()
         return redirect('/users/misEmpleados/')
 
+@login_required
 def logoutUser(request):
     logout(request)
     return redirect('/users/login')
+
+
 
 def user_login(request):
     if request.method == 'POST':
