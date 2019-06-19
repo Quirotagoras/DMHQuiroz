@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'materializecssform',
 
+
+
 ]
 
 MIDDLEWARE = [

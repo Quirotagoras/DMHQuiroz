@@ -8,14 +8,17 @@ from django.contrib.auth.models import User
 from farmacia.models import Farmacia
 from .models import Receta
 from users.models import Gerente,Capturista
+from doctores.models import Doctor
 from django import forms
 from django.contrib.auth.decorators import login_required
+from dal import autocomplete
 
 def SuccessRegister(request):
     return render(request,'../templates/successReceta.html')
 
 def SuccessRegisterGerente(request):
     return render(request,'../templates/successRecetaGerente.html')
+
 
 
 
@@ -48,7 +51,6 @@ def RegisterReceta(request,idEmpleado):
                         cantidad=form.cleaned_data.get("cantidad"),
                         cbarras=form.cleaned_data.get("cbarras"),
                         farmacia=Farmacia.objects.get(id=id_farmacia),
-
                         equivalencia_cantidad=form.cleaned_data.get("equivalencia_cantidad"),
                         equivalencia_obs=form.cleaned_data.get("equivalencia_obs"),
                         creado=timezone.now(),
@@ -77,8 +79,7 @@ def RegisterReceta(request,idEmpleado):
 def RegisterRecetaGerente(request,idEmpleado):
     if request.method == 'POST':
         print('entre a post')
-        form = RecetaForm(data=request.POST)
-        a=1
+        form = RecetaForm(request.POST)
         print(form.is_valid())
         print(form.errors)
         if form.is_valid():
@@ -125,6 +126,8 @@ def RegisterRecetaGerente(request,idEmpleado):
 
 
     return render(request, '../templates/registerRecetaGerente.html', {'Form': form})
+
+
 
 
 

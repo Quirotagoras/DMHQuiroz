@@ -2,13 +2,19 @@ from django.forms import ModelForm
 from .models import Receta
 from django import forms
 from users.models import Gerente
+from dal import autocomplete
+from doctores.models import Doctor
 
 
-class RecetaForm(ModelForm):
+
+
+class RecetaForm(forms.ModelForm):
+
 
     class Meta:
         model = Receta
         fields = ['folio_receta' , 'status' , 'fecha_expide' , 'fecha_recibe' , 'fecha_surte' ,'doctor','ficha_derechohabiente','cbarras','cantidad','equivalencia_cantidad','equivalencia_obs']
+
 
         widgets = {
 
@@ -27,7 +33,14 @@ class RecetaForm(ModelForm):
 
 
 
+
+
+
+
+
         }
+
+
 
     def clean(self):
         folio = self.cleaned_data.get('folio_receta')

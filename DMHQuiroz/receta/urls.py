@@ -17,6 +17,7 @@ from django.urls import path
 from .views import RegisterReceta,SuccessRegister,RegisterRecetaGerente,SuccessRegisterGerente
 
 
+
 urlpatterns = [
 
     path('<int:idEmpleado>/',RegisterReceta,name="RegisterReceta"),
@@ -25,4 +26,5 @@ urlpatterns = [
 
     path('registeredReceta/',SuccessRegister,name='SuccessRegister'),
     path('registeredRecetaGerente/',SuccessRegisterGerente,name='SuccessRegisterGerente'),
+
 ]

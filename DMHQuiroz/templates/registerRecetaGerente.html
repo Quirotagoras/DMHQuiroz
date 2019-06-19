@@ -20,6 +20,10 @@
 
     <script>
 
+         document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.autocomplete');
+    var instances = M.Autocomplete.init(elems, options);
+  });
 
 
         $(document).ready(function(){
@@ -32,6 +36,13 @@
                                 yearRange: [2019,2080]});
         $('select').formSelect();
          $('.collapsible').collapsible();
+         $('input.autocomplete').autocomplete({
+      data: {
+        "Apple": null,
+        "Microsoft": null,
+        "Google": 'https://placehold.it/250x250'
+      },
+    });
         });
         </script>
     {% endblock javascript %}
@@ -60,17 +71,55 @@
 
     {{ Form.fecha_surte }}
 
-    <label class="active">Doctor que medica:</label>
 
+    <div class="input-field">
+
+          <input type="text" id="autocomplete-input" class="autocomplete">
+          <label for="autocomplete-input">Autocomplete</label>
+        </div>
+    <label class="active">Doctor que medica:</label>
     {{ Form.doctor }}
 
-<div>
+    <div>
      <label class="active">Ficha de Derecho Habiente:</label>
 
     {{ Form.ficha_derechohabiente }}
     </div>
 
     <div>
+        <script>
+
+         document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.autocomplete2');
+    var instances = M.Autocomplete.init(elems, options);
+  });
+
+
+        $(document).ready(function(){
+            $(".dropdown-trigger").dropdown();
+            $('select').formSelect();
+        // Initialize materialize data picker
+            $('.datepicker').datepicker({format: 'mm/dd/yyyy',
+                                 changeMonth: true,
+                                 changeYear: true,
+                                yearRange: [2019,2080]});
+        $('select').formSelect();
+         $('.collapsible').collapsible();
+         $('input.autocomplete2').autocomplete({
+      data: {
+        "Tafil": null,
+        "algo1": null,
+        "algo2": 'https://placehold.it/250x250'
+      },
+    });
+        });
+        </script>
+
+    <div class="input-field">
+
+          <input type="text" class="autocomplete2">
+          <label for="autocomplete-input">Autocomplete</label>
+        </div>
      <label class="active">Medicamento:</label>
 
     {{ Form.cbarras }}

@@ -15,11 +15,16 @@ Including another URLconf
 """
 from django.urls import path
 from .views import RegisterDoctor,SuccessRegister,SuccessRegisterGerente,RegisterDoctorGerente
+from .views import Doctor
+from dal import autocomplete
+
+
 
 
 urlpatterns = [
     path('<int:idEmpleado>',RegisterDoctor,name="RegisterDoctor"),
     path('<int:idEmpleado>/Gerente',RegisterDoctorGerente,),
     path('registeredDoctor/',SuccessRegister),
-    path('registeredDoctorGerente/',SuccessRegisterGerente,)
+    path('registeredDoctorGerente/',SuccessRegisterGerente,),
+
 ]

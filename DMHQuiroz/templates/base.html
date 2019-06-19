@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -89,10 +90,8 @@
 <!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
     <li><a href="/doctor/{{ request.user.pk }}">Doctor</a></li>
-    <li><a href="/farmacias/{{ request.user.pk }}">Farmacia</a></li>
-
     <li><a href="/derechoHabiente/{{ request.user.pk }}">Derecho Habiente</a></li>
-    <li><a href="/products/{{ request.user.pk }}">Productos</a></li>
+
     <li class="divider"></li>
 </ul>
 

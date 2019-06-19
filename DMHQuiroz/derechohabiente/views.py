@@ -59,7 +59,7 @@ def RegisterDerechoHabienteGerente(request,idEmpleado):
 
 
     if request.method == 'POST':
-        form = DerechoHabienteForm(request.POST)
+        form = DerechoHabienteForm(request.POST,request.user)
         if form.is_valid():
             model = Gerente.objects.get(user_id=idEmpleado)
 
