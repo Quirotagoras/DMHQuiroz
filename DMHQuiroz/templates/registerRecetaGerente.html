@@ -18,11 +18,25 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
-
+<!-- AUTOCOMPLETE DOCTOR -->
     <script>
 
+        function parseDoctors(arrayDoctores){
+            //array pasa a convertirse a objeto
+
+            var dataDoctors={};
+
+            var i;
+            for(i = 0; i <arrayDoctores.length;i++){
+                dataDoctors[arrayDoctores[i]]=null;
+            }
+
+            return dataDoctors;
+        }
+
+
         var doctoresAutocomplete = {{ DoctoresAutocomplete|safe }};
-        document.write(doctoresAutocomplete);
+        var doctores=parseDoctors(doctoresAutocomplete);
 
 
         $(document).ready(function(){
@@ -37,14 +51,11 @@
 
 
          $('input.autocomplete').autocomplete({
-      data: {
-        Apple:null,
-        Microsoft: null,
-        "Google": 'https://placehold.it/250x250'
-      },
+     data: doctores,
     });
         });
         </script>
+    <!-- AUTOCOMPLETE DOCTOR -->
     {% endblock javascript %}
 
     {% csrf_token %}
@@ -73,12 +84,12 @@
 
 
     <div class="input-field ">
-          <input type="text" id="autocomplete" class="autocomplete">
-          <label for="autocomplete">Autocomplete</label>
+           <label class="active">Doctor que medica:</label>
+            <input type="text" name="doctor" class="autocomplete" maxlength="100" required="" id="id_doctor">
     </div>
 
-    <label class="active">Doctor que medica:</label>
-    {{ Form.doctor }}
+
+
 
     <div>
      <label class="active">Ficha de Derecho Habiente:</label>

@@ -13,11 +13,11 @@ class Receta(models.Model):
     fecha_expide = models.DateField("Fecha de expedicion")
     fecha_recibe = models.DateField("Fecha que recibe")
     fecha_surte = models.DateField("Fecha que surte")
-    doctor = models.ForeignKey(Doctor,on_delete=models.CASCADE)
+    doctor = models.CharField(max_length=100)#se pone como char field por el tema del autocomplete
     ficha_derechohabiente = models.ForeignKey(DerechoHabiente,on_delete=models.CASCADE)
     cbarras = models.ForeignKey(Product,on_delete=models.CASCADE)
     cantidad = models.IntegerField()
-    equivalencia = models.ForeignKey(Equivalencia,on_delete=models.CASCADE)
+    equivalencia = models.ForeignKey(Equivalencia,on_delete=models.CASCADE,blank=True,null=True)
     equivalencia_cantidad = models.PositiveIntegerField(blank=True, null=True)
     equivalencia_obs = models.TextField(max_length=300,blank=True,null=True)
     farmacia = models.ForeignKey(Farmacia,on_delete=models.CASCADE)
