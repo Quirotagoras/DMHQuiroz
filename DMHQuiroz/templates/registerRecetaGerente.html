@@ -15,32 +15,30 @@
         src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/js/materialize.min.js" integrity="sha256-SrBfGi+Zp2LhAvy9M1bWOCXztRU9Ztztxmu5BcYPcPE=" crossorigin="anonymous"></script>
 
     <script>
+
         var doctoresAutocomplete = {{ DoctoresAutocomplete|safe }};
         document.write(doctoresAutocomplete);
 
-         document.addEventListener('DOMContentLoaded', function() {
-             var elems = document.querySelectorAll('.autocomplete');
-             var instances = M.Autocomplete.init(elems, options);
-  });
-
 
         $(document).ready(function(){
-            $(".dropdown-trigger").dropdown();
-            $('select').formSelect();
+             $('.modal').modal();
+
+
         // Initialize materialize data picker
             $('.datepicker').datepicker({format: 'mm/dd/yyyy',
                                  changeMonth: true,
                                  changeYear: true,
                                 yearRange: [2019,2080]});
-        $('select').formSelect();
-         $('.collapsible').collapsible();
+
+
          $('input.autocomplete').autocomplete({
       data: {
-        pple:null,
+        Apple:null,
         Microsoft: null,
         "Google": 'https://placehold.it/250x250'
       },
@@ -74,11 +72,11 @@
     {{ Form.fecha_surte }}
 
 
-    <div class="input-field">
+    <div class="input-field ">
+          <input type="text" id="autocomplete" class="autocomplete">
+          <label for="autocomplete">Autocomplete</label>
+    </div>
 
-          <input type="text" id="autocomplete-input" class="autocomplete">
-          <label for="autocomplete-input">Autocomplete</label>
-        </div>
     <label class="active">Doctor que medica:</label>
     {{ Form.doctor }}
 

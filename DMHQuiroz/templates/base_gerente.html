@@ -24,8 +24,6 @@
 <body>
 {% block javascript %}
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-  <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 
         <script
         src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -35,12 +33,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/js/materialize.min.js" integrity="sha256-SrBfGi+Zp2LhAvy9M1bWOCXztRU9Ztztxmu5BcYPcPE=" crossorigin="anonymous"></script>
 
         <script>
-        document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.collapsible');
-        var instances = M.Collapsible.init(elems, options);
-
-
-         });
 
   // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
   // var collapsibleElem = document.querySelector('.collapsible');
@@ -49,9 +41,6 @@
   // Or with jQuery
 
         $(document).ready(function(){
-
-
-
             $(".dropdown-trigger").dropdown();
             $('select').formSelect();
 
