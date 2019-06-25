@@ -77,6 +77,12 @@ def RegisterReceta(request,idEmpleado):
 
 @login_required
 def RegisterRecetaGerente(request,idEmpleado):
+    model = Gerente.objects.get(user_id=idEmpleado)
+    username = model.user
+    user_id = User.objects.get(username=username)
+    id_farmacia = model.farmacia_id
+
+    #FORM
     if request.method == 'POST':
         print('entre a post')
         form = RecetaForm(request.POST)
@@ -84,10 +90,7 @@ def RegisterRecetaGerente(request,idEmpleado):
         print(form.errors)
         if form.is_valid():
             print('entre a valid')
-            model = Gerente.objects.get(user_id=idEmpleado)
-            username = model.user
-            user_id = User.objects.get(username=username)
-            id_farmacia = model.farmacia_id
+
             try:
                 Receta.objects.get(folio_receta=form.cleaned_data.get('folio_receta'),farmacia_id=id_farmacia)
                 return HttpResponseRedirect('/recetaGerente/'+str(idEmpleado)+'/Gerente')
@@ -123,9 +126,26 @@ def RegisterRecetaGerente(request,idEmpleado):
         print("entre")
         form = RecetaForm()
 
+    #END form
+
+    #Info for doctor autocomplete
+    tempdoctores = Doctor.objects.filter(farmacia=id_farmacia)
+    doctorestemp = tempdoctores.all()
+
+    doctores=[]
+    i=0
+    #transformar info
+    for doctor in doctorestemp:
+        doctores.append(doctor.first_name)
 
 
-    return render(request, '../templates/registerRecetaGerente.html', {'Form': form})
+
+
+    context = {'Form':form,'DoctoresAutocomplete':doctores}
+
+
+
+    return render(request, '../templates/registerRecetaGerente.html', context)
 
 
 

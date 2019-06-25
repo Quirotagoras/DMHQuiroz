@@ -88,12 +88,12 @@ WSGI_APPLICATION = 'DMHQuiroz.wsgi.application'
 
 DATABASES = {
     'default': {
-            'ENGINE': 'django.db.backends.mysql',
+            'ENGINE': 'django.db.backends.postgresql',
             'NAME': 'DMHQuiroz',
-            'USER': 'developer',
-            'PASSWORD': 'adminsql',
-            'HOST': 'localhost',
-            'PORT': '3306',
+            'USER': 'postgres',
+            'PASSWORD': 'quirotagoras1595',
+            'HOST': '127.0.0.1',
+            'PORT': '5432',
         }
 }
 

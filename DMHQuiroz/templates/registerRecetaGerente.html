@@ -19,10 +19,12 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/js/materialize.min.js" integrity="sha256-SrBfGi+Zp2LhAvy9M1bWOCXztRU9Ztztxmu5BcYPcPE=" crossorigin="anonymous"></script>
 
     <script>
+        var doctoresAutocomplete = {{ DoctoresAutocomplete|safe }};
+        document.write(doctoresAutocomplete);
 
          document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.autocomplete');
-    var instances = M.Autocomplete.init(elems, options);
+             var elems = document.querySelectorAll('.autocomplete');
+             var instances = M.Autocomplete.init(elems, options);
   });
 
 
@@ -38,8 +40,8 @@
          $('.collapsible').collapsible();
          $('input.autocomplete').autocomplete({
       data: {
-        "Apple": null,
-        "Microsoft": null,
+        pple:null,
+        Microsoft: null,
         "Google": 'https://placehold.it/250x250'
       },
     });
@@ -87,12 +89,19 @@
     </div>
 
     <div>
-        <script>
+        <script type = 'text/javascript'>
 
          document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.autocomplete2');
     var instances = M.Autocomplete.init(elems, options);
   });
+
+
+
+
+
+    var andres = {'andres':null,
+    'mayte':null};
 
 
         $(document).ready(function(){
@@ -103,15 +112,14 @@
                                  changeMonth: true,
                                  changeYear: true,
                                 yearRange: [2019,2080]});
-        $('select').formSelect();
+
          $('.collapsible').collapsible();
          $('input.autocomplete2').autocomplete({
-      data: {
-        "Tafil": null,
-        "algo1": null,
-        "algo2": 'https://placehold.it/250x250'
-      },
-    });
+
+
+
+            data: andres,
+        });
         });
         </script>
 
