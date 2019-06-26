@@ -29,16 +29,17 @@ class RecetaForm(forms.ModelForm):
             'fecha_surte': forms.DateInput(attrs={'class': 'datepicker',
                                                    'placeholder': 'formato: mm/dd/yyyy'}),
 
-
-
-
-
-
-
-
+            'ficha_derechohabiente': forms.TextInput(),
 
 
         }
+
+    def is_valid(self):
+
+        if self.data['ficha_derechohabiente']  and self.data['cbarras']:
+            return True
+        else:
+            return False
 
 
 
