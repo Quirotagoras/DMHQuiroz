@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
+
 <ul>
     <li><h2 class="pink-text text-lighten-3">Registrar Receta
+
     <i class="medium material-icons ">local_pharmacy</i></h2></li>
     <li class="divider pink lighten-3"></li>
 </ul>
@@ -13,25 +15,51 @@
         src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/js/materialize.min.js" integrity="sha256-SrBfGi+Zp2LhAvy9M1bWOCXztRU9Ztztxmu5BcYPcPE=" crossorigin="anonymous"></script>
-
+<!-- AUTOCOMPLETE DOCTOR -->
     <script>
 
+        function parseDoctors(arrayDoctores){
+            //array pasa a convertirse a objeto
+
+            var dataDoctors={};
+
+            var i;
+            for(i = 0; i <arrayDoctores.length;i++){
+                dataDoctors[arrayDoctores[i]]=null;
+            }
+
+            return dataDoctors;
+        }
+
+
+        var doctoresAutocomplete = {{ DoctoresAutocomplete|safe }};
+        var doctores=parseDoctors(doctoresAutocomplete);
 
 
         $(document).ready(function(){
-            $(".dropdown-trigger").dropdown();
+              $(".dropdown-trigger").dropdown();
             $('select').formSelect();
+             $('.modal').modal();
+
+
         // Initialize materialize data picker
             $('.datepicker').datepicker({format: 'mm/dd/yyyy',
                                  changeMonth: true,
                                  changeYear: true,
                                 yearRange: [2019,2080]});
-        $('select').formSelect();
-         $('.collapsible').collapsible();
+
+
+         $('input.autocomplete').autocomplete({
+     data: doctores,
+             limit : 10,
+             minLength : 2,
+    });
         });
         </script>
+    <!-- AUTOCOMPLETE DOCTOR -->
     {% endblock javascript %}
 
     {% csrf_token %}
@@ -41,9 +69,10 @@
 
     <label class="active">Folio de Receta:</label>
 
+
     {{ Form.folio_receta }}
+
     {{ Form.non_field_errors }}
-    {{ Form.errors }}
 
     <label class="active">Status</label>
 
@@ -59,28 +88,70 @@
 
     {{ Form.fecha_surte }}
 
-    <label class="active">Doctor que medica:</label>
 
-    {{ Form.doctor }}
-
-<div>
-     <label class="active">Ficha de Derecho Habiente:</label>
-
-    {{ Form.ficha_derechohabiente }}
+    <div class="input-field ">
+           <label class="active">Doctor que medica:</label>
+            <input type="text" name="doctor" class="autocomplete" maxlength="100" required="" id="id_doctor">
     </div>
 
-    <div>
-     <label class="active">Medicamento:</label>
+     <script type = 'text/javascript'>
+              var DerechoAutocomplete = {{ DHAutocomplete|safe }};
+            var derecho=parseDoctors(DerechoAutocomplete);
+            var MedicamentoAutocomplete = {{ medicamentoAutcomplete|safe }};
+            var medicamento=parseDoctors(MedicamentoAutocomplete);
 
-    {{ Form.cbarras }}
 
+
+
+
+        $(document).ready(function(){
+            $('.modal').modal();
+              $(".dropdown-trigger").dropdown();
+            $('select').formSelect();
+
+        // Initialize materialize data picker
+            $('.datepicker').datepicker({format: 'mm/dd/yyyy',
+                                 changeMonth: true,
+                                 changeYear: true,
+                                yearRange: [2019,2080]});
+
+
+         $('input.autocomplete2').autocomplete({
+
+
+
+            data: derecho,
+        });
+          $('input.autocomplete3').autocomplete({
+
+
+
+            data: medicamento,
+        });
+        });
+        </script>
+
+     <div class="input-field ">
+           <label class="active">Nombre de Derecho Habiente:</label>
+            <input type="text" name="ficha_derechohabiente" class="autocomplete2" maxlength="100" required="" id="id_derechohabiente">
+    </div>
+
+
+
+
+
+   <div class="input-field ">
+           <label class="active">Medicamento:</label>
+            <input type="text" name="cbarras" class="autocomplete3" maxlength="100" required="" id="">
     </div>
 <div>
+
       <label class="active">Cantidad:</label>
 
     {{ Form.cantidad }}
 
 </div>
+
     <ul class=" collapsible">
     <li>
       <div class="collapsible-header pink lighten-3 white-text"><i class=" small material-icons h">add</i>Agregar Equivalencia a Receta(opcional)</div>
@@ -109,13 +180,8 @@
 
 
 
-
-
-
-
    <button class="btn waves-effect waves-light pink lighten-3" type="submit" name="action">Terminar
     <i class="material-icons right pink lighten-3">done</i>
   </button>
 </form>
 {% endblock %}
-

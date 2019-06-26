@@ -28,17 +28,18 @@ def SuccessRegisterGerente(request):
 
 @login_required
 def RegisterReceta(request,idEmpleado):
+    model = Capturista.objects.get(user_id=idEmpleado)
+    username = model.user
+    user_id = User.objects.get(username=username)
+    id_farmacia = model.farmacia_id
+
     if request.method == 'POST':
         print('entre a post')
         form = RecetaForm(request.POST)
         if form.is_valid():
             print('entre a valid')
             try:
-                model = Capturista.objects.get(user_id=idEmpleado)
-                username = model.user
-                user_id = User.objects.get(username=username)
 
-                id_farmacia = model.farmacia_id
                 try:
                     Receta.objects.get(folio_receta=form.cleaned_data.get('folio_receta'),farmacia_id=id_farmacia)
                     return HttpResponseRedirect('/receta/'+str(idEmpleado))
@@ -76,7 +77,40 @@ def RegisterReceta(request,idEmpleado):
     else:
         form = RecetaForm()
 
-    return render(request, '../templates/registerReceta.html', {'Form': form})
+    #Info for doctor autocomplete
+    tempdoctores = Doctor.objects.filter(farmacia=id_farmacia)
+    doctorestemp = tempdoctores.all()
+    doctores=[]
+
+    #Info DerechoHabientes
+
+    tempDerechoHabientes =DerechoHabiente.objects.filter(farmacia=id_farmacia)
+    DerechoHabientetemp = tempDerechoHabientes.all()
+    derechohabientes=[]
+
+    #Info Medicamento
+
+    Medicamentotemp = Product.objects.all()
+    medicamentos = []
+
+    #transformar info
+    for doctor in doctorestemp:
+        doctores.append(doctor.first_name+" "+doctor.last_name)
+
+    for derechohabiente in DerechoHabientetemp:
+        derechohabientes.append(derechohabiente.nombre)
+
+
+    for medicamento in Medicamentotemp:
+
+        medicamentos.append(medicamento.nombre_comercial + '( '+medicamento.nombre_activo+')')
+
+    context = {'Form': form, 'DoctoresAutocomplete': doctores, 'DHAutocomplete': derechohabientes,
+               'medicamentoAutcomplete': medicamentos}
+
+
+
+    return render(request, '../templates/registerReceta.html', context)
 
 
 @login_required
