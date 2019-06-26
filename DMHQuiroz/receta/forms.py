@@ -6,6 +6,15 @@ from dal import autocomplete
 from doctores.models import Doctor
 
 
+class EquivalenciaForm(forms.ModelForm):
+
+    class Meta:
+        model = Receta
+        fields=['equivalencia','equivalencia_obs']
+
+
+
+
 
 
 class RecetaForm(forms.ModelForm):
@@ -13,7 +22,7 @@ class RecetaForm(forms.ModelForm):
 
     class Meta:
         model = Receta
-        fields = ['folio_receta' , 'status' , 'fecha_expide' , 'fecha_recibe' , 'fecha_surte' ,'doctor','ficha_derechohabiente','cbarras','cantidad','equivalencia_cantidad','equivalencia_obs','has_Equivalencia']
+        fields = ['folio_receta' , 'status' , 'fecha_expide' , 'fecha_recibe' , 'fecha_surte' ,'doctor','ficha_derechohabiente','cbarras','cantidad','has_Equivalencia']
 
 
         widgets = {

@@ -18,7 +18,6 @@ class Receta(models.Model):
     cbarras = models.ForeignKey(Product,on_delete=models.CASCADE)
     cantidad = models.IntegerField()
     equivalencia = models.ForeignKey(Equivalencia,on_delete=models.CASCADE,blank=True,null=True)
-    equivalencia_cantidad = models.PositiveIntegerField(blank=True, null=True)
     equivalencia_obs = models.TextField(max_length=300,blank=True,null=True)
     farmacia = models.ForeignKey(Farmacia,on_delete=models.CASCADE)
     creado = models.DateField()

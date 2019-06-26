@@ -11,10 +11,12 @@ from derechohabiente.models import DerechoHabiente
 from users.models import Gerente,Capturista
 from doctores.models import Doctor
 from products.models import Product
+from equivalencia.models import Equivalencia
 
 from django import forms
 from django.contrib.auth.decorators import login_required
 from dal import autocomplete
+from .forms import EquivalenciaForm
 
 
 def parse(string):
@@ -30,6 +32,32 @@ def SuccessRegister(request):
 def SuccessRegisterGerente(request):
     return render(request,'../templates/successRecetaGerente.html')
 
+
+@login_required
+def ListEquivalenciaGerente(request,idEmpleado,folio):
+    model = Gerente.objects.get(user_id=idEmpleado)
+    id_farmacia = model.farmacia_id
+    receta = Receta.objects.get(folio_receta=folio,farmacia=id_farmacia)
+    medicamento = receta.cbarras
+    nombre_medicamento = medicamento.nombre_activo+ " " + medicamento.nombre_comercial
+    cbarras=medicamento.cbarras
+    print('CBARRAS:'+str(cbarras))
+
+    equivalencias = Equivalencia.objects.filter(cbarras=cbarras)
+
+
+    if request.method == 'POST':
+        form=EquivalenciaForm(request.POST)
+        if form.is_valid():
+            try:
+                receta.equivalencia=form.cleaned_data.get('equivalencia')
+                receta.equivalencia_obs=form.cleaned_data.get('equivalencia_obs')
+                receta.save()
+            except Receta.DoesNotExist:
+                raise ValidationError('Receta no existe')
+
+    context = {'list':equivalencias,'folio':folio,'medicamento':nombre_medicamento}
+    return render(request, '../templates/listEquivalencia.html', context)
 
 
 
@@ -181,7 +209,7 @@ def RegisterRecetaGerente(request,idEmpleado):
                     cantidad=form.cleaned_data.get("cantidad"),
                     cbarras=medicamento_id,
                     farmacia=Farmacia.objects.get(id=id_farmacia),
-                    equivalencia_cantidad=form.cleaned_data.get("equivalencia_cantidad"),
+                    equivalencia=form.cleaned_data.get("equivalencia_cantidad"),
                     equivalencia_obs=form.cleaned_data.get("equivalencia_obs"),
                     creado=timezone.now(),
                     ultimamodif=timezone.now(),
@@ -194,7 +222,7 @@ def RegisterRecetaGerente(request,idEmpleado):
 
 
             if (form.cleaned_data.get('has_Equivalencia')== True):
-                return HttpResponseRedirect(str(form.cleaned_data.get('folio_receta'))+"/")
+                return HttpResponseRedirect(form.cleaned_data.get('folio_receta')+"/")
 
             else:
 
