@@ -40,6 +40,8 @@
 
 
         $(document).ready(function(){
+              $(".dropdown-trigger").dropdown();
+            $('select').formSelect();
              $('.modal').modal();
 
 
@@ -52,6 +54,8 @@
 
          $('input.autocomplete').autocomplete({
      data: doctores,
+             limit : 10,
+             minLength : 2,
     });
         });
         </script>
@@ -65,7 +69,9 @@
 
     <label class="active">Folio de Receta:</label>
 
+
     {{ Form.folio_receta }}
+
     {{ Form.non_field_errors }}
 
     <label class="active">Status</label>
@@ -88,66 +94,64 @@
             <input type="text" name="doctor" class="autocomplete" maxlength="100" required="" id="id_doctor">
     </div>
 
+     <script type = 'text/javascript'>
+              var DerechoAutocomplete = {{ DHAutocomplete|safe }};
+            var derecho=parseDoctors(DerechoAutocomplete);
+            var MedicamentoAutocomplete = {{ medicamentoAutcomplete|safe }};
+            var medicamento=parseDoctors(MedicamentoAutocomplete);
 
 
 
-    <div>
-     <label class="active">Ficha de Derecho Habiente:</label>
-
-    {{ Form.ficha_derechohabiente }}
-    </div>
-
-    <div>
-        <script type = 'text/javascript'>
-
-         document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.autocomplete2');
-    var instances = M.Autocomplete.init(elems, options);
-  });
-
-
-
-
-
-    var andres = {'andres':null,
-    'mayte':null};
 
 
         $(document).ready(function(){
-            $(".dropdown-trigger").dropdown();
+            $('.modal').modal();
+              $(".dropdown-trigger").dropdown();
             $('select').formSelect();
+
         // Initialize materialize data picker
             $('.datepicker').datepicker({format: 'mm/dd/yyyy',
                                  changeMonth: true,
                                  changeYear: true,
                                 yearRange: [2019,2080]});
 
-         $('.collapsible').collapsible();
+
          $('input.autocomplete2').autocomplete({
 
 
 
-            data: andres,
+            data: derecho,
+        });
+          $('input.autocomplete3').autocomplete({
+
+
+
+            data: medicamento,
         });
         });
         </script>
 
-    <div class="input-field">
+     <div class="input-field ">
+           <label class="active">Nombre de Derecho Habiente:</label>
+            <input type="text" name="ficha_derechohabiente" class="autocomplete2" maxlength="100" required="" id="id_derechohabiente">
+    </div>
 
-          <input type="text" class="autocomplete2">
-          <label for="autocomplete-input">Autocomplete</label>
-        </div>
-     <label class="active">Medicamento:</label>
 
-    {{ Form.cbarras }}
 
+
+
+   <div class="input-field ">
+           <label class="active">Medicamento:</label>
+            <input type="text" name="cbarras" class="autocomplete3" maxlength="100" required="" id="">
     </div>
 <div>
+
       <label class="active">Cantidad:</label>
 
     {{ Form.cantidad }}
 
 </div>
+
     <ul class=" collapsible">
     <li>
       <div class="collapsible-header pink lighten-3 white-text"><i class=" small material-icons h">add</i>Agregar Equivalencia a Receta(opcional)</div>

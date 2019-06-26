@@ -7,8 +7,11 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from farmacia.models import Farmacia
 from .models import Receta
+from derechohabiente.models import DerechoHabiente
 from users.models import Gerente,Capturista
 from doctores.models import Doctor
+from products.models import Product
+
 from django import forms
 from django.contrib.auth.decorators import login_required
 from dal import autocomplete
@@ -58,6 +61,7 @@ def RegisterReceta(request,idEmpleado):
                         empleado = user_id,
 
                     )
+
                     new_derechohabiente.save()
 
 
@@ -130,18 +134,37 @@ def RegisterRecetaGerente(request,idEmpleado):
     #Info for doctor autocomplete
     tempdoctores = Doctor.objects.filter(farmacia=id_farmacia)
     doctorestemp = tempdoctores.all()
-
     doctores=[]
-    i=0
-    #transformar info
 
+    #Info DerechoHabientes
+
+    tempDerechoHabientes =DerechoHabiente.objects.filter(farmacia=id_farmacia)
+    DerechoHabientetemp = tempDerechoHabientes.all()
+    derechohabientes=[]
+
+    #Info Medicamento
+
+    Medicamentotemp = Product.objects.all()
+    medicamentos = []
+
+    #transformar info
     for doctor in doctorestemp:
         doctores.append(doctor.first_name+" "+doctor.last_name)
 
+    for derechohabiente in DerechoHabientetemp:
+        derechohabientes.append(derechohabiente.nombre)
+
+
+    for medicamento in Medicamentotemp:
+
+        medicamentos.append(medicamento.nombre_comercial + '( '+medicamento.nombre_activo+')')
 
 
 
-    context = {'Form':form,'DoctoresAutocomplete':doctores}
+
+
+
+    context = {'Form':form,'DoctoresAutocomplete':doctores,'DHAutocomplete':derechohabientes,'medicamentoAutcomplete':medicamentos}
 
 
 

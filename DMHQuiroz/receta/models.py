@@ -14,8 +14,8 @@ class Receta(models.Model):
     fecha_recibe = models.DateField("Fecha que recibe")
     fecha_surte = models.DateField("Fecha que surte")
     doctor = models.CharField(max_length=100)#se pone como char field por el tema del autocomplete
-    ficha_derechohabiente = models.ForeignKey(DerechoHabiente,on_delete=models.CASCADE)
-    cbarras = models.ForeignKey(Product,on_delete=models.CASCADE)
+    ficha_derechohabiente = models.CharField(max_length=100)
+    cbarras = models.CharField(max_length=100)
     cantidad = models.IntegerField()
     equivalencia = models.ForeignKey(Equivalencia,on_delete=models.CASCADE,blank=True,null=True)
     equivalencia_cantidad = models.PositiveIntegerField(blank=True, null=True)
