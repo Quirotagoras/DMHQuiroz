@@ -154,7 +154,7 @@ def RegisterRecetaGerente(request,idEmpleado):
             print('entre a valid')
 
             try:
-                Receta.objects.get(folio_receta=form.cleaned_data.get('folio_receta'),farmacia_id=id_farmacia)
+                Receta.objects.get(folio_receta=form.cleaned_data.get('folio_receta'),farmacia_id=id_farmacia)# aqui es la validacion de un solo numero de receta por sucursal
                 return HttpResponseRedirect('/recetaGerente/'+str(idEmpleado)+'/Gerente')
             except Receta.DoesNotExist:
                 ficha = request.POST.get('ficha_derechohabiente')
@@ -186,13 +186,20 @@ def RegisterRecetaGerente(request,idEmpleado):
                     creado=timezone.now(),
                     ultimamodif=timezone.now(),
                     empleado = user_id,
+                    has_Equivalencia = form.cleaned_data.get('has_Equivalencia'),
 
                     )
                 new_derechohabiente.save()
 
 
 
-            return HttpResponseRedirect('/receta/registeredRecetaGerente/')
+            if (form.cleaned_data.get('has_Equivalencia')== True):
+                return HttpResponseRedirect(str(form.cleaned_data.get('folio_receta'))+"/")
+
+            else:
+
+                return HttpResponseRedirect('/receta/registeredRecetaGerente/')
+
         else:
             print('entre a not valid')
 

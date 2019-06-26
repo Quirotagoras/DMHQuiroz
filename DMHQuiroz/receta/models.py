@@ -24,6 +24,7 @@ class Receta(models.Model):
     creado = models.DateField()
     ultimamodif = models.DateField()
     empleado = models.ForeignKey(User,on_delete=models.CASCADE)
+    has_Equivalencia = models.BooleanField(default=False)
 
 
 
