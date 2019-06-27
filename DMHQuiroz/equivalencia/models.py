@@ -6,7 +6,7 @@ class Equivalencia(models.Model):
     descripcion = models.CharField(max_length=200)
     cbarras_equivalente = models.CharField(max_length=200)
     descripcion_equivalente = models.CharField(max_length=200)
-    cantidad_equivalente = models.CharField(max_length=50)
+    cantidad_equivalente = models.FloatField(max_length=50)
 
 
     def __str__(self):

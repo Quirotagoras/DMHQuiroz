@@ -166,7 +166,7 @@ def RegisterReceta(request,idEmpleado):
         doctores.append("Dr. "+doctor.first_name+" "+doctor.last_name+' '+doctor.last_name2)
 
     for derechohabiente in DerechoHabientetemp:
-        derechohabientes.append(str(derechohabiente.ficha)+" "+ derechohabiente.nombre)
+        derechohabientes.append(str(derechohabiente.ficha)+ " " +"Codigo :"+ str(derechohabiente.codigo)+ " "+ derechohabiente.nombre +  " "+ derechohabiente.org)
 
 
     for medicamento in Medicamentotemp:
@@ -276,11 +276,11 @@ def RegisterRecetaGerente(request,idEmpleado):
         doctores.append("Dr. "+doctor.first_name+" "+doctor.last_name+' '+doctor.last_name2)
 
     for derechohabiente in DerechoHabientetemp:
-        derechohabientes.append(str(derechohabiente.ficha)+" "+ derechohabiente.nombre)
+        derechohabientes.append(str(derechohabiente.ficha) + " " +", Codigo: "+ str(derechohabiente.codigo) + ", Nombre : " + derechohabiente.nombre + " " + ", Organismo : "+derechohabiente.org)
 
 
     for medicamento in Medicamentotemp:
-        medicamentos.append(str(medicamento.cbarras)+" "+medicamento.nombre_comercial + ' '+medicamento.presentacion+' de '+str(medicamento.cantidad_pastillas)+' '+medicamento.nombre_activo+' ')
+        medicamentos.append(str(medicamento.cbarras)+" "+medicamento.nombre_comercial + ' '+medicamento.presentacion+medicamento.nombre_activo+' ')
 
 
     #Pasar a contexto
