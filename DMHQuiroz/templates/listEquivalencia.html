@@ -1,16 +1,30 @@
 {% extends "base_gerente.html" %}
 {% block content %}
 <ul>
-    <li><h5 class="pink-text text-lighten-3">Receta :{{ folio }}
-    <li><h5 class="pink-text text-lighten-3">Medicamento a sustituir:{{ medicamento }}
+    <li><h2 class="pink-text text-lighten-3"> Agregar Equivalencia
+    <pre></pre>
+
+     <li class="divider pink lighten-3"></li>
+    <li class="divider pink lighten-3"></li>
 
 
+    <li><h6 class=" pink-text text-lighten-3">Folio de Receta : {{ folio }} </h6></li>
+    <li><h6 class=" pink-text text-lighten-3">Medicamento: {{ medicamento }} </h6></li>
+    <li><h6 class=" pink-text text-lighten-3">Cantidad: {{ cantidad }} </h6></li>
+
+    <li class="divider pink lighten-3"></li>
     <li class="divider pink lighten-3"></li>
 
 </ul>
 
 <table class="highlight">
-        <thead>
+
+    <form method="POST">
+
+    {% csrf_token %}
+    {% if list %}
+    <tbody>
+    <thead>
           <tr>
               <th>Codigo de Barras</th>
               <th>Descripcion </th>
@@ -19,9 +33,6 @@
           </tr>
         </thead>
 
-        <tbody>
-    {% csrf_token %}
-    {% if list %}
     {% for equivalencia in list %}
 
           <tr>
@@ -32,8 +43,8 @@
               <td>{{ equivalencia.descripcion_equivalente }}</td>
               <td>
 
-                  <button class="right btn waves-effect waves-light  yellow accent-3" type="submit" name="action"><a href="/users/misEmpleados/{{ empleado.pk }}/Editar" style="color: white">Elegir
-                    <i class="material-icons right  yellow accent-3">border_color</i></a>
+                  <input type="hidden" name="equivalencia" value='{{ equivalencia.pk }}'  ><button class="right btn waves-effect waves-light  pink lighten-3"  type="submit" name="action">Elegir
+                  <i class="material-icons right  pink lighten-3">add</i></input>
                     </button>
 
               </td>
@@ -42,7 +53,22 @@
 
 
     {% endfor %}
+
+
       </tbody>
+        {% else %}
+        <h3>No se encontro equivalencia, favor de agregar descripcion</h3>
+        <div class="input-field  ">
+            <label class="active">Descripcion</label>
+            <input type="text" name="equivalencia_obs">
+    </div>
+
+
+   <button class="btn waves-effect waves-light pink lighten-3" type="submit" name="action">Terminar
+    <i class="material-icons right pink lighten-3">done</i>
+  </button>
+
+        </form>
 
       </table>
 

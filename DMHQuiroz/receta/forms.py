@@ -8,6 +8,8 @@ from doctores.models import Doctor
 
 class EquivalenciaForm(forms.ModelForm):
 
+
+
     class Meta:
         model = Receta
         fields=['equivalencia','equivalencia_obs']
@@ -18,6 +20,8 @@ class EquivalenciaForm(forms.ModelForm):
 
 
 class RecetaForm(forms.ModelForm):
+    folio2 = forms.CharField(label='Repetir Contrasena')
+
 
 
     class Meta:
@@ -44,18 +48,34 @@ class RecetaForm(forms.ModelForm):
         }
 
     def is_valid(self):
-
-        if self.data['ficha_derechohabiente']  and self.data['cbarras']:
+        folio = self.cleaned_data.get('folio_receta')
+        cd = self.cleaned_data
+        if self.data['ficha_derechohabiente']  and self.data['cbarras'] and len(folio)==12 and (cd['folio2'] == cd['folio_receta']):
             return True
+
+
         else:
             return False
 
 
 
     def clean(self):
+        cd = self.cleaned_data
         folio = self.cleaned_data.get('folio_receta')
         if len(folio)!=12:
-            raise forms.ValidationError('Folio debe de ser de 12 caracteres')
+            raise forms.ValidationError('Folio de receta debe de ser de 12 caracteres')
+
+        if cd['folio2'] != cd['folio_receta']:
+            raise forms.ValidationError('Asegurese que los folios de receta coinciden ')
+
+
+
+
+
+
+
+
+
 
 
 

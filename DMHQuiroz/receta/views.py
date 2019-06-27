@@ -33,15 +33,18 @@ def SuccessRegisterGerente(request):
     return render(request,'../templates/successRecetaGerente.html')
 
 
+
+
 @login_required
 def ListEquivalenciaGerente(request,idEmpleado,folio):
     model = Gerente.objects.get(user_id=idEmpleado)
     id_farmacia = model.farmacia_id
     receta = Receta.objects.get(folio_receta=folio,farmacia=id_farmacia)
     medicamento = receta.cbarras
+    cantidad = receta.cantidad
     nombre_medicamento = medicamento.nombre_activo+ " " + medicamento.nombre_comercial
     cbarras=medicamento.cbarras
-    print('CBARRAS:'+str(cbarras))
+
 
     equivalencias = Equivalencia.objects.filter(cbarras=cbarras)
 
@@ -56,7 +59,9 @@ def ListEquivalenciaGerente(request,idEmpleado,folio):
             except Receta.DoesNotExist:
                 raise ValidationError('Receta no existe')
 
-    context = {'list':equivalencias,'folio':folio,'medicamento':nombre_medicamento}
+            return HttpResponseRedirect('/jalo/')
+
+    context = {'list':equivalencias,'folio':folio,'medicamento':nombre_medicamento,'cantidad':cantidad}
     return render(request, '../templates/listEquivalencia.html', context)
 
 
@@ -87,7 +92,6 @@ def RegisterReceta(request,idEmpleado):
                 ficha = request.POST.get('ficha_derechohabiente')
                 parsed_ficha = parse(ficha)
                 ficha_id = DerechoHabiente.objects.get(ficha=parsed_ficha)
-
                 medicamento = request.POST.get('cbarras')
                 parsed_medicamento = parse(medicamento)
                 medicamento_id = Product.objects.get(cbarras=parsed_medicamento)

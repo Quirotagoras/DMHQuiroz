@@ -100,12 +100,22 @@
 
     {% csrf_token %}
 
-
-    {{ Form.non_field_errors }}
+    {% if Form.non_field_errors %}
+    <li class="divider red"></li>
+    <li class="divider red"></li>
+    <h6 style="color: #cc1111">Error :{{ Form.non_field_errors }}</h6>
+    <li class="divider red"></li>
+    <li class="divider red"></li>
+    {% endif %}
 
     <div class="input-field  ">
            <label class="active">Folio de receta:</label>
             <input type="text"  name="folio_receta"  maxlength="100" required="">
+    </div>
+
+    <div class="input-field  ">
+           <label class="active">Repetir Folio de receta:</label>
+            <input type="text"  name="folio2"  maxlength="100" required="">
     </div>
 
   <div class="input-field ">
@@ -193,6 +203,7 @@
    <button class="btn waves-effect waves-light pink lighten-3" type="submit" name="action">Terminar
     <i class="material-icons right pink lighten-3">done</i>
   </button>
+    <pre></pre>
 
 </form>
 {% endblock %}
