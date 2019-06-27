@@ -18,7 +18,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
-<!-- AUTOCOMPLETE DOCTOR -->
+<!-- AUTOCOMPLETE -->
     <script>
 
         function parseDoctors(arrayDoctores){
@@ -55,45 +55,10 @@
          $('input.autocomplete').autocomplete({
      data: doctores,
              limit : 10,
-             minLength : 2,
+
     });
         });
         </script>
-    <!-- AUTOCOMPLETE DOCTOR -->
-    {% endblock javascript %}
-
-    {% csrf_token %}
-
-
-
-
-    <label class="active">Folio de Receta:</label>
-
-
-    {{ Form.folio_receta }}
-
-    {{ Form.non_field_errors }}
-
-    <label class="active">Status</label>
-
-    {{ Form.status }}
-     <label class="active">Fecha que expide:</label>
-
-    {{ Form.fecha_expide }}
-     <label class="active">Fecha que recibe:</label>
-
-    {{ Form.fecha_recibe }}
-
-     <label class="active">Fecha que surte:</label>
-
-    {{ Form.fecha_surte }}
-
-
-    <div class="input-field ">
-           <label class="active">Doctor que medica:</label>
-            <input type="text" name="doctor" class="autocomplete" maxlength="100" required="" id="id_doctor">
-    </div>
-
      <script type = 'text/javascript'>
               var DerechoAutocomplete = {{ DHAutocomplete|safe }};
             var derecho=parseDoctors(DerechoAutocomplete);
@@ -130,10 +95,64 @@
         });
         });
         </script>
+    <!-- AUTOCOMPLETEs -->
+    {% endblock javascript %}
+
+    {% csrf_token %}
+
+    {% if Form.non_field_errors %}
+    <li class="divider red"></li>
+    <li class="divider red"></li>
+    <h6 style="color: #cc1111">Error :{{ Form.non_field_errors }}</h6>
+    <li class="divider red"></li>
+    <li class="divider red"></li>
+    {% endif %}
+
+    <div class="input-field  ">
+           <label class="active">Folio de receta:</label>
+            <input type="text"  name="folio_receta"  maxlength="100" required="">
+    </div>
+
+    <div class="input-field  ">
+           <label class="active">Repetir Folio de receta:</label>
+            <input type="text"  name="folio2"  maxlength="100" required="">
+    </div>
+
+  <div class="input-field ">
+           <label class="active">Status:</label>
+            <input type="text"  name="status"  maxlength="100" required="">
+    </div>
+
+
+      <div class="input-field ">
+           <label class="active">Fecha que expide:</label>
+            <input type="text" class="datepicker" name="fecha_expide"  maxlength="100" required="">
+    </div>
+
+
+
+      <div class="input-field ">
+           <label class="active">Fecha que recibe:</label>
+            <input type="text" class="datepicker" name="fecha_recibe" >
+    </div>
+
+
+
+      <div class="input-field ">
+           <label class="active">Fecha que surte:</label>
+            <input type="text" class="datepicker" name="fecha_surte" >
+    </div>
+
+    <div class="input-field ">
+           <label class="active">Doctor que medica:</label>
+            <input type="text" name="doctor" class="autocomplete" maxlength="100" required="" id="id_doctor">
+    </div>
+
+
 
      <div class="input-field ">
            <label class="active">Nombre de Derecho Habiente:</label>
-            <input type="text" name="ficha_derechohabiente" class="autocomplete2" maxlength="100" required="" id="id_derechohabiente">
+            <input type="text" name="ficha_derechohabiente" class="autocomplete2" maxlength="100" required="" id="ficha_derechohabiente">
     </div>
 
 
@@ -144,37 +163,38 @@
            <label class="active">Medicamento:</label>
             <input type="text" name="cbarras" class="autocomplete3" maxlength="100" required="" id="">
     </div>
-<div>
+<div class="input-field">
 
       <label class="active">Cantidad:</label>
+    <input type="number" name="cantidad">
 
-    {{ Form.cantidad }}
+
+
+
 
 </div>
 
-    <ul class=" collapsible">
-    <li>
-      <div class="collapsible-header pink lighten-3 white-text"><i class=" small material-icons h">add</i>Agregar Equivalencia a Receta(opcional)</div>
-      <div class="collapsible-body">
-          <label>Medicamento de Equivalencia</label>
-          {{ Form.equivalencia_cbarras }}
+    <div>
+
+  <p>
+      <label>
+        <input type="checkbox"  class="filled-in  " name="has_Equivalencia"/>
+        <span>Equivalencia</span>
+      </label>
+    </p>
 
 
-      </div>
-           <div class="collapsible-body">
-          <label>Cantidad equivalente:</label>
-          {{ Form.equivalencia_cantidad }}
 
 
-      </div>
-         <div class="collapsible-body">
-          <label>Observaciones</label>
-          {{ Form.equivalencia_obs }}
+
+</div>
+
+    <div>
 
 
-      </div>
-    </li>
-    </ul>
+    </div>
+
+
 
 
 
@@ -183,5 +203,7 @@
    <button class="btn waves-effect waves-light pink lighten-3" type="submit" name="action">Terminar
     <i class="material-icons right pink lighten-3">done</i>
   </button>
+    <pre></pre>
+
 </form>
 {% endblock %}

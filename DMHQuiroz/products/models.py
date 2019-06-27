@@ -4,7 +4,7 @@ from django.db import models
 class Product(models.Model):
 
     presentaciones = [
-        ('Tab','Tabletas'),
+        ('Tabletas','Tabletas'),
         ('Amp','Ampolletas'),
         ('Polv','Polvos'),
         ('Cap','Capsulas'),
@@ -48,4 +48,4 @@ class Product(models.Model):
 
 
     def __str__(self):
-        return self.nombre_comercial + " " + self.unidad_medida+" "+ self.presentacion
+        return self.nombre_activo+" " + self.nombre_comercial + " " + self.unidad_medida+" "+ self.presentacion +" de " + str(self.cantidad_pastillas)

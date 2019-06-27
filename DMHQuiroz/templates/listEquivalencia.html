@@ -1,5 +1,42 @@
-{% extends "base_gerente.html" %}
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!--Icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<nav class="pink lighten-3"> <!-- navbar content here  -->
+   {% load static from staticfiles %}
+       <div class="nav-wrapper">
+  <img class="left hide-on-med-and-down" src="{% static 'DMHQuiroz/logo.png' %}" width="200" height="63"/>
+
+  </div>
+
+
+  </nav>
+
+<div class="row">
+    <div class="row">
+      <div class="col s7 push-s5"><span class="flow-text"></span></div>
+      <div class="col s5 pull-s7"><span class="flow-text"></span></div>
+    </div>
+        <div class="col s6 push-s3 z-depth-3">
+
 <ul>
     <li><h2 class="pink-text text-lighten-3"> Agregar Equivalencia
     <pre></pre>
@@ -83,5 +120,9 @@
 
             </div>
 
-{% endblock %}
+        </div>
+</div>
+</html>
+
+
 
