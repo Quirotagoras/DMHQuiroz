@@ -170,7 +170,7 @@ def RegisterReceta(request,idEmpleado):
 
 
     for medicamento in Medicamentotemp:
-        medicamentos.append(str(medicamento.cbarras)+" "+medicamento.nombre_comercial + ' '+medicamento.presentacion+' de '+str(medicamento.cantidad_pastillas)+' '+medicamento.nombre_activo+' ')
+        medicamentos.append(str(medicamento.cbarras)+" "+medicamento.nombre_comercial + ' '+medicamento.presentacion+medicamento.nombre_activo+' ')
 
 
     #Pasar a contexto
