@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
-from .views import RegisterReceta,SuccessRegister,RegisterRecetaGerente,SuccessRegisterGerente,ListEquivalenciaGerente
+from .views import RegisterReceta,SuccessRegister,RegisterRecetaGerente,SuccessRegisterGerente,ListEquivalenciaGerente,searchReceta,EditReceta,ListEquivalenciaEdit
 
 
 
@@ -23,7 +23,9 @@ urlpatterns = [
     path('<int:idEmpleado>/',RegisterReceta,name="RegisterReceta"),
     path('<int:idEmpleado>/Gerente',RegisterRecetaGerente,name="RegisterRecetaGerente"),
     path('<int:idEmpleado>/<int:folio>/',ListEquivalenciaGerente,name="RegisterEquivalencia"),
-
+    path('editReceta/',searchReceta),
+    path('editReceta/<int:idEmpleado>/<int:idReceta>/',EditReceta),
+    path('editReceta/<int:idEmpleado>/<int:folio>/EditEquivalencia/',ListEquivalenciaEdit),
 
     path('registeredReceta/',SuccessRegister,name='SuccessRegister'),
     path('registeredRecetaGerente/',SuccessRegisterGerente,name='SuccessRegisterGerente'),

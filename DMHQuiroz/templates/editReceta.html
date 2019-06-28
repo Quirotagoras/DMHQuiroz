@@ -1,0 +1,214 @@
+{% extends "base_gerente.html" %}
+
+{% block content %}
+
+<ul>
+    <li><h2 class="pink-text text-lighten-3">Editar Receta
+
+    <i class="medium material-icons ">border_color</i></h2></li>
+    <h5 class="pink-text text-lighten-3">Folio : {{ receta }} </h5>
+    <li class="divider pink lighten-3"></li>
+</ul>
+
+<form method="POST">
+    {% block javascript %}
+     <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+<!-- AUTOCOMPLETE -->
+    <script>
+
+        function parseDoctors(arrayDoctores){
+            //array pasa a convertirse a objeto
+
+            var dataDoctors={};
+
+            var i;
+            for(i = 0; i <arrayDoctores.length;i++){
+                dataDoctors[arrayDoctores[i]]=null;
+            }
+
+            return dataDoctors;
+        }
+
+
+        var doctoresAutocomplete = {{ DoctoresAutocomplete|safe }};
+        var doctores=parseDoctors(doctoresAutocomplete);
+
+
+        $(document).ready(function(){
+              $(".dropdown-trigger").dropdown();
+            $('select').formSelect();
+             $('.modal').modal();
+
+
+        // Initialize materialize data picker
+            $('.datepicker').datepicker({format: 'mm/dd/yyyy',
+                                 changeMonth: true,
+                                 changeYear: true,
+                                yearRange: [2019,2080]});
+
+
+         $('input.autocomplete').autocomplete({
+     data: doctores,
+             limit : 10,
+
+    });
+        });
+        </script>
+     <script type = 'text/javascript'>
+              var DerechoAutocomplete = {{ DHAutocomplete|safe }};
+            var derecho=parseDoctors(DerechoAutocomplete);
+            var MedicamentoAutocomplete = {{ medicamentoAutcomplete|safe }};
+            var medicamento=parseDoctors(MedicamentoAutocomplete);
+
+
+
+
+
+        $(document).ready(function(){
+            $('.modal').modal();
+              $(".dropdown-trigger").dropdown();
+            $('select').formSelect();
+
+        // Initialize materialize data picker
+            $('.datepicker').datepicker({format: 'mm/dd/yyyy',
+                                 changeMonth: true,
+                                 changeYear: true,
+                                yearRange: [2019,2080]});
+
+
+         $('input.autocomplete2').autocomplete({
+
+
+
+            data: derecho,
+             limit:10,
+        });
+          $('input.autocomplete3').autocomplete({
+
+
+
+            data: medicamento,
+              limit:10,
+        });
+        });
+        </script>
+    <!-- AUTOCOMPLETEs -->
+    {% endblock javascript %}
+
+    {% csrf_token %}
+
+    {% if Form.non_field_errors %}
+    <li class="divider red"></li>
+    <li class="divider red"></li>
+    <h6 style="color: #cc1111">Error :{{ Form.non_field_errors }}</h6>
+    <li class="divider red"></li>
+    <li class="divider red"></li>
+    {% endif %}
+
+
+
+  <div class="input-field ">
+           <label class="active">Status:</label>
+            <input type="text"  name="status"  value='{{objecto_receta.status}}' maxlength="100" required="">
+    </div>
+
+
+      <div class="input-field ">
+           <label class="active">Fecha que expide:</label>
+            <input type="text" class="datepicker" value ='{{ objecto_receta.fecha_expide|date:'m/d/Y' }}'name="fecha_expide"  maxlength="100" required="">
+    </div>
+
+
+
+      <div class="input-field ">
+           <label class="active">Fecha que recibe(formato: mm/dd/aaaa):</label>
+            <input type="text" class="datepicker" value ='{{ objecto_receta.fecha_recibe|date:'m/d/Y' }}'name="fecha_recibe" >
+    </div>
+
+
+
+      <div class="input-field ">
+           <label class="active">Fecha que surte:</label>
+            <input type="text" class="datepicker" value ='{{ objecto_receta.fecha_surte|date:'m/d/Y' }}' name="fecha_surte" >
+    </div>
+
+    <div class="input-field ">
+           <label class="active">Doctor que medica:</label>
+            <input type="text" name="doctor" class="autocomplete" value="{{ objecto_receta.doctor }}"maxlength="100" required="" id="id_doctor">
+    </div>
+
+
+
+     <div class="input-field ">
+           <label class="active">Nombre de Derecho Habiente:</label>
+            <input type="text" name="ficha_derechohabiente" value="{{ choicederecho }}"class="autocomplete2" maxlength="100" required="" id="ficha_derechohabiente">
+    </div>
+
+
+
+
+
+   <div class="input-field ">
+           <label class="active">Medicamento:</label>
+            <input type="text" name="cbarras" value="{{ choice_medicamento }}"class="autocomplete3" maxlength="100" required="" id="">
+    </div>
+<div class="input-field">
+
+      <label class="active">Cantidad:</label>
+    <input type="number" value="{{ objecto_receta.cantidad }}"name="cantidad">
+
+
+
+
+
+</div>
+
+    <div>
+
+        {% if objecto_receta.has_Equivalencia %}
+  <p>
+      <label>
+        <input type="checkbox"  checked class="filled-in  " name="has_Equivalencia"/>
+        <span>Equivalencia</span>
+      </label>
+    </p>
+        {% else %}
+         <p>
+      <label>
+        <input type="checkbox"  class="filled-in  " name="has_Equivalencia"/>
+        <span>Equivalencia</span>
+      </label>
+    </p>
+        {% endif %}
+
+
+
+
+
+</div>
+
+    <div>
+
+
+    </div>
+
+
+
+
+
+
+
+   <button class="btn waves-effect waves-light pink lighten-3" type="submit" name="action">Terminar
+    <i class="material-icons right pink lighten-3">done</i>
+  </button>
+    <pre></pre>
+
+</form>
+{% endblock %}
+

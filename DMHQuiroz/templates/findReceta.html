@@ -1,0 +1,42 @@
+{% extends "base_gerente.html" %}
+
+
+{% block content %}
+<ul>
+    <li><h2 class="pink-text text-lighten-3">Buscar Receta
+    <i class="medium material-icons ">search</i></h2></li>
+    <li class="divider pink lighten-3"></li>
+</ul>
+
+<form method="POST">
+    {% csrf_token %}
+
+     {% if form.non_field_errors %}
+    <li class="divider red"></li>
+    <li class="divider red"></li>
+    <h6 style="color: #cc1111">Error :{{ form.non_field_errors }}</h6>
+    <li class="divider red"></li>
+    <li class="divider red"></li>
+    {% endif %}
+
+
+      <div class="input-field ">
+
+
+           <label class="active">Receta a buscar:</label>
+            <input type="text" class="datepicker" name="receta" >
+
+    </div>
+     <div class="input-field ">
+           <label class="active"></label>
+            <input type="hidden" class="datepicker" value="{{ request.user.pk }}" name="temp_id" >
+    </div>
+
+
+   <button class="btn waves-effect waves-light pink lighten-3" type="submit" name="action">Buscar
+    <i class="material-icons right pink lighten-3">search</i>
+  </button>
+    <pre></pre>
+</form>
+{% endblock %}
+

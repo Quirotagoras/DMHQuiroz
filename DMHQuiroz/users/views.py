@@ -31,6 +31,12 @@ def EditCapturistaView(request,id):
     return render(request, '../templates/editCapturista.html', context)
 
 
+
+
+
+
+
+
 @login_required
 def UserRegisterView(request):
     if request.method == 'POST':
