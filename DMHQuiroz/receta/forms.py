@@ -56,7 +56,7 @@ class FindRecetaForm(forms.Form):
 
 class RecetaFormEdit(forms.ModelForm):
 
-
+    changeEquivalencia= forms.BooleanField()
 
     class Meta:
         model = Receta

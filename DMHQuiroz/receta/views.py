@@ -68,12 +68,13 @@ def ListEquivalenciaGerente(request,idEmpleado,folio):
 
     equivalencias = Equivalencia.objects.filter(cbarras=cbarras)
 
-
+    print(receta.equivalencia)
     if request.method == 'POST':
         form=EquivalenciaForm(request.POST)
         if form.is_valid():
             try:
                 receta.equivalencia=form.cleaned_data.get('equivalencia')
+                print(form.cleaned_data.get('equivalencia'))
                 receta.equivalencia_obs=form.cleaned_data.get('equivalencia_obs')
                 receta.save()
             except Receta.DoesNotExist:
@@ -100,10 +101,14 @@ def ListEquivalenciaEdit(request,idEmpleado,folio):
 
 
     if request.method == 'POST':
+
         form=EquivalenciaForm(request.POST)
+        print("Antes"+str(receta.equivalencia))
         if form.is_valid():
             try:
                 receta.equivalencia=form.cleaned_data.get('equivalencia')
+                print(form.cleaned_data.get('equivalencia'))
+                print("DESPUES"+str(receta.equivalencia))
                 receta.equivalencia_obs=form.cleaned_data.get('equivalencia_obs')
                 receta.save()
             except Receta.DoesNotExist:
@@ -235,6 +240,9 @@ def EditReceta(request,idEmpleado,idReceta):
 
 
 
+    equivalenciabefore = receta.has_Equivalencia
+
+
     # FORM
     if request.method == 'POST':
         print('entre a post')
@@ -268,13 +276,28 @@ def EditReceta(request,idEmpleado,idReceta):
 
             receta.save()
 
+            print('Q'+str(form.cleaned_data.get('changeEquivalencia')))
+            #no tenia equivalencia y despues tuvo equivalencia
+            if ((form.cleaned_data.get('has_Equivalencia') == True) and equivalenciabefore==False ):
+                return HttpResponseRedirect('EditEquivalencia/')
+            #tenia equivalencia, ahora no
+            elif((form.cleaned_data.get('has_Equivalencia') == False) and equivalenciabefore==True):
+                receta.equivalencia=None
+                receta.equivalencia_obs=None
+                receta.save()
+                return HttpResponseRedirect('/receta/registeredRecetaGerente/')
+            #no hay modificacion
+            elif ((form.cleaned_data.get('has_Equivalencia') == False) and equivalenciabefore == False):
+                return HttpResponseRedirect('/receta/registeredRecetaGerente/')
 
-            if (form.cleaned_data.get('has_Equivalencia') == True):
+            #tenia equivalencia y quiere cambiar equivalencia
+            elif((form.cleaned_data.get('has_Equivalencia') == True) and equivalenciabefore == True and (form.cleaned_data.get('changeEquivalencia')==True)):
                 return HttpResponseRedirect('EditEquivalencia/')
 
-            else:
-
+            #tenia equivalencia y no se quiere cambiar equivalencia
+            elif ((form.cleaned_data.get('has_Equivalencia') == True) and equivalenciabefore == True and (form.cleaned_data.get('changeEquivalencia') == None)):
                 return HttpResponseRedirect('/receta/registeredRecetaGerente/')
+
 
         else:
             print('entre a not valid')

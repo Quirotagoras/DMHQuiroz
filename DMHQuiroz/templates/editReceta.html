@@ -50,7 +50,9 @@
             $('.datepicker').datepicker({format: 'mm/dd/yyyy',
                                  changeMonth: true,
                                  changeYear: true,
-                                yearRange: [2019,2080]});
+                                yearRange: [2019,2080]
+
+            });
 
 
          $('input.autocomplete').autocomplete({
@@ -76,10 +78,13 @@
             $('select').formSelect();
 
         // Initialize materialize data picker
-            $('.datepicker').datepicker({format: 'mm/dd/yyyy',
+            $('.datepicker').datepicker({
+                                format: 'mm/dd/yyyy',
                                  changeMonth: true,
                                  changeYear: true,
-                                yearRange: [2019,2080]});
+                                yearRange: [2019,2080]
+
+            });
 
 
          $('input.autocomplete2').autocomplete({
@@ -176,6 +181,12 @@
       <label>
         <input type="checkbox"  checked class="filled-in  " name="has_Equivalencia"/>
         <span>Equivalencia</span>
+      </label>
+    </p>
+         <p>
+      <label>
+        <input type="checkbox"  class="filled-in  " name="changeEquivalencia"/>
+        <span>Cambiar Equivalencia</span>
       </label>
     </p>
         {% else %}

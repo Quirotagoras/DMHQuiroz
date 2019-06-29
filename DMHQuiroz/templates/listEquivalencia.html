@@ -56,7 +56,7 @@
 
 <table class="highlight">
 
-    <form method="POST">
+
 
     {% csrf_token %}
     {% if list %}
@@ -79,10 +79,12 @@
               <td>{{ equivalencia.cbarras_equivalente }}</td>
               <td>{{ equivalencia.descripcion_equivalente }}</td>
               <td>
-
-                  <input type="hidden" name="equivalencia" value='{{ equivalencia.pk }}'  ><button class="right btn waves-effect waves-light  pink lighten-3"  type="submit" name="action">Elegir
+                  <form method="POST">
+                      {% csrf_token %}
+                  <input type="text" value="{{ equivalencia.pk }}" name="equivalencia" id="{{ equivalencia.pk }}" multiple><button class="right btn waves-effect waves-light  pink lighten-3"  type="submit" name="action">Elegir{{ equivalencia.pk }}
                   <i class="material-icons right  pink lighten-3">add</i></input>
                     </button>
+                  </form>
 
               </td>
           </tr>
@@ -105,7 +107,7 @@
     <i class="material-icons right pink lighten-3">done</i>
   </button>
 
-        </form>
+
 
       </table>
 
