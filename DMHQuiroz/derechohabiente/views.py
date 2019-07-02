@@ -7,12 +7,59 @@ from django.contrib.auth.decorators import login_required
 from users.models import Capturista,Gerente
 from django.contrib.auth.models import User
 from farmacia.models import Farmacia
+from .models import  DerechoHabiente
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
+
+def DerechoList (request,idEmpleado):
+    model = Gerente.objects.get(user_id=idEmpleado)
+    id_farmacia = model.farmacia_id
+    habientes_list = DerechoHabiente.objects.filter(farmacia=id_farmacia)
+    page = request.GET.get('page',1)
+    paginator = Paginator(habientes_list,2)
+    try:
+        habientes = paginator.page(page)
+    except PageNotAnInteger:
+        habientes = paginator.page(1)
+    except EmptyPage:
+        habientes = paginator.page(paginator.num_pages)
+
+    return render(request,'../templates/listDerecho.html',{'habientes':habientes})
+
+
 
 def SuccessRegister(request):
     return render(request,'../templates/successDerecho.html')
 
 def SuccessRegisterGerente(request):
     return render(request,'../templates/successDerechoGerente.html')
+
+def editDerecho(request,idEmpleado,idDerecho):
+    habiente = DerechoHabiente.objects.get(pk=idDerecho)
+
+    if request.method=='POST':
+        form = DerechoHabienteForm(request.POST)
+        if form.is_valid():
+            habiente.ficha = form.cleaned_data.get('ficha')
+            habiente.codigo = form.cleaned_data.get('codigo')
+            habiente.org = form.cleaned_data.get('org')
+
+            habiente.nombre = form.cleaned_data.get('nombre')
+            habiente.calle_num = form.cleaned_data.get('calle_num')
+            habiente.colonia = form.cleaned_data.get('colonia')
+
+            habiente.cp = form.cleaned_data.get('cp')
+            habiente.telefono = form.cleaned_data.get('telefono')
+            habiente.email = form.cleaned_data.get('email')
+            habiente.save()
+            return HttpResponseRedirect('/derechoHabiente/registeredDerechoHabienteGerente/')
+    else:
+        form = DerechoHabienteForm(request.POST)
+
+
+    context={'Form':form,'habiente':habiente}
+    return render(request, '../templates/editDerechoHabiente.html',context)
+
 
 @login_required
 def RegisterDerechoHabiente(request,idEmpleado):

@@ -19,7 +19,6 @@ def SuccessRegisterGerente(request):
 
 
 def DoctorList (request,idEmpleado):
-
     model = Gerente.objects.get(user_id=idEmpleado)
     id_farmacia = model.farmacia_id
     doctor_list = Doctor.objects.filter(farmacia=id_farmacia)
@@ -33,6 +32,12 @@ def DoctorList (request,idEmpleado):
         doctors = paginator.page(paginator.num_pages)
 
     return render(request,'../templates/listDoctors.html',{'doctors':doctors})
+
+
+
+
+
+
 
 
 def editDoctor(request,idEmpleado,idDoctor):

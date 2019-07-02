@@ -1,0 +1,60 @@
+{% extends 'base_gerente.html' %}
+
+{% block content %}
+
+<ul>
+    <li><h2 class="pink-text text-lighten-3">Derecho habientes
+    <i class="medium material-icons ">account_box</i>
+
+    <li class="divider pink lighten-3"></li>
+
+</ul>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Ficha</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    {% for habiente in habientes %}
+      <tr>
+        <td>{{ habiente.nombre }}</td>
+        <td>{{ habiente.ficha }}</td>
+          <td>
+            <button class="right btn waves-effect waves-light  pink lighten-3"  type="submit" name="action"><a href="edit/{{ habiente.pk }}" style="color: white">Edit
+              <i class="material-icons right  pink lighten-3">border_color</i></a></input>
+                    </button>
+          </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% if habientes.has_other_pages %}
+  <ul class="pagination">
+    {% if habientes.has_previous %}
+
+      <li class="waves-effect pink lighten-3 "><a style="color:white" href="?page={{ habientes.previous_page_number }}"><i class="material-icons">chevron_left</i></a></li>
+    {% else %}
+
+    {% endif %}
+    {% for i in habientes.paginator.page_range %}
+      {% if habientes.number == i %}
+
+      <li class="active pink lighten-3 "><a href="#!">{{ i }}</a></li>
+      {% else %}
+        <li><a href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if habientes.has_next %}
+      <li class="waves-effect pink lighten-3"><a style="color:white"href="?page={{ habientes.next_page_number }}"><i class="material-icons">chevron_right</i></a></li>
+
+    {% endif %}
+  </ul>
+{% endif %}
+
+
+{% endblock %}

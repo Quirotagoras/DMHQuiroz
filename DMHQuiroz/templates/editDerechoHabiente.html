@@ -1,0 +1,103 @@
+{% extends "base_gerente.html" %}
+
+{% block content %}
+
+<ul>
+    <li><h2 class="pink-text text-lighten-3">Editar Derecho Habiente
+
+    <i class="medium material-icons ">border_color</i></h2></li>
+    <h5 class="pink-text text-lighten-3">{{ habiente.pk }} </h5>
+    <li class="divider pink lighten-3"></li>
+</ul>
+
+<form method="POST">
+
+
+    {% csrf_token %}
+
+    {% if Form.non_field_errors %}
+    <li class="divider red"></li>
+    <li class="divider red"></li>
+    <h6 style="color: #cc1111">Error :{{ Form.non_field_errors }}</h6>
+    <li class="divider red"></li>
+    <li class="divider red"></li>
+    {% endif %}
+
+
+
+  <div class="input-field ">
+           <label class="active">Ficha:</label>
+            <input type="text"  name="ficha"  value='{{ habiente.ficha }}' maxlength="100" required="">
+    </div>
+
+
+
+
+    <div class="input-field ">
+           <label class="active">Codigo:</label>
+            <input type="text" name="codigo"  value="{{ habiente.codigo }}"maxlength="100" required="" id="id_doctor">
+    </div>
+
+
+
+     <div class="input-field ">
+           <label class="active">Organizacion:</label>
+            <input type="text" name="org" value="{{ habiente.org }}" maxlength="100" required="">
+    </div>
+
+
+
+   <div class="input-field ">
+           <label class="active">Nombre:</label>
+            <input type="text" name="nombre" value="{{ habiente.nombre }}" maxlength="100" required="" id="">
+    </div>
+<div class="input-field">
+
+      <label class="active">Calle y numero:</label>
+    <input type="text" value="{{ habiente.calle_num }}"name="calle_num">
+
+
+</div>
+
+     <div class="input-field">
+
+      <label class="active">Colonia:</label>
+    <input type="text" value="{{ habiente.colonia }}" name="colonia">
+    </div>
+
+
+    <div class="input-field">
+
+      <label class="active">Codigo Postal:</label>
+    <input type="number" value="{{ habiente.cp }}"name="cp">
+    </div>
+
+    <div class="input-field">
+
+      <label class="active">Telefono:</label>
+    <input type="text" value="{{ habiente.telefono }}"name="telefono">
+    </div>
+
+      <div class="input-field">
+
+      <label class="active">Email:</label>
+    <input type="email" value="{{ habiente.email }}"name="email">
+    </div>
+
+
+    <div>
+
+
+    </div>
+
+
+
+
+   <button class="btn waves-effect waves-light pink lighten-3" type="submit" name="action">Terminar
+    <i class="material-icons right pink lighten-3">done</i>
+  </button>
+    <pre></pre>
+
+</form>
+{% endblock %}
+
