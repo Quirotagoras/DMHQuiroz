@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
-from .views import RegisterDoctor,SuccessRegister,SuccessRegisterGerente,RegisterDoctorGerente
+from .views import RegisterDoctor,SuccessRegister,SuccessRegisterGerente,RegisterDoctorGerente,DoctorList,editDoctor
 from .views import Doctor
 from dal import autocomplete
 
@@ -24,6 +24,8 @@ from dal import autocomplete
 urlpatterns = [
     path('<int:idEmpleado>',RegisterDoctor,name="RegisterDoctor"),
     path('<int:idEmpleado>/Gerente',RegisterDoctorGerente,),
+    path('<int:idEmpleado>/listDoctores',DoctorList,),
+    path('<int:idEmpleado>/edit/<int:idDoctor>',editDoctor,),
     path('registeredDoctor/',SuccessRegister),
     path('registeredDoctorGerente/',SuccessRegisterGerente,),
 

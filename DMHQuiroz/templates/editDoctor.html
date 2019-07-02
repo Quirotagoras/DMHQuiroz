@@ -1,0 +1,95 @@
+{% extends "base_gerente.html" %}
+
+{% block content %}
+
+<ul>
+    <li><h2 class="pink-text text-lighten-3">Editar Doctor
+
+    <i class="medium material-icons ">border_color</i></h2></li>
+    <h5 class="pink-text text-lighten-3">{{ doctor.pk }} </h5>
+    <li class="divider pink lighten-3"></li>
+</ul>
+
+<form method="POST">
+
+
+    {% csrf_token %}
+
+    {% if Form.non_field_errors %}
+    <li class="divider red"></li>
+    <li class="divider red"></li>
+    <h6 style="color: #cc1111">Error :{{ Form.non_field_errors }}</h6>
+    <li class="divider red"></li>
+    <li class="divider red"></li>
+    {% endif %}
+
+
+
+  <div class="input-field ">
+           <label class="active">Nombre:</label>
+            <input type="text"  name="first_name"  value='{{ doctor.first_name }}' maxlength="100" required="">
+    </div>
+
+
+
+
+    <div class="input-field ">
+           <label class="active">Apellido Paterno:</label>
+            <input type="text" name="last_name" class="autocomplete" value="{{ doctor.last_name }}"maxlength="100" required="" id="id_doctor">
+    </div>
+
+
+
+     <div class="input-field ">
+           <label class="active">Apellido Materno:</label>
+            <input type="text" name="last_name2" value="{{ doctor.last_name2 }}" maxlength="100" required="">
+    </div>
+
+
+
+   <div class="input-field ">
+           <label class="active">Cedula Profesional:</label>
+            <input type="text" name="cedula" value="{{ doctor.cedula }}" maxlength="100" required="" id="">
+    </div>
+<div class="input-field">
+
+      <label class="active">Rfc:</label>
+    <input type="text" value="{{ doctor.rfc }}"name="rfc">
+
+
+</div>
+
+    <div class="input-field">
+
+      <label class="active">Telefono:</label>
+    <input type="number" value="{{ doctor.telefono }}"name="telefono">
+    </div>
+
+    <div class="input-field">
+
+      <label class="active">Calle y numero:</label>
+    <input type="text" value="{{ doctor.calle_num }}"name="calle_num">
+    </div>
+
+     <div class="input-field">
+
+      <label class="active">Codigo postal:</label>
+    <input type="number" value="{{ doctor.cp }}"name="cp">
+    </div>
+
+    <div>
+
+
+    </div>
+
+
+
+
+   <button class="btn waves-effect waves-light pink lighten-3" type="submit" name="action">Terminar
+    <i class="material-icons right pink lighten-3">done</i>
+  </button>
+    <pre></pre>
+
+</form>
+{% endblock %}
+
