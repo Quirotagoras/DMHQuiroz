@@ -16,7 +16,7 @@ Including another URLconf
 from django.urls import path
 from .views import RegisterDoctor,SuccessRegister,SuccessRegisterGerente,RegisterDoctorGerente,DoctorList,editDoctor
 from .views import Doctor
-from dal import autocomplete
+
 
 
 
