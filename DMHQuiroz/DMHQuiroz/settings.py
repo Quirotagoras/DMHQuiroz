@@ -25,7 +25,7 @@ SECRET_KEY = 'hlip8o*#4c&omho-r#q%!2oa%5b^=xpd#9kzbq)y)0br_v848j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['3.15.23.126']
 
 
 # Application definition
@@ -89,9 +89,9 @@ WSGI_APPLICATION = 'DMHQuiroz.wsgi.application'
 DATABASES = {
     'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'DMHQuiroz',
-            'USER': 'postgres',
-            'PASSWORD': 'quirotagoras1595',
+            'NAME': 'dmhquiroz',
+            'USER': 'postgres_admin',
+            'PASSWORD': 'Barri1595#',
             'HOST': '127.0.0.1',
             'PORT': '5432',
         }
@@ -138,5 +138,6 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 STATICFILES_DIRS=(os.path.join(BASE_DIR,'static'),
 )
+
 
 STATIC_URL = '/static/'
