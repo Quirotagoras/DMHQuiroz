@@ -57,7 +57,7 @@ class Product(models.Model):
     grupo = models.CharField(max_length=2,null = True)
     laboratorio = models.TextField()
     pais = models.TextField()
-    tlc = models.CharField(max_length=10)
+    tlc = models.TextField()
     pumpvp = models.FloatField()
     modalidad_real = models.CharField(max_length=10)
 
