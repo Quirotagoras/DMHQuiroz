@@ -42,7 +42,7 @@ class Product(models.Model):
     nombre_comercial=models.CharField(max_length=200)
     presentacion = models.CharField(max_length=200)
     empaque = models.CharField(max_length=50)
-    dcantidad = models.PositiveIntegerField()
+    dcantidad = models.FloatField()
     unidad_medida = models.CharField("Unidad de medida", choices=unidades, max_length=20)
     presenta = models.CharField(choices=presentaciones,max_length=100)
     gramaje = models.CharField(max_length=10)
