@@ -45,21 +45,21 @@ class Product(models.Model):
     dcantidad = models.FloatField()
     unidad_medida = models.CharField("Unidad de medida", choices=unidades, max_length=20)
     presenta = models.CharField(choices=presentaciones,max_length=100)
-    gramaje = models.CharField(max_length=10)
+    gramaje = models.TextField()
     cve_farmacia = models.IntegerField()
     costo_venta = models.FloatField()
     costo_compra = models.FloatField()
     iva = models.IntegerField()
-    proveedor = models.CharField(max_length=20)
+    proveedor = models.TextField()
     stock = models.IntegerField()
     modificacion = models.CharField(max_length=3,null=True)
     registro= models.CharField(max_length=20)
     grupo = models.CharField(max_length=2,null = True)
-    laboratorio = models.CharField(max_length=80)
-    pais = models.CharField(max_length=20)
-    tlc = models.CharField(max_length=3)
+    laboratorio = models.TextField()
+    pais = models.TextField
+    tlc = models.CharField(max_length=10)
     pumpvp = models.FloatField()
-    modalidad_real = models.CharField(max_length=2)
+    modalidad_real = models.CharField(max_length=10)
 
 
 
