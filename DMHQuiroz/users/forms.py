@@ -6,7 +6,7 @@ from .models import  Capturista
 
 class LoginForm(forms.Form):
     username = forms.CharField(label="Nombre de usuario")
-    password = forms.PasswordInput()
+    password = forms.CharField(label="Contrasena")
 
 
 class UserForm(ModelForm):
