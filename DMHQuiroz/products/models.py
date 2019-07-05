@@ -54,7 +54,7 @@ class Product(models.Model):
     stock = models.IntegerField()
     modificacion = models.CharField(max_length=3,null=True)
     registro= models.CharField(max_length=20)
-    grupo = models.CharField(max_length=2,null = True)
+    grupo = models.TextField(null = True)
     laboratorio = models.TextField()
     pais = models.TextField()
     tlc = models.TextField()
