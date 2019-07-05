@@ -55,7 +55,7 @@ class Product(models.Model):
     modificacion = models.CharField(max_length=3,null=True)
     registro= models.CharField(max_length=20)
     grupo = models.CharField(max_length=2,null = True)
-    laboratorio = models.CharField(max_length=20)
+    laboratorio = models.CharField(max_length=80)
     pais = models.CharField(max_length=20)
     tlc = models.CharField(max_length=3)
     pumpvp = models.FloatField()
