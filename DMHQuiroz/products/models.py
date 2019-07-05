@@ -38,9 +38,9 @@ class Product(models.Model):
     ]
     cbarras=models.BigIntegerField("Codgio de Barras",unique=True)
     ubicacion = models.CharField(max_length=100)
-    nombre_activo = models.CharField(max_length=200)
-    nombre_comercial=models.CharField(max_length=200)
-    presentacion = models.CharField(max_length=200)
+    nombre_activo = models.TextField()
+    nombre_comercial=models.TextField()
+    presentacion = models.TextField()
     empaque = models.CharField(max_length=50)
     dcantidad = models.FloatField()
     unidad_medida = models.CharField("Unidad de medida", choices=unidades, max_length=20)
