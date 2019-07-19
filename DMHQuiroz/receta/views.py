@@ -246,7 +246,6 @@ def EditReceta(request,idEmpleado,idReceta):
     receta = Receta.objects.get(nur=idReceta)
 
 
-
     equivalenciabefore = receta.has_Equivalencia
 
 
@@ -261,8 +260,11 @@ def EditReceta(request,idEmpleado,idReceta):
             print('entre a valid')
             #autocomplete derechohabiente
             ficha = request.POST.get('ficha_derechohabiente')
+
             parsed_ficha = parse(ficha)
-            ficha_id = DerechoHabiente.objects.get(ficha=parsed_ficha)
+            parsed_codigo = parseCode(ficha)
+            ficha_id = DerechoHabiente.objects.get(ficha=parsed_ficha, codigo=parsed_codigo)
+            print(str(ficha_id))
 
             #autocomplete medicamento
             medicamento = request.POST.get('cbarras')
