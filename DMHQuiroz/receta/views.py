@@ -155,7 +155,7 @@ def RegisterReceta(request,idEmpleado):
 
 
                 new_derechohabiente = Receta(
-
+                    NUR = form.cleaned_data.get('NUR'),
                     folio_receta=form.cleaned_data.get("folio_receta"),
                     status=form.cleaned_data.get("status"),
                     fecha_expide=form.cleaned_data.get("fecha_expide"),

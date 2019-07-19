@@ -98,7 +98,7 @@ class RecetaForm(forms.ModelForm):
 
     class Meta:
         model = Receta
-        fields = ['folio_receta' , 'status' , 'fecha_expide' , 'fecha_recibe' , 'fecha_surte' ,'doctor','ficha_derechohabiente','cbarras','cantidad','has_Equivalencia']
+        fields = ['NUR','folio_receta' , 'status' , 'fecha_expide' , 'fecha_recibe' , 'fecha_surte' ,'doctor','ficha_derechohabiente','cbarras','cantidad','has_Equivalencia']
 
 
         widgets = {
@@ -122,7 +122,7 @@ class RecetaForm(forms.ModelForm):
     def is_valid(self):
         folio = self.cleaned_data.get('folio_receta')
         cd = self.cleaned_data
-        if self.data['ficha_derechohabiente']  and self.data['cbarras'] and len(folio)==12 and (cd['folio2'] == cd['folio_receta']):
+        if self.data['nur'] and self.data['ficha_derechohabiente']  and self.data['cbarras'] and len(folio)==12 and self.data['cantidad'] and (cd['folio2'] == cd['folio_receta']):
             return True
 
 
