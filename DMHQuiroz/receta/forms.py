@@ -122,9 +122,8 @@ class RecetaForm(forms.ModelForm):
     def is_valid(self):
         folio = self.cleaned_data.get('folio_receta')
         cd = self.cleaned_data
-        if self.data['nur'] and self.data['ficha_derechohabiente']  and self.data['cbarras'] and len(folio)==12 and self.data['cantidad'] and (cd['folio2'] == cd['folio_receta']):
+        if self.data['NUR'] and self.data['ficha_derechohabiente']  and self.data['cbarras'] and len(folio)==12 and self.data['cantidad'] and (cd['folio2'] == cd['folio_receta']):
             return True
-
 
         else:
             return False
