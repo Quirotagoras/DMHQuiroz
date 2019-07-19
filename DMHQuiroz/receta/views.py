@@ -24,6 +24,11 @@ def parse(string):
     value = parsed[0]
     return value
 
+def parseCode(string):
+    parsed = string.split()
+    value = parsed [1]
+    return value
+
 
 
 def SuccessRegister(request):
@@ -383,11 +388,15 @@ def RegisterRecetaGerente(request,idEmpleado):
                 return HttpResponseRedirect('/recetaGerente/'+str(idEmpleado)+'/Gerente')
             except Receta.DoesNotExist:
                 ficha = request.POST.get('ficha_derechohabiente')
+
                 parsed_ficha = parse(ficha)
-                ficha_id = DerechoHabiente.objects.get(ficha=parsed_ficha)
+                parsed_codigo = parseCode(ficha)
+                ficha_id = DerechoHabiente.objects.get(ficha=parsed_ficha, codigo=parsed_codigo)
+                print(str(ficha_id))
 
                 medicamento = request.POST.get('cbarras')
                 parsed_medicamento = parse(medicamento)
+
                 medicamento_id = Product.objects.get(cbarras=parsed_medicamento)
 
 
@@ -454,7 +463,7 @@ def RegisterRecetaGerente(request,idEmpleado):
         doctores.append("Dr. "+doctor.first_name+" "+doctor.last_name+' '+doctor.last_name2)
 
     for derechohabiente in DerechoHabientetemp:
-        derechohabientes.append(str(derechohabiente.ficha) + " " +", Codigo: "+ str(derechohabiente.codigo) + ", Nombre : " + derechohabiente.nombre + " " + ", Organismo : "+derechohabiente.org)
+        derechohabientes.append(str(derechohabiente.ficha) + " "+str(derechohabiente.codigo)+" "+", Codigo: "+ str(derechohabiente.codigo) + ", Nombre : " + derechohabiente.nombre + " " + ", Organismo : "+derechohabiente.org)
 
 
     for medicamento in Medicamentotemp:

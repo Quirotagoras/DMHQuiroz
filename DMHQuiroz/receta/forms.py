@@ -93,6 +93,7 @@ class RecetaFormEdit(forms.ModelForm):
 
 class RecetaForm(forms.ModelForm):
     folio2 = forms.CharField(label='Repetir Contrasena')
+    nur2 = forms.CharField(label="Repetir Nur")
 
 
 
@@ -121,8 +122,9 @@ class RecetaForm(forms.ModelForm):
 
     def is_valid(self):
         folio = self.cleaned_data.get('folio_receta')
+        nur = self.cleaned_data.get('nur')
         cd = self.cleaned_data
-        if self.data['nur'] and self.data['ficha_derechohabiente']  and self.data['cbarras'] and len(folio)==12 and self.data['cantidad'] and (cd['folio2'] == cd['folio_receta']):
+        if self.data['nur'] and self.data['ficha_derechohabiente']  and self.data['cbarras'] and len(folio)==7 and self.data['cantidad'] and (cd['folio2'] == cd['folio_receta'])and len(nur)==12 and (cd['nur2'] == cd['nur']):
             return True
 
         else:
@@ -133,11 +135,18 @@ class RecetaForm(forms.ModelForm):
     def clean(self):
         cd = self.cleaned_data
         folio = self.cleaned_data.get('folio_receta')
-        if len(folio)!=12:
-            raise forms.ValidationError('Folio de receta debe de ser de 12 caracteres')
+        nur = self.cleaned_data.get('nur')
+        if len(folio)!=7:
+            raise forms.ValidationError('Folio de receta debe de ser de 7 caracteres')
+
+        if len(nur)!=12:
+            raise forms.ValidationError('NUR debe de ser de 12 caracteres')
 
         if cd['folio2'] != cd['folio_receta']:
             raise forms.ValidationError('Asegurese que los folios de receta coinciden ')
+
+        if cd['nur2'] != cd['nur']:
+            raise forms.ValidationError('Asegurese que NUR coincide ')
 
 
 
