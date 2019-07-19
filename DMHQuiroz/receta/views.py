@@ -95,7 +95,7 @@ def ListEquivalenciaEdit(request,idEmpleado,folio):
 
     model = Gerente.objects.get(user_id=idEmpleado)
     id_farmacia = model.farmacia_id
-    receta = Receta.objects.get(folio_receta=folio,farmacia=id_farmacia)
+    receta = Receta.objects.get(nur=folio,farmacia=id_farmacia)
     medicamento = receta.cbarras
     cantidad = receta.cantidad
     nombre_medicamento = medicamento.nombre_activo+ " " + medicamento.nombre_comercial
@@ -348,7 +348,7 @@ def EditReceta(request,idEmpleado,idReceta):
     folio_receta = receta.folio_receta
     derecho = receta.ficha_derechohabiente.pk
     derechohabiente = DerechoHabiente.objects.get(id=derecho)
-    derechotemp = (str(derechohabiente.ficha) + " " + ", Codigo: " + str(
+    derechotemp = (str(derechohabiente.ficha) + " " +str(derechohabiente.codigo)+" "+ ", Codigo: " + str(
         derechohabiente.codigo) + ", Nombre : " + derechohabiente.nombre + " " + ", Organismo : " + derechohabiente.org)
 
     fecha_expide = receta.fecha_expide
@@ -362,7 +362,7 @@ def EditReceta(request,idEmpleado,idReceta):
     # Pasar a contexto
 
     context = {'Form': form, 'DoctoresAutocomplete': doctores, 'DHAutocomplete': derechohabientes,
-               'medicamentoAutcomplete': medicamentos,'receta':folio_receta,'objecto_receta':receta,'choicederecho':derechotemp,'choice_medicamento':medicamentostring}
+               'medicamentoAutcomplete': medicamentos,'receta':receta,'objecto_receta':receta,'choicederecho':derechotemp,'choice_medicamento':medicamentostring}
 
     return render(request, '../templates/editReceta.html', context)
 
