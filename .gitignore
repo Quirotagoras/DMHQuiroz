@@ -108,11 +108,11 @@ venv.bak/
 DMHQuiroz/settings.py
 
 #Migrations
-derechohabiente/migrations/
-doctores/migrations/
-equivalencia/migrations/
-farmacia/migrations/
-products/migrations/
-receta/migrations/
-users/migrations/
+derechohabiente/migrations
+doctores/migrations
+equivalencia/migrations
+farmacia/migrations
+products/migrations
+receta/migrations
+users/migrations
 
