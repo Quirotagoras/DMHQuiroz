@@ -149,13 +149,14 @@ def RegisterReceta(request,idEmpleado):
                 medicamento = request.POST.get('cbarras')
                 parsed_medicamento = parse(medicamento)
                 medicamento_id = Product.objects.get(cbarras=parsed_medicamento)
+                print("NUR:"+form.cleaned_data.get("nur"))
 
 
 
 
 
                 new_derechohabiente = Receta(
-                    NUR = form.cleaned_data.get('NUR'),
+                    nur = form.cleaned_data.get("nur"),
                     folio_receta=form.cleaned_data.get("folio_receta"),
                     status=form.cleaned_data.get("status"),
                     fecha_expide=form.cleaned_data.get("fecha_expide"),
@@ -393,7 +394,7 @@ def RegisterRecetaGerente(request,idEmpleado):
 
 
                 new_derechohabiente = Receta(
-
+                    nur = form.cleaned_data.get("nur"),
                     folio_receta=form.cleaned_data.get("folio_receta"),
                     status=form.cleaned_data.get("status"),
                     fecha_expide=form.cleaned_data.get("fecha_expide"),

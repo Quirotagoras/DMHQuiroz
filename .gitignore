@@ -102,3 +102,17 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+
+#Settings
+DMHQuiroz/settings.py
+
+#Migrations
+derechohabiente/migrations/
+doctores/migrations/
+equivalencia/migrations/
+farmacia/migrations/
+products/migrations/
+receta/migrations/
+users/migrations/
+
