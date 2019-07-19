@@ -243,7 +243,7 @@ def EditReceta(request,idEmpleado,idReceta):
     username = model.user
     user_id = User.objects.get(username=username)
     id_farmacia = model.farmacia_id
-    receta = Receta.objects.get(folio_receta=idReceta)
+    receta = Receta.objects.get(nur=idReceta)
 
 
 
@@ -268,8 +268,6 @@ def EditReceta(request,idEmpleado,idReceta):
             medicamento = request.POST.get('cbarras')
             parsed_medicamento = parse(medicamento)
             medicamento_id = Product.objects.get(cbarras=parsed_medicamento)
-
-
             receta.status=form.cleaned_data.get("status")
             receta.fecha_expide = form.cleaned_data.get("fecha_expide")
             receta.fecha_recibe = form.cleaned_data.get("fecha_recibe")

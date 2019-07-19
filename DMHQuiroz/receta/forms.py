@@ -33,7 +33,7 @@ class FindRecetaForm(forms.Form):
 
         try:
 
-            Receta.objects.get(folio_receta=receta, farmacia=farmacia)
+            Receta.objects.get(nur=receta, farmacia=farmacia)
 
             return True
         except Receta.DoesNotExist:
@@ -47,7 +47,7 @@ class FindRecetaForm(forms.Form):
         gerente = Gerente.objects.get(user_id=pk)
         farmacia = gerente.farmacia
 
-        if Receta.objects.get(folio_receta=receta,farmacia=farmacia):
+        if Receta.objects.get(nur=receta,farmacia=farmacia):
             raise self.ValidationError('Ahuevo')
         else:
             raise self.ValidationError('Receta no existe.')
