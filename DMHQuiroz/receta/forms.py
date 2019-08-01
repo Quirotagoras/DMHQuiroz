@@ -60,7 +60,7 @@ class RecetaFormEdit(forms.ModelForm):
 
     class Meta:
         model = Receta
-        fields = [ 'status' , 'fecha_expide' , 'fecha_recibe' , 'fecha_surte' ,'doctor','ficha_derechohabiente','cbarras','cantidad','has_Equivalencia']
+        fields = ['fecha_expide' , 'fecha_recibe' , 'fecha_surte' ,'doctor','ficha_derechohabiente','cbarras','cantidad','has_Equivalencia']
 
 
         widgets = {
@@ -99,7 +99,7 @@ class RecetaForm(forms.ModelForm):
 
     class Meta:
         model = Receta
-        fields = ['nur','folio_receta' , 'status' , 'fecha_expide' , 'fecha_recibe' , 'fecha_surte' ,'doctor','ficha_derechohabiente','cbarras','cantidad','has_Equivalencia']
+        fields = ['nur','folio_receta' , 'fecha_expide' , 'fecha_recibe' , 'fecha_surte' ,'doctor','ficha_derechohabiente','cbarras','cantidad','has_Equivalencia']
 
 
         widgets = {

@@ -10,7 +10,6 @@ from django.contrib.auth.models import User
 class Receta(models.Model):
     nur = models.CharField('NUR',max_length=255)
     folio_receta = models.CharField("Folio de Receta",max_length=255)
-    status = models.CharField(max_length=100)
     fecha_expide = models.DateTimeField("Fecha de expedicion")
     fecha_recibe = models.DateTimeField("Fecha que recibe")
     fecha_surte = models.DateTimeField("Fecha que surte")

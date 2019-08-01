@@ -165,7 +165,7 @@ def RegisterReceta(request,idEmpleado):
                 new_derechohabiente = Receta(
                     nur = form.cleaned_data.get("nur"),
                     folio_receta=form.cleaned_data.get("folio_receta"),
-                    status=form.cleaned_data.get("status"),
+
                     fecha_expide=form.cleaned_data.get("fecha_expide"),
                     fecha_recibe=form.cleaned_data.get("fecha_recibe"),
                     fecha_surte=form.cleaned_data.get("fecha_surte"),
@@ -270,7 +270,7 @@ def EditReceta(request,idEmpleado,idReceta):
             medicamento = request.POST.get('cbarras')
             parsed_medicamento = parse(medicamento)
             medicamento_id = Product.objects.get(cbarras=parsed_medicamento)
-            receta.status=form.cleaned_data.get("status")
+
             receta.fecha_expide = form.cleaned_data.get("fecha_expide")
             receta.fecha_recibe = form.cleaned_data.get("fecha_recibe")
             receta.fecha_surte = form.cleaned_data.get("fecha_surte")
@@ -406,7 +406,7 @@ def RegisterRecetaGerente(request,idEmpleado):
                 new_derechohabiente = Receta(
                     nur = form.cleaned_data.get("nur"),
                     folio_receta=form.cleaned_data.get("folio_receta"),
-                    status=form.cleaned_data.get("status"),
+
                     fecha_expide=form.cleaned_data.get("fecha_expide"),
                     fecha_recibe=form.cleaned_data.get("fecha_recibe"),
                     fecha_surte=form.cleaned_data.get("fecha_surte"),
