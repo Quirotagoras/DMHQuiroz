@@ -5,11 +5,19 @@ from users.models import Gerente
 from dal import autocomplete
 from doctores.models import Doctor
 from .models import Receta
+from derechohabiente.models import DerechoHabiente
 
+
+def parseCode(string):
+    parsed = string.split()
+    value = parsed[1]
+    return value
+def parse(string):
+    parsed = string.split()
+    value = parsed[0]
+    return value
 
 class EquivalenciaForm(forms.ModelForm):
-
-
 
     class Meta:
         model = Receta
@@ -95,8 +103,6 @@ class RecetaForm(forms.ModelForm):
     folio2 = forms.CharField(label='Repetir Contrasena')
     nur2 = forms.CharField(label="Repetir Nur")
 
-
-
     class Meta:
         model = Receta
         fields = ['nur','folio_receta' , 'fecha_expide' , 'fecha_recibe' , 'fecha_surte' ,'doctor','ficha_derechohabiente','cbarras','cantidad','has_Equivalencia']
@@ -120,12 +126,24 @@ class RecetaForm(forms.ModelForm):
 
         }
 
+
+
+
     def is_valid(self):
+        dh = self.data['ficha_derechohabiente']
         folio = self.cleaned_data.get('folio_receta')
         nur = self.cleaned_data.get('nur')
         cd = self.cleaned_data
         if self.data['nur'] and self.data['ficha_derechohabiente']  and self.data['cbarras'] and len(folio)==7 and self.data['cantidad'] and (cd['folio2'] == cd['folio_receta'])and len(nur)==12 and (cd['nur2'] == cd['nur']):
-            return True
+            try:
+                medicamento = self.data['cbarras']
+                int(parse(dh))
+                int(parseCode(dh))
+                int(parse(medicamento))
+
+                return True
+            except ValueError:
+                return False
 
         else:
             return False
@@ -147,6 +165,26 @@ class RecetaForm(forms.ModelForm):
 
         if cd['nur2'] != cd['nur']:
             raise forms.ValidationError('Asegurese que NUR coincide ')
+
+        if self.data['ficha_derechohabiente']:# validacion derechohabiente
+            dh = self.data['ficha_derechohabiente']
+            try:
+                int(parse(dh))
+                int(parseCode(dh))
+            except ValueError:
+                raise forms.ValidationError('Derecho Habiente no existe. Se debe de dar de alta el derechohabiente y utilizar el autocompletar proporcionado por la pagina para llenar este campo.')
+
+
+        if self.data['cbarras']: #validacion Cbarras
+            medicamento = self.data['cbarras']
+            try:
+                int(parse(medicamento))
+            except ValueError:
+                raise forms.ValidationError('Medicamento no existe. Usa el autocompletar proporcionado por la pagina para llenar este campo')
+
+
+
+
 
 
 

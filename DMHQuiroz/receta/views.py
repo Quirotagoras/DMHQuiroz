@@ -151,7 +151,7 @@ def RegisterReceta(request,idEmpleado):
                 parsed_ficha = parse(ficha)
                 parsed_codigo = parseCode(ficha)
                 ficha_id = DerechoHabiente.objects.get(ficha=parsed_ficha, codigo=parsed_codigo)
-                print(str(ficha_id))
+                print("Ficha"+str(ficha_id))
 
                 medicamento = request.POST.get('cbarras')
                 parsed_medicamento = parse(medicamento)
@@ -165,7 +165,6 @@ def RegisterReceta(request,idEmpleado):
                 new_derechohabiente = Receta(
                     nur = form.cleaned_data.get("nur"),
                     folio_receta=form.cleaned_data.get("folio_receta"),
-
                     fecha_expide=form.cleaned_data.get("fecha_expide"),
                     fecha_recibe=form.cleaned_data.get("fecha_recibe"),
                     fecha_surte=form.cleaned_data.get("fecha_surte"),
@@ -382,8 +381,6 @@ def RegisterRecetaGerente(request,idEmpleado):
         print(form.errors)
 
         if form.is_valid():
-            print('entre a valid')
-
             try:
                 Receta.objects.get(folio_receta=form.cleaned_data.get('folio_receta'),farmacia_id=id_farmacia)# aqui es la validacion de un solo numero de receta por sucursal
                 return HttpResponseRedirect('/recetaGerente/'+str(idEmpleado)+'/Gerente')
@@ -393,14 +390,10 @@ def RegisterRecetaGerente(request,idEmpleado):
                 parsed_ficha = parse(ficha)
                 parsed_codigo = parseCode(ficha)
                 ficha_id = DerechoHabiente.objects.get(ficha=parsed_ficha, codigo=parsed_codigo)
-                print(str(ficha_id))
 
                 medicamento = request.POST.get('cbarras')
                 parsed_medicamento = parse(medicamento)
-
                 medicamento_id = Product.objects.get(cbarras=parsed_medicamento)
-
-
 
 
                 new_derechohabiente = Receta(
