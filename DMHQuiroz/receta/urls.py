@@ -24,9 +24,8 @@ urlpatterns = [
     path('<int:idEmpleado>/Gerente',RegisterRecetaGerente,name="RegisterRecetaGerente"),
     path('<int:idEmpleado>/<int:folio>/',ListEquivalenciaGerente,name="RegisterEquivalencia"),
     path('editReceta/',searchReceta),
-    path('editReceta/<int:idEmpleado>/<int:idReceta>/',EditReceta),
+    path('editReceta/<int:idEmpleado>/<str:idReceta>/',EditReceta),
     path('editReceta/<int:idEmpleado>/<int:folio>/EditEquivalencia/',ListEquivalenciaEdit),
-
     path('registeredReceta/',SuccessRegister,name='SuccessRegister'),
     path('registeredRecetaGerente/',SuccessRegisterGerente,name='SuccessRegisterGerente'),
 

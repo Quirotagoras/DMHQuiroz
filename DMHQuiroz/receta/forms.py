@@ -40,12 +40,9 @@ class FindRecetaForm(forms.Form):
         farmacia = gerente.farmacia
 
         try:
-
             Receta.objects.get(nur=receta, farmacia=farmacia)
-
             return True
         except Receta.DoesNotExist:
-
             return False
 
 
@@ -153,8 +150,8 @@ class RecetaForm(forms.ModelForm):
         cd = self.cleaned_data
         folio = self.cleaned_data.get('folio_receta')
         nur = self.cleaned_data.get('nur')
-        if len(folio)!=7:
-            raise forms.ValidationError('Folio de receta debe de ser de 7 caracteres')
+        if len(folio)!=10:
+            raise forms.ValidationError('Folio de receta debe de ser de 10 caracteres')
 
         if len(nur)!=12:
             raise forms.ValidationError('NUR debe de ser de 12 caracteres')
