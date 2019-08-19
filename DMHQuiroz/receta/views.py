@@ -242,9 +242,7 @@ def EditReceta(request,idEmpleado,idReceta):
     username = model.user
     user_id = User.objects.get(username=username)
     id_farmacia = model.farmacia_id
-    idReceta="'"+str(idReceta)+"'"
-    print(idReceta)
-    receta = Receta.objects.get(nur=idReceta)
+    receta = Receta.objects.get(nur=str(idReceta))
 
 
     equivalenciabefore = receta.has_Equivalencia
