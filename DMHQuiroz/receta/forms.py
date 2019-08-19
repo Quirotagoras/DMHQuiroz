@@ -134,7 +134,7 @@ class RecetaForm(forms.ModelForm):
         folio = self.cleaned_data.get('folio_receta')
         nur = self.cleaned_data.get('nur')
         cd = self.cleaned_data
-        if self.data['nur'] and self.data['ficha_derechohabiente']  and self.data['cbarras'] and len(folio)==7 and self.data['cantidad'] and (cd['folio2'] == cd['folio_receta'])and len(nur)==12 and (cd['nur2'] == cd['nur']):
+        if self.data['nur'] and self.data['ficha_derechohabiente']  and self.data['cbarras'] and len(folio)==10 and self.data['cantidad'] and (cd['folio2'] == cd['folio_receta'])and len(nur)==12 and (cd['nur2'] == cd['nur']):
             try:
                 medicamento = self.data['cbarras']
                 int(parse(dh))
