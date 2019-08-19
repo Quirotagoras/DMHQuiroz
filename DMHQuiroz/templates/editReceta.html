@@ -119,13 +119,6 @@
     {% endif %}
 
 
-
-  <div class="input-field ">
-           <label class="active">Status:</label>
-            <input type="text"  name="status"  value='{{objecto_receta.status}}' maxlength="100" required="">
-    </div>
-
-
       <div class="input-field ">
            <label class="active">Fecha que expide:</label>
             <input type="text" class="datepicker" value ='{{ objecto_receta.fecha_expide|date:'m/d/Y' }}'name="fecha_expide"  maxlength="100" required="">
