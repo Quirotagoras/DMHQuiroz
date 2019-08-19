@@ -16,7 +16,7 @@ def DerechoList (request,idEmpleado):
     id_farmacia = model.farmacia_id
     habientes_list = DerechoHabiente.objects.filter(farmacia=id_farmacia)
     page = request.GET.get('page',1)
-    paginator = Paginator(habientes_list,2)
+    paginator = Paginator(habientes_list,10)
     try:
         habientes = paginator.page(page)
     except PageNotAnInteger:

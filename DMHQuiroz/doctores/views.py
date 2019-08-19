@@ -23,7 +23,7 @@ def DoctorList (request,idEmpleado):
     id_farmacia = model.farmacia_id
     doctor_list = Doctor.objects.filter(farmacia=id_farmacia)
     page = request.GET.get('page',1)
-    paginator = Paginator(doctor_list,2)
+    paginator = Paginator(doctor_list,10)
     try:
         doctors = paginator.page(page)
     except PageNotAnInteger:

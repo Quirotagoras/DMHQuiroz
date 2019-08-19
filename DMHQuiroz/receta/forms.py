@@ -140,7 +140,6 @@ class RecetaForm(forms.ModelForm):
                 int(parse(dh))
                 int(parseCode(dh))
                 int(parse(medicamento))
-
                 return True
             except ValueError:
                 return False
@@ -172,7 +171,7 @@ class RecetaForm(forms.ModelForm):
                 int(parse(dh))
                 int(parseCode(dh))
             except ValueError:
-                raise forms.ValidationError('Derecho Habiente no existe. Se debe de dar de alta el derechohabiente y utilizar el autocompletar proporcionado por la pagina para llenar este campo.')
+                raise forms.ValidationError('Derecho Habiente no existe. Se debe de dar de alta al derecho habiente y utilizar el autocompletar proporcionado por la pagina para llenar este campo.')
 
 
         if self.data['cbarras']: #validacion Cbarras
@@ -180,7 +179,7 @@ class RecetaForm(forms.ModelForm):
             try:
                 int(parse(medicamento))
             except ValueError:
-                raise forms.ValidationError('Medicamento no existe. Usa el autocompletar proporcionado por la pagina para llenar este campo')
+                raise forms.ValidationError('Medicamento no existe. Utiliza el autocompletar proporcionado por la pagina para llenar este campo')
 
 
 
