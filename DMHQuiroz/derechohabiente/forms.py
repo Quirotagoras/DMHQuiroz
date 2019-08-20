@@ -11,7 +11,6 @@ class DerechoHabienteForm(ModelForm):
 
 
         widgets = {
-            'required' : True,
             'ficha': forms.TextInput(attrs={'placeholder' :'Inserte ficha de derecho habiente aqui'}),
             'codigo': forms.TextInput(attrs={'placeholder': 'Inserte codigo de derecho habiente aqui'}),
             'org': forms.NumberInput(attrs={'placeholder': 'Inserte organizacion de derecho habiente aqui'}),
@@ -19,8 +18,6 @@ class DerechoHabienteForm(ModelForm):
             'calle_num': forms.TextInput(attrs={'placeholder': 'Inserte calle y numero de residencia  de derecho habiente aqui'}),
             'colonia': forms.TextInput(
                 attrs={'placeholder': 'Inserte colonia de residencia  de derecho habiente aqui'}),
-
-
             'cp': forms.TextInput(attrs={'placeholder': 'Inserte cp de residencia de derecho habiente aqui'}),
             'telefono': forms.TextInput(attrs={'placeholder': 'Inserte telefono de derecho habiente aqui'}),
             'email': forms.EmailInput(attrs={'placeholder': 'Inserte email de derecho habiente aqui'}),
@@ -29,6 +26,14 @@ class DerechoHabienteForm(ModelForm):
 
 
         }
+
+        def is_valid(self):
+            cd = self.cleaned_data
+            if (cd['ficha'] and cd['codigo'] and cd['org'] and ['nombre'] and ['calle_num'] and['colonia'] and ['cp'] and ['telefono'] and ['email']):
+                return True
+            else:
+                return False
+
 
     #def clean(self):
      #   cleaned_data = super().clean()

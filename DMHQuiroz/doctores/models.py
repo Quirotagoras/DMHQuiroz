@@ -44,7 +44,7 @@ class Doctor(models.Model):
     last_name2 = models.CharField('Apellido Materno',max_length=50)
     cedula = models.CharField('Cedula Profesional',max_length=50)
     telefono = models.BigIntegerField()
-    rfc = models.CharField(max_length=50)
+
     calle_num = models.CharField("Calle y numero",max_length=100)
     estado = models.CharField(max_length=100,choices=estado_choices)
     municipio = models.CharField(max_length=100)

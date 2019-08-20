@@ -51,7 +51,7 @@ def editDoctor(request,idEmpleado,idDoctor):
             doctor.last_name2 = form.cleaned_data.get("last_name2")
             doctor.cedula = form.cleaned_data.get('cedula')
             doctor.telefono = form.cleaned_data.get("telefono")
-            doctor.rfc = form.cleaned_data.get("rfc")
+
             doctor.calle_num = form.cleaned_data.get('calle_num')
             doctor.cp = form.cleaned_data.get("cp")
             doctor.save()
@@ -85,7 +85,7 @@ def RegisterDoctor(request,idEmpleado):
                 last_name2=form.cleaned_data.get("last_name2"),
                 cedula=form.cleaned_data.get("cedula"),
                 telefono=form.cleaned_data.get("telefono"),
-                rfc=form.cleaned_data.get("rfc"),
+
                 calle_num=form.cleaned_data.get("calle_num"),
                 farmacia=farmacia,
                 estado=farmacia_estado,
@@ -121,7 +121,7 @@ def RegisterDoctorGerente(request,idEmpleado):
                 last_name2=form.cleaned_data.get("last_name2"),
                 cedula=form.cleaned_data.get("cedula"),
                 telefono=form.cleaned_data.get("telefono"),
-                rfc=form.cleaned_data.get("rfc"),
+
                 calle_num=form.cleaned_data.get("calle_num"),
                 farmacia = farmacia,
                 estado = farmacia_estado,
