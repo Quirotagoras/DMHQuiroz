@@ -150,7 +150,7 @@ def RegisterReceta(request,idEmpleado):
                 ficha = request.POST.get('ficha_derechohabiente')
                 parsed_ficha = parse(ficha)
                 parsed_codigo = parseCode(ficha)
-                ficha_id = DerechoHabiente.objects.get(ficha=parsed_ficha, codigo=parsed_codigo)
+                ficha_id = DerechoHabiente.objects.get(ficha=parsed_ficha, codigo=parsed_codigo, farmacia=id_farmacia)
                 print("Ficha"+str(ficha_id))
 
                 medicamento = request.POST.get('cbarras')
