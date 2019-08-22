@@ -29,15 +29,11 @@ def parseCode(string):
     value = parsed [1]
     return value
 
-
-
 def SuccessRegister(request):
     return render(request,'../templates/successReceta.html')
 
 def SuccessRegisterGerente(request):
     return render(request,'../templates/successRecetaGerente.html')
-
-
 
 def searchReceta(request):
     if request.method == 'POST':
@@ -53,8 +49,6 @@ def searchReceta(request):
 
     context={'form':form}
     return render(request,'../templates/findReceta.html',context)
-
-
 
 @login_required
 def ListEquivalenciaGerente(request,idEmpleado,folio):
@@ -124,7 +118,6 @@ def ListEquivalenciaEdit(request,idEmpleado,folio):
     context = {'list':equivalencias,'folio':folio,'medicamento':nombre_medicamento,'cantidad':cantidad}
     return render(request, '../templates/listEquivalencia.html', context)
 
-
 @login_required
 def RegisterReceta(request,idEmpleado):
     model = Capturista.objects.get(user_id=idEmpleado)
@@ -148,9 +141,8 @@ def RegisterReceta(request,idEmpleado):
                 return HttpResponseRedirect('/recetaGerente/'+str(idEmpleado)+'/Gerente')
             except Receta.DoesNotExist:
                 ficha = request.POST.get('ficha_derechohabiente')
-                parsed_ficha = parse(ficha)
-                parsed_codigo = parseCode(ficha)
-                ficha_id = DerechoHabiente.objects.get(ficha=parsed_ficha, codigo=parsed_codigo, farmacia=id_farmacia)
+                parsed_id = parse(ficha)
+                ficha_id = DerechoHabiente.objects.get(id=parsed_id)#modificar esto para que permita tener duplicados de derechohabientes(parsear nombre y verificar nombre tambien(indices 7 8 y 9))
                 print("Ficha"+str(ficha_id))
 
                 medicamento = request.POST.get('cbarras')
@@ -222,7 +214,7 @@ def RegisterReceta(request,idEmpleado):
         doctores.append("Dr. "+doctor.first_name+" "+doctor.last_name+' '+doctor.last_name2)
 
     for derechohabiente in DerechoHabientetemp:
-        derechohabientes.append(str(derechohabiente.ficha) + " "+str(derechohabiente.codigo)+" "+", Codigo: "+ str(derechohabiente.codigo) + ", Nombre : " + derechohabiente.nombre + " " + ", Organismo : "+derechohabiente.org)
+        derechohabientes.append(str(derechohabiente.id)+" "+str(derechohabiente.ficha) + " "+str(derechohabiente.codigo)+" "+", Codigo: "+ str(derechohabiente.codigo) + ", Nombre : " + derechohabiente.nombre + " " + ", Organismo : "+derechohabiente.org)
 
     for medicamento in Medicamentotemp:
         medicamentos.append(str(medicamento.cbarras)+" "+medicamento.nombre_comercial + ' '+medicamento.presentacion+medicamento.nombre_activo)
@@ -235,6 +227,109 @@ def RegisterReceta(request,idEmpleado):
 
     return render(request, '../templates/registerReceta.html', context)
 
+@login_required
+def RegisterRecetaGerente(request,idEmpleado):
+    model = Gerente.objects.get(user_id=idEmpleado)
+    username = model.user
+    user_id = User.objects.get(username=username)
+    id_farmacia = model.farmacia_id
+
+    #FORM
+    if request.method == 'POST':
+        print('entre a post')
+        form = RecetaForm(request.POST)
+
+        print(form.errors)
+
+        if form.is_valid():
+            try:
+                Receta.objects.get(folio_receta=form.cleaned_data.get('folio_receta'),farmacia_id=id_farmacia)# aqui es la validacion de un solo numero de receta por sucursal
+                return HttpResponseRedirect('/recetaGerente/'+str(idEmpleado)+'/Gerente')
+            except Receta.DoesNotExist:
+                ficha = request.POST.get('ficha_derechohabiente')
+                parsed_id = parse(ficha)
+                ficha_id = DerechoHabiente.objects.get(id=parsed_id)
+
+                medicamento = request.POST.get('cbarras')
+                parsed_medicamento = parse(medicamento)
+                medicamento_id = Product.objects.get(cbarras=parsed_medicamento)
+
+
+                new_derechohabiente = Receta(
+                    nur = form.cleaned_data.get("nur"),
+                    folio_receta=form.cleaned_data.get("folio_receta"),
+
+                    fecha_expide=form.cleaned_data.get("fecha_expide"),
+                    fecha_recibe=form.cleaned_data.get("fecha_recibe"),
+                    fecha_surte=form.cleaned_data.get("fecha_surte"),
+                    doctor=form.cleaned_data.get("doctor"),
+                    ficha_derechohabiente=ficha_id,
+                    cantidad=form.cleaned_data.get("cantidad"),
+                    cbarras=medicamento_id,
+                    farmacia=Farmacia.objects.get(id=id_farmacia),
+                    equivalencia=form.cleaned_data.get("equivalencia_cantidad"),
+                    equivalencia_obs=form.cleaned_data.get("equivalencia_obs"),
+                    creado=timezone.now(),
+                    ultimamodif=timezone.now(),
+                    empleado = user_id,
+                    has_Equivalencia = form.cleaned_data.get('has_Equivalencia'),
+
+                    )
+                new_derechohabiente.save()
+
+
+
+            if (form.cleaned_data.get('has_Equivalencia')== True):
+                return HttpResponseRedirect(form.cleaned_data.get('folio_receta')+"/")
+
+            else:
+
+                return HttpResponseRedirect('/receta/registeredRecetaGerente/')
+
+        else:
+            print('entre a not valid')
+
+    else:
+        print("entre")
+        form = RecetaForm()
+
+    #END form
+
+    #Info for doctor autocomplete
+    tempdoctores = Doctor.objects.filter(farmacia=id_farmacia)
+    doctorestemp = tempdoctores.all()
+    doctores=[]
+
+    #Info DerechoHabientes
+
+    tempDerechoHabientes =DerechoHabiente.objects.filter(farmacia=id_farmacia)
+    DerechoHabientetemp = tempDerechoHabientes.all()
+    derechohabientes=[]
+
+    #Info Medicamento
+
+    Medicamentotemp = Product.objects.all()
+    medicamentos = []
+
+    #transformar info
+    for doctor in doctorestemp:
+        doctores.append("Dr. "+doctor.first_name+" "+doctor.last_name+' '+doctor.last_name2)
+
+    for derechohabiente in DerechoHabientetemp:
+        derechohabientes.append(str(derechohabiente.id)+" "+ str(derechohabiente.ficha) + " "+str(derechohabiente.codigo)+" "+", Codigo: "+ str(derechohabiente.codigo) + ", Nombre : " + derechohabiente.nombre + " " + ", Organismo : "+derechohabiente.org)
+
+
+    for medicamento in Medicamentotemp:
+        medicamentos.append(str(medicamento.cbarras)+" "+medicamento.nombre_comercial + ' '+medicamento.presentacion+medicamento.nombre_activo+' ')
+
+
+    #Pasar a contexto
+
+    context = {'Form':form,'DoctoresAutocomplete':doctores,'DHAutocomplete':derechohabientes,'medicamentoAutcomplete':medicamentos}
+
+
+
+    return render(request, '../templates/registerRecetaGerente.html', context)
 
 @login_required
 def EditReceta(request,idEmpleado,idReceta):
@@ -364,111 +459,7 @@ def EditReceta(request,idEmpleado,idReceta):
     return render(request, '../templates/editReceta.html', context)
 
 
-@login_required
-def RegisterRecetaGerente(request,idEmpleado):
-    model = Gerente.objects.get(user_id=idEmpleado)
-    username = model.user
-    user_id = User.objects.get(username=username)
-    id_farmacia = model.farmacia_id
 
-    #FORM
-    if request.method == 'POST':
-        print('entre a post')
-        form = RecetaForm(request.POST)
-
-        print(form.errors)
-
-        if form.is_valid():
-            try:
-                Receta.objects.get(folio_receta=form.cleaned_data.get('folio_receta'),farmacia_id=id_farmacia)# aqui es la validacion de un solo numero de receta por sucursal
-                return HttpResponseRedirect('/recetaGerente/'+str(idEmpleado)+'/Gerente')
-            except Receta.DoesNotExist:
-                ficha = request.POST.get('ficha_derechohabiente')
-
-                parsed_ficha = parse(ficha)
-                parsed_codigo = parseCode(ficha)
-                ficha_id = DerechoHabiente.objects.get(ficha=parsed_ficha, codigo=parsed_codigo)
-
-                medicamento = request.POST.get('cbarras')
-                parsed_medicamento = parse(medicamento)
-                medicamento_id = Product.objects.get(cbarras=parsed_medicamento)
-
-
-                new_derechohabiente = Receta(
-                    nur = form.cleaned_data.get("nur"),
-                    folio_receta=form.cleaned_data.get("folio_receta"),
-
-                    fecha_expide=form.cleaned_data.get("fecha_expide"),
-                    fecha_recibe=form.cleaned_data.get("fecha_recibe"),
-                    fecha_surte=form.cleaned_data.get("fecha_surte"),
-                    doctor=form.cleaned_data.get("doctor"),
-                    ficha_derechohabiente=ficha_id,
-                    cantidad=form.cleaned_data.get("cantidad"),
-                    cbarras=medicamento_id,
-                    farmacia=Farmacia.objects.get(id=id_farmacia),
-                    equivalencia=form.cleaned_data.get("equivalencia_cantidad"),
-                    equivalencia_obs=form.cleaned_data.get("equivalencia_obs"),
-                    creado=timezone.now(),
-                    ultimamodif=timezone.now(),
-                    empleado = user_id,
-                    has_Equivalencia = form.cleaned_data.get('has_Equivalencia'),
-
-                    )
-                new_derechohabiente.save()
-
-
-
-            if (form.cleaned_data.get('has_Equivalencia')== True):
-                return HttpResponseRedirect(form.cleaned_data.get('folio_receta')+"/")
-
-            else:
-
-                return HttpResponseRedirect('/receta/registeredRecetaGerente/')
-
-        else:
-            print('entre a not valid')
-
-    else:
-        print("entre")
-        form = RecetaForm()
-
-    #END form
-
-    #Info for doctor autocomplete
-    tempdoctores = Doctor.objects.filter(farmacia=id_farmacia)
-    doctorestemp = tempdoctores.all()
-    doctores=[]
-
-    #Info DerechoHabientes
-
-    tempDerechoHabientes =DerechoHabiente.objects.filter(farmacia=id_farmacia)
-    DerechoHabientetemp = tempDerechoHabientes.all()
-    derechohabientes=[]
-
-    #Info Medicamento
-
-    Medicamentotemp = Product.objects.all()
-    medicamentos = []
-
-    #transformar info
-    for doctor in doctorestemp:
-        doctores.append("Dr. "+doctor.first_name+" "+doctor.last_name+' '+doctor.last_name2)
-
-    for derechohabiente in DerechoHabientetemp:
-        derechohabientes.append(str(derechohabiente.ficha) + " "+str(derechohabiente.codigo)+" "+", Codigo: "+ str(derechohabiente.codigo) + ", Nombre : " + derechohabiente.nombre + " " + ", Organismo : "+derechohabiente.org)
-
-
-    for medicamento in Medicamentotemp:
-        medicamentos.append(str(medicamento.cbarras)+" "+medicamento.nombre_comercial + ' '+medicamento.presentacion+medicamento.nombre_activo+' ')
-
-
-    #Pasar a contexto
-
-    context = {'Form':form,'DoctoresAutocomplete':doctores,'DHAutocomplete':derechohabientes,'medicamentoAutcomplete':medicamentos}
-
-
-
-    return render(request, '../templates/registerRecetaGerente.html', context)
 
 
 
