@@ -138,7 +138,7 @@ def RegisterReceta(request,idEmpleado):
 
             try:
                 Receta.objects.get(folio_receta=form.cleaned_data.get('folio_receta'),farmacia_id=id_farmacia)# aqui es la validacion de un solo numero de receta por sucursal
-                return HttpResponseRedirect('/recetaGerente/'+str(idEmpleado)+'/Gerente')
+                return HttpResponseRedirect('/receta/'+str(idEmpleado)+'/')
             except Receta.DoesNotExist:
                 ficha = request.POST.get('ficha_derechohabiente')
                 parsed_id = parse(ficha)
@@ -181,7 +181,6 @@ def RegisterReceta(request,idEmpleado):
                 return HttpResponseRedirect(form.cleaned_data.get('folio_receta')+"/")
 
             else:
-
                 return HttpResponseRedirect('/receta/registeredReceta/')
 
         else:
