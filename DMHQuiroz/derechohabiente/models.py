@@ -55,4 +55,4 @@ class DerechoHabiente(models.Model):
     email = models.EmailField(max_length=50)
 
     def __str__(self):
-        return str(self.ficha) +"-"+ str(self.codigo)
+        return self.nombre

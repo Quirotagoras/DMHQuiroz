@@ -154,6 +154,7 @@ def RegisterReceta(request,idEmpleado):
 
 
 
+
                 new_derechohabiente = Receta(
                     nur = form.cleaned_data.get("nur"),
                     folio_receta=form.cleaned_data.get("folio_receta"),
@@ -173,6 +174,7 @@ def RegisterReceta(request,idEmpleado):
                     has_Equivalencia = form.cleaned_data.get('has_Equivalencia'),
 
                     )
+
                 new_derechohabiente.save()
 
 

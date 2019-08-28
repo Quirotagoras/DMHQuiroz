@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'hlip8o*#4c&omho-r#q%!2oa%5b^=xpd#9kzbq)y)0br_v848j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['ec2-18-191-241-57.us-east-2.compute.amazonaws.com']
 
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'doctores.apps.DoctoresConfig',
     'derechohabiente.apps.DerechohabienteConfig',
     'receta.apps.RecetaConfig',
+    'reporte.apps.ReporteConfig',
     'products.apps.ProductsConfig',
     'equivalencia.apps.EquivalenciaConfig',
     'farmacia.apps.FarmaciaConfig',

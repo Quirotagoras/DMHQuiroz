@@ -29,8 +29,10 @@ urlpatterns = [
     path('receta/', include('receta.urls')),
     path('recetaGerente/', include('receta.urls')),
     path('users/',include('users.urls')),
-
+    path('reporte/',include('reporte.urls')),
+    path('reporteGerente/',include('reporte.urls')),
     path('admin/', admin.site.urls),
 
 ]
+
 urlpatterns += staticfiles_urlpatterns()

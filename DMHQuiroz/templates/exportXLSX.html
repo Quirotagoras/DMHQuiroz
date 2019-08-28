@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block javascript %}
+     <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+<!-- AUTOCOMPLETE -->
+    <script>
+
+        // Initialize materialize data picker
+            document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.datepicker');
+    var instances = M.Datepicker.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.datepicker').datepicker({format: 'yyyy-mm-dd',
+                                 changeMonth: true,
+                                 changeYear: true,
+                                yearRange: [2019,2080]});
+     $(".dropdown-trigger").dropdown();
+            $('select').formSelect();
+  });
+
+        </script>
+{% endblock javascript %}
+{% block content %}
+<ul>
+    <li><h2 class="pink-text text-lighten-3">Exportar
+    <i class="medium material-icons ">search</i></h2></li>
+    <li class="divider pink lighten-3"></li>
+</ul>
+
+<form method="POST">
+    {% csrf_token %}
+
+     {% if form.non_field_errors %}
+    <li class="divider red"></li>
+    <li class="divider red"></li>
+    <h6 style="color: #cc1111">Error :{{ form.non_field_errors }}</h6>
+    <li class="divider red"></li>
+    <li class="divider red"></li>
+    {% endif %}
+
+
+      <div class="input-field ">
+
+
+           <label class="active">Fecha Desde:</label>
+            <input type="text" class="datepicker" name="fechaDesde" >
+
+    </div>
+       <div class="input-field ">
+
+
+           <label class="active">Fecha Hasta:</label>
+            <input type="text" class="datepicker" name="fechaHasta" >
+
+    </div>
+     <div class="input-field ">
+           <label class="active">Nombre de Archivo a exportar:</label>
+            <input type="text" name="nombreArchivo" >
+    </div>
+
+
+   <button class="btn waves-effect waves-light pink lighten-3" type="submit" name="action">Exportar
+    <i class="material-icons right pink lighten-3">search</i>
+  </button>
+    <pre></pre>
+</form>
+{% endblock %}
+

@@ -78,6 +78,7 @@
 
 
       <li><a href="/receta/{{ request.user.pk }}"> Capturar Receta</a></li>
+        <li><a href="/reporte/{{ request.user.pk }}/export"> Generar Reporte</a></li>
       <!-- Dropdown Trigger -->
       <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Alta<i class="material-icons right">arrow_drop_down</i></a></li>
         <li><a href="{% url 'logoutUser' %}" >Logout</a></li>
