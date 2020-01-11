@@ -12,10 +12,8 @@ from users.models import Gerente,Capturista
 from doctores.models import Doctor
 from products.models import Product
 from equivalencia.models import Equivalencia
-
 from django.views.generic import ListView
 from django.contrib.auth.decorators import login_required
-from dal import autocomplete
 from .forms import EquivalenciaForm,FindRecetaForm,RecetaFormEdit
 
 

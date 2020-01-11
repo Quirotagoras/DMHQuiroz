@@ -22,14 +22,11 @@ class DerechoHabienteForm(ModelForm):
             'telefono': forms.TextInput(attrs={'placeholder': 'Inserte telefono de derecho habiente aqui'}),
             'email': forms.EmailInput(attrs={'placeholder': 'Inserte email de derecho habiente aqui'}),
 
-
-
-
         }
 
         def is_valid(self):
             cd = self.cleaned_data
-            if (cd['ficha'] and cd['codigo'] and cd['org'] and ['nombre'] and ['calle_num'] and['colonia'] and ['cp'] and ['telefono'] and ['email']):
+            if (cd['ficha'] and cd['codigo'] and cd['org'] and cd['nombre'] and cd['calle_num'] and cd['colonia'] and cd['cp'] and cd['telefono'] and cd['email']):
                 return True
             else:
                 return False
