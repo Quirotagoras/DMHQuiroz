@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="696639d0-eb9f-4c0b-85f7-96bc05bbd9f1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/derechohabiente/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doctores/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/equivalencia/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/farmacia/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/receta/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reporte/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DMHQuiroz/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DMHQuiroz/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/derechohabiente/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/derechohabiente/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/receta/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/receta/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/receta/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/receta/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/receta/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/receta/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reporte/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/reporte/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reporte/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/reporte/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/exportXLSX.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exportXLSX.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/exportXLSXGerente.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exportXLSXGerente.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registerReceta.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registerReceta.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registerRecetaGerente.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registerRecetaGerente.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,11 +25,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/registerReceta.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="467">
               <caret line="167" column="68" selection-start-line="167" selection-start-column="68" selection-end-line="167" selection-end-column="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -57,15 +48,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="257">
               <caret line="169" column="68" selection-start-line="169" selection-start-column="68" selection-end-line="169" selection-end-column="68" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reporte/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="37" lean-forward="true" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -165,7 +147,6 @@
         <option value="$PROJECT_DIR$/receta/views.py" />
         <option value="$PROJECT_DIR$/receta/forms.py" />
         <option value="$PROJECT_DIR$/DMHQuiroz/settings.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/derechohabiente/forms.py" />
         <option value="$PROJECT_DIR$/reporte/forms.py" />
         <option value="$PROJECT_DIR$/templates/exportXLSXGerente.html" />
@@ -174,6 +155,7 @@
         <option value="$PROJECT_DIR$/templates/exportXLSX.html" />
         <option value="$PROJECT_DIR$/templates/registerRecetaGerente.html" />
         <option value="$PROJECT_DIR$/templates/registerReceta.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -195,41 +177,6 @@
             <path>
               <item name="DMHQuiroz" type="b2602c69:ProjectViewProjectNode" />
               <item name="DMHQuiroz" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DMHQuiroz" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DMHQuiroz" type="462c0819:PsiDirectoryNode" />
-              <item name="derechohabiente" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DMHQuiroz" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DMHQuiroz" type="462c0819:PsiDirectoryNode" />
-              <item name="DMHQuiroz" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DMHQuiroz" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DMHQuiroz" type="462c0819:PsiDirectoryNode" />
-              <item name="doctores" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DMHQuiroz" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DMHQuiroz" type="462c0819:PsiDirectoryNode" />
-              <item name="products" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DMHQuiroz" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DMHQuiroz" type="462c0819:PsiDirectoryNode" />
-              <item name="receta" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DMHQuiroz" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DMHQuiroz" type="462c0819:PsiDirectoryNode" />
-              <item name="reporte" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DMHQuiroz" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DMHQuiroz" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DMHQuiroz" type="b2602c69:ProjectViewProjectNode" />
@@ -307,12 +254,12 @@
       <workItem from="1573246636867" duration="7000" />
       <workItem from="1574176870535" duration="1000" />
       <workItem from="1575135145252" duration="5000" />
-      <workItem from="1578756856356" duration="14009000" />
+      <workItem from="1578756856356" duration="14246000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26837000" />
+    <option name="totallyTimeSpent" value="27074000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -323,7 +270,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" visible="true" weight="0.32959184" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" weight="0.32959184" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -332,7 +279,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50061053" side_tool="true" weight="0.32857144" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4993895" weight="0.32857144" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4993895" visible="true" weight="0.32857144" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -365,13 +312,6 @@
           <folding>
             <element signature="e#633#700#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -487,6 +427,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="467">
           <caret line="167" column="68" selection-start-line="167" selection-start-column="68" selection-end-line="167" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
